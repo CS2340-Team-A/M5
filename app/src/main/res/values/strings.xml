@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">M5</string>
     <string name="activity_config_default_name">Name</string>
+    <string name="activity_config_difficulty_text">Select game difficulty</string>
 </resources>
