@@ -7,7 +7,7 @@
     tools:context=".views.ConfigActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/name_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
@@ -31,7 +31,7 @@
         android:text="@string/activity_config_difficulty_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
     <Spinner
         android:id="@+id/difficulty_spinner"
@@ -94,12 +94,12 @@
         android:layout_marginBottom="26dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/engineer_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/engineer_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
@@ -120,7 +120,7 @@
         android:layout_marginBottom="72dp"
         android:text="Name"
         app:layout_constraintBottom_toTopOf="@+id/fighter_text"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/name_input"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -168,7 +168,7 @@
         android:layout_marginBottom="84dp"
         android:text="Engineer Points"
         app:layout_constraintBottom_toTopOf="@+id/difficulty_textview"
-        app:layout_constraintEnd_toStartOf="@+id/editText5"
+        app:layout_constraintEnd_toStartOf="@+id/engineer_number"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
