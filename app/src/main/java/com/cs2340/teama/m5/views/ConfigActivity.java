@@ -63,38 +63,45 @@ public class ConfigActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Edit", "Add Player Pressed");
-
-                int pil = Integer.parseInt(pilot.getText().toString());
-                int fight = Integer.parseInt(figher.getText().toString());
-                int trad = Integer.parseInt(trader.getText().toString());
-                int engin = Integer.parseInt(engineer.getText().toString());
-
-
-                if (viewModel.calculatePoints(pil, fight, trad, engin)) {
-                            showToast();
-                            pilot.invalidate();
-                            figher.invalidate();
-                            trader.invalidate();
-                            engineer.invalidate();
-
-                } else {
-
-                    GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
-
-                    Player player = new Player(nameGiven.getText().toString());
-
-                    player.incrementSkill(SkillType.FIGHTER, fight);
-                    player.incrementSkill(SkillType.ENGINEER, engin);
-                    player.incrementSkill(SkillType.TRADER, trad);
-                    player.incrementSkill(SkillType.PILOT, pil);
+                try {
+                    int pil = Integer.parseInt(pilot.getText().toString());
+                    int fight = Integer.parseInt(figher.getText().toString());
+                    int trad = Integer.parseInt(trader.getText().toString());
+                    int engin = Integer.parseInt(engineer.getText().toString());
 
 
-                    Log.d("Edit", "Got new player" + player);
+                    if (viewModel.calculatePoints(pil, fight, trad, engin)) {
+                        showToast();
+                        pilot.invalidate();
+                        figher.invalidate();
+                        trader.invalidate();
+                        engineer.invalidate();
 
-                    viewModel.addPlayer(player);
+                    } else {
 
-                    openBlankActivity();
+                        GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
+                        Player player = new Player(nameGiven.getText().toString());
+
+                        player.incrementSkill(SkillType.FIGHTER, fight);
+                        player.incrementSkill(SkillType.ENGINEER, engin);
+                        player.incrementSkill(SkillType.TRADER, trad);
+                        player.incrementSkill(SkillType.PILOT, pil);
+
+
+                        Log.d("Edit", "Got new player" + player);
+
+                        viewModel.addPlayer(player);
+
+                        openBlankActivity();
+
+                    }
+                } catch (Exception e) {
+                    showToast();
+                    pilot.invalidate();
+                    figher.invalidate();
+                    trader.invalidate();
+                    engineer.invalidate();
                 }
 
             }
