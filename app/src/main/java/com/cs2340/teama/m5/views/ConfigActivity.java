@@ -59,60 +59,48 @@ public class ConfigActivity extends AppCompatActivity {
         difficulty_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(difficulty_adapter);
 
+        startGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Edit", "Add Player Pressed");
 
-    }
-
-
-
-    public void onClick(View view) {
-        Log.d("Edit", "Add Player Pressed");
-        boolean ready;
-        int pil = 0;
-        int fight = 0;
-        int trad = 0;
-        int engin = 0;
-        try {
-            pil = Integer.parseInt(pilot.getText().toString());
-            fight = Integer.parseInt(figher.getText().toString());
-            trad = Integer.parseInt(trader.getText().toString());
-            engin = Integer.parseInt(engineer.getText().toString());
-            ready = viewModel.calculatePoints(pil, fight, trad, engin);
-        } catch (Exception e) {
-            Log.d("Error", "Inappropriate Input");
-            ready = false;
-        }
-
-        if (!ready) {
-            startGame.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showToast();
-                }
-            });
-        } else {
-
-            GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
-
-            Player player = new Player(nameGiven.getText().toString());
-
-            player.incrementSkill(SkillType.FIGHTER, fight);
-            player.incrementSkill(SkillType.ENGINEER, engin);
-            player.incrementSkill(SkillType.TRADER, trad);
-            player.incrementSkill(SkillType.PILOT, pil);
+                int pil = Integer.parseInt(pilot.getText().toString());
+                int fight = Integer.parseInt(figher.getText().toString());
+                int trad = Integer.parseInt(trader.getText().toString());
+                int engin = Integer.parseInt(engineer.getText().toString());
 
 
-            Log.d("Edit", "Got new player" + player);
+                if (viewModel.calculatePoints(pil, fight, trad, engin)) {
+                            showToast();
+                            pilot.invalidate();
+                            figher.invalidate();
+                            trader.invalidate();
+                            engineer.invalidate();
 
-            viewModel.addPlayer(player);
-            startGame.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                } else {
+
+                    GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
+
+                    Player player = new Player(nameGiven.getText().toString());
+
+                    player.incrementSkill(SkillType.FIGHTER, fight);
+                    player.incrementSkill(SkillType.ENGINEER, engin);
+                    player.incrementSkill(SkillType.TRADER, trad);
+                    player.incrementSkill(SkillType.PILOT, pil);
+
+
+                    Log.d("Edit", "Got new player" + player);
+
+                    viewModel.addPlayer(player);
+
                     openBlankActivity();
-                }
-            });
-        }
 
+                }
+
+            }
+        });
     }
+
     public void openBlankActivity() {
         Intent intent = new Intent(this, BlankActivity.class);
         startActivity(intent);
