@@ -66,14 +66,23 @@ public class ConfigActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         Log.d("Edit", "Add Player Pressed");
+        boolean ready;
+        int pil = 0;
+        int fight = 0;
+        int trad = 0;
+        int engin = 0;
+        try {
+            pil = Integer.parseInt(pilot.getText().toString());
+            fight = Integer.parseInt(figher.getText().toString());
+            trad = Integer.parseInt(trader.getText().toString());
+            engin = Integer.parseInt(engineer.getText().toString());
+            ready = viewModel.calculatePoints(pil, fight, trad, engin);
+        } catch (Exception e) {
+            Log.d("Error", "Inappropriate Input");
+            ready = false;
+        }
 
-        int pil = Integer.parseInt(pilot.getText().toString());
-        int fight = Integer.parseInt(figher.getText().toString());
-        int trad = Integer.parseInt(trader.getText().toString());
-        int engin = Integer.parseInt(engineer.getText().toString());
-
-
-        if (viewModel.calculatePoints(pil, fight, trad, engin)) {
+        if (!ready) {
             startGame.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
