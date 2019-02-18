@@ -71,20 +71,12 @@ public class ConfigActivity extends AppCompatActivity {
 
 
                 if (viewModel.calculatePoints(pil, fight, trad, engin)) {
-                    startGame.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
                             showToast();
-                            pilot.setText("");
                             pilot.invalidate();
-                            figher.setText("");
                             figher.invalidate();
-                            trader.setText("");
                             trader.invalidate();
-                            engineer.setText("");
                             engineer.invalidate();
-                        }
-                    });
+
                 } else {
 
                     GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
