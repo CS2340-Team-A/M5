@@ -36,4 +36,9 @@ public class Coordinates {
         // Compare the data members and return accordingly
         return compCoords.getX() == getX() && compCoords.getY() == getY();
     }
+
+    @Override
+    public String toString() {
+        return "(" + this.getX() + ", " + this.getY() + ")";
+    }
 }

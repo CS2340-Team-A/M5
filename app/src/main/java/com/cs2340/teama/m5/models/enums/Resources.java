@@ -1,6 +1,6 @@
 package com.cs2340.teama.m5.models.enums;
 
-public enum Resource {
+public enum Resources {
     NoSpecialResources,
     MineralRich,
     MineralPoor,
