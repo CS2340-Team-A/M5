@@ -16,9 +16,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.cs2340.teama.m5.R;
-import com.cs2340.teama.m5.models.GameDifficulty;
+import com.cs2340.teama.m5.models.enums.GameDifficulty;
 import com.cs2340.teama.m5.models.Player;
-import com.cs2340.teama.m5.models.SkillType;
+import com.cs2340.teama.m5.models.enums.SkillType;
 import com.cs2340.teama.m5.viewModels.ConfigViewModel;
 
 public class ConfigActivity extends AppCompatActivity {

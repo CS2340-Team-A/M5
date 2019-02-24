@@ -1,5 +1,8 @@
 package com.cs2340.teama.m5.models;
 
+import com.cs2340.teama.m5.models.enums.ShipType;
+import com.cs2340.teama.m5.models.enums.SkillType;
+
 public class Player {
     private String name;
     private SkillType[] skills;
