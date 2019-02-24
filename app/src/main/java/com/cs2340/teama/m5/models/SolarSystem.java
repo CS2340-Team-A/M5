@@ -19,7 +19,7 @@ public class SolarSystem {
 
     @Override
     public String toString() {
-        return "Name: " + name + " Coordinates: " + coordinates.toString() +
-                " Tech Level: " + techLevel + " Resources: " + resources;
+        return "Name: " + name + " | Coordinates: " + coordinates.toString() +
+                " | Tech Level: " + techLevel + " | Resources: " + resources;
     }
 }

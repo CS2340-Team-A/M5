@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.cs2340.teama.m5.R;
+import com.cs2340.teama.m5.models.Universe;
 import com.cs2340.teama.m5.models.enums.GameDifficulty;
 import com.cs2340.teama.m5.models.Player;
 import com.cs2340.teama.m5.models.enums.SkillType;
@@ -91,6 +92,10 @@ public class ConfigActivity extends AppCompatActivity {
                         Log.d("Edit", "Got new player" + player);
 
                         viewModel.addPlayer(player);
+
+                        // Create Universe
+                        Universe universe = new Universe();
+                        Log.d("Edit", "Created Universe: \n" + universe);
 
                         openBlankActivity();
 

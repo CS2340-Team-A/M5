@@ -82,7 +82,7 @@ public class Universe {
 
     @Override
     public String toString() {
-        String output = "";
+        String output = "Solar Systems in Universe:\n";
         for (SolarSystem system : solarSystems) {
             output += system.toString() + "\n";
         }
