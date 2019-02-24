@@ -1,6 +1,5 @@
 package com.cs2340.teama.m5.views;
 
-import android.app.AlertDialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +24,7 @@ import com.cs2340.teama.m5.viewModels.ConfigViewModel;
 public class ConfigActivity extends AppCompatActivity {
 
     private Spinner difficultySpinner;
-    private EditText figher;
+    private EditText fighter;
     private EditText pilot;
     private EditText trader;
     private EditText engineer;
@@ -43,7 +42,7 @@ public class ConfigActivity extends AppCompatActivity {
         Grabbing the widgets
          */
         difficultySpinner = findViewById(R.id.difficulty_spinner);
-        figher = findViewById(R.id.pilot_number);
+        fighter = findViewById(R.id.pilot_number);
         pilot = findViewById(R.id.fighter_number);
         trader = findViewById(R.id.trader_number);
         engineer = findViewById(R.id.editText5);
@@ -65,7 +64,7 @@ public class ConfigActivity extends AppCompatActivity {
                 Log.d("Edit", "Add Player Pressed");
                 try {
                     int pil = Integer.parseInt(pilot.getText().toString());
-                    int fight = Integer.parseInt(figher.getText().toString());
+                    int fight = Integer.parseInt(fighter.getText().toString());
                     int trad = Integer.parseInt(trader.getText().toString());
                     int engin = Integer.parseInt(engineer.getText().toString());
 
@@ -73,7 +72,7 @@ public class ConfigActivity extends AppCompatActivity {
                     if (viewModel.calculatePoints(pil, fight, trad, engin)) {
                         showToast();
                         pilot.invalidate();
-                        figher.invalidate();
+                        fighter.invalidate();
                         trader.invalidate();
                         engineer.invalidate();
 
@@ -99,7 +98,7 @@ public class ConfigActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     showToast();
                     pilot.invalidate();
-                    figher.invalidate();
+                    fighter.invalidate();
                     trader.invalidate();
                     engineer.invalidate();
                 }
