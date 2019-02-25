@@ -47,7 +47,7 @@ public class ConfigActivity extends AppCompatActivity {
         pilot = findViewById(R.id.fighter_number);
         trader = findViewById(R.id.trader_number);
         engineer = findViewById(R.id.editText5);
-        startGame = (Button) findViewById(R.id.begin_game_button);
+        startGame = findViewById(R.id.begin_game_button);
         nameGiven = findViewById(R.id.editText);
 
         /*
@@ -81,6 +81,9 @@ public class ConfigActivity extends AppCompatActivity {
 
                         GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
+                        if (nameGiven.getText().toString().length() == 0) {
+                            throw new Exception();
+                        }
                         Player player = new Player(nameGiven.getText().toString());
 
                         player.incrementSkill(SkillType.FIGHTER, fight);
