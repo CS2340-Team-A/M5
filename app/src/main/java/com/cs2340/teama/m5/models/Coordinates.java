@@ -24,16 +24,10 @@ public class Coordinates {
         if (comp == this) {
             return true;
         }
-
-        /* Check if o is an instance of Complex or not
-          "null instanceof [type]" also returns false */
         if (!(comp instanceof Coordinates)) {
             return false;
         }
-
         Coordinates compCoords = (Coordinates) comp;
-
-        // Compare the data members and return accordingly
         return compCoords.getX() == getX() && compCoords.getY() == getY();
     }
 
