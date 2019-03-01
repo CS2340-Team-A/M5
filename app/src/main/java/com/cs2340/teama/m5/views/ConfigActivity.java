@@ -82,7 +82,7 @@ public class ConfigActivity extends AppCompatActivity {
                         GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
                         if (nameGiven.getText().toString().length() == 0) {
-                            throw new Exception();
+                            throw new IllegalArgumentException();
                         }
                         Player player = new Player(nameGiven.getText().toString());
 
@@ -103,6 +103,8 @@ public class ConfigActivity extends AppCompatActivity {
                         openBlankActivity();
 
                     }
+                } catch (IllegalArgumentException e){
+                    showNameToast();
                 } catch (Exception e) {
                     showToast();
                     pilot.invalidate();
@@ -122,6 +124,18 @@ public class ConfigActivity extends AppCompatActivity {
     public void showToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_root));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+
+        toast.show();
+    }
+
+    public void showNameToast() {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout_name, (ViewGroup) findViewById(R.id.toast_root_name));
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
