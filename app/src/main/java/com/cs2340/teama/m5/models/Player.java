@@ -46,13 +46,13 @@ public class Player {
 
     @Override
     public String toString() {
-        String playerString = "Players name is " + name + ".\n";
+        String playerString = "\nPlayers name is " + name + ".\n";
         for (SkillType sk: skills) {
             playerString = playerString + name + " has " + sk.getSkillPointsAllocated() + " points"
             + " allocated to " + sk + ".\n";
         }
         playerString = playerString + "Player's ship is the " + getShip() + ".\n";
-        playerString = playerString + "Player has " + getCredits() + "credits.";
+        playerString = playerString + "Player has " + getCredits() + " credits.";
         return playerString;
     }
 }
