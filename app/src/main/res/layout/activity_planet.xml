@@ -12,10 +12,9 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <TextView
-            android:id="@+id/planet_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView"
+            android:text="You Are On"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="36sp"
