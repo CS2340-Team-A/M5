@@ -18,6 +18,7 @@ public class SolarSystem {
         this.coordinates = coordinates;
         this.techLevel = techLevel;
         this.resources = resources;
+        this.planet = new Planet(name);
     }
 
     public static SolarSystem findSolarSystemByCoords(List<SolarSystem> solarSystems, Coordinates planetCoords) {
@@ -33,6 +34,10 @@ public class SolarSystem {
 
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    public Planet getPlanet() {
+        return planet;
     }
 
     @Override

@@ -25,8 +25,11 @@ public class PlanetActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        TextView planet_name = (TextView) findViewById(R.id.planet_name);
-        planet_name.setText(viewModel.getPlanetName());
+        TextView planetName = (TextView) findViewById(R.id.planet_name);
+        planetName.setText(viewModel.getPlanetName());
+
+        TextView planetInfo = findViewById(R.id.planet_info);
+        planetInfo.setText(viewModel.getPlanetInfo());
 
     }
 
