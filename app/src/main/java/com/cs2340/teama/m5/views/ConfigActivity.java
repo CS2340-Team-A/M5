@@ -94,12 +94,13 @@ public class ConfigActivity extends AppCompatActivity {
 
                         Log.d("Edit", "Got new player" + player);
 
-                        viewModel.addPlayer(player);
+
 
                         // Create Universe
                         Universe universe = new Universe();
                         Log.d("Edit", "Created Universe: \n" + universe);
 
+                        viewModel.addPlayerUniverse(player, universe);
                         openBlankActivity();
 
                     }
