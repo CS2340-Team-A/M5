@@ -80,6 +80,10 @@ public class Universe {
         }
     }
 
+    public List<SolarSystem> getSolarSystems() {
+        return solarSystems;
+    }
+
     @Override
     public String toString() {
         String output = "Solar Systems in Universe:\n";

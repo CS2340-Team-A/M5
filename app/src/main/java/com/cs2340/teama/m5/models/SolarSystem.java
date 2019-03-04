@@ -17,6 +17,10 @@ public class SolarSystem {
         this.resources = resources;
     }
 
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
     @Override
     public String toString() {
         return "Name: " + name + " | Coordinates: " + coordinates.toString() +

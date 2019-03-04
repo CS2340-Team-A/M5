@@ -8,12 +8,15 @@ public class Player {
     private SkillType[] skills;
     private ShipType ship;
     private int credits;
+    private Coordinates coordinates;
 
-    public Player(String name) {
+    public Player(String name, Coordinates coordinates1) {
+        this.coordinates = coordinates1;
         this.name = name;
         this.ship = ShipType.GNAT;
         skills = SkillType.values();
         credits = 1000;
+
     }
 
     public void incrementSkill(SkillType skill, int increase) {

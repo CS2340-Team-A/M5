@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.cs2340.teama.m5.R;
+import com.cs2340.teama.m5.models.Coordinates;
 import com.cs2340.teama.m5.models.Universe;
 import com.cs2340.teama.m5.models.enums.GameDifficulty;
 import com.cs2340.teama.m5.models.Player;
@@ -79,12 +80,19 @@ public class ConfigActivity extends AppCompatActivity {
 
                     } else {
 
+                        // Create Universe
+                        Universe universe = new Universe();
+                        Log.d("Edit", "Created Universe: \n" + universe);
+
                         GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
                         if (nameGiven.getText().toString().length() == 0) {
                             throw new IllegalArgumentException();
                         }
-                        Player player = new Player(nameGiven.getText().toString());
+
+                        Coordinates startingCoords = universe.getSolarSystems().get(0).getCoordinates();
+
+                        Player player = new Player(nameGiven.getText().toString(), startingCoords);
 
                         player.incrementSkill(SkillType.FIGHTER, fight);
                         player.incrementSkill(SkillType.ENGINEER, engin);
@@ -96,9 +104,7 @@ public class ConfigActivity extends AppCompatActivity {
 
 
 
-                        // Create Universe
-                        Universe universe = new Universe();
-                        Log.d("Edit", "Created Universe: \n" + universe);
+
 
                         viewModel.addPlayerUniverse(player, universe);
                         openBlankActivity();
