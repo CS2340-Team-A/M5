@@ -11,4 +11,12 @@ public class Game {
         this.player = p;
         this.universe = u;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Universe getUniverse() {
+        return universe;
+    }
 }

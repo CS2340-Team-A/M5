@@ -58,4 +58,8 @@ public class Player {
         playerString = playerString + "Player has " + getCredits() + " credits.";
         return playerString;
     }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
 }
