@@ -125,7 +125,7 @@ public class ConfigActivity extends AppCompatActivity {
     }
 
     public void openBlankActivity() {
-        Intent intent = new Intent(this, PlanetActivity.class);
+        Intent intent = new Intent(this, LoadScreenActivity.class);
         startActivity(intent);
     }
     public void showToast() {

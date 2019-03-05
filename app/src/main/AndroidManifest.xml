@@ -19,7 +19,8 @@
         <activity
             android:name=".views.PlanetActivity"
             android:label="@string/title_activity_planet"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".views.LoadScreenActivity"></activity>
     </application>
 
 </manifest>
