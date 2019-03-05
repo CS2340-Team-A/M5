@@ -3,4 +3,5 @@
     <string name="activity_config_default_name">Name</string>
     <string name="activity_config_difficulty_text">Select game difficulty</string>
     <string name="title_activity_planet">PlanetActivity</string>
+    <string name="title_activity_market_place">MarketPlaceActivity</string>
 </resources>

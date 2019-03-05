@@ -1,13 +1,16 @@
 package com.cs2340.teama.m5.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.cs2340.teama.m5.R;
@@ -30,6 +33,21 @@ public class PlanetActivity extends AppCompatActivity {
         TextView planetInfo = findViewById(R.id.planet_info);
         planetInfo.setText(viewModel.getPlanetInfo());
 
+        Button goToMarket = findViewById(R.id.planet_trade);
+
+        goToMarket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Edit", "goToMarket Button Pushed");
+                startMarket();
+            }
+        });
+
+    }
+
+    private void startMarket() {
+        Intent intent = new Intent(this, MarketPlaceActivity.class);
+        this.startActivity(intent);
     }
 
 
