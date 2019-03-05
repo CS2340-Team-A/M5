@@ -17,7 +17,7 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/activity_config_default_name"
+        android:hint="Name"
         app:layout_constraintBottom_toTopOf="@+id/fighter_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name_text"
