@@ -1,4 +1,4 @@
-package com.cs2340.teama.m5;
+package com.cs2340.teama;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

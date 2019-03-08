@@ -1,8 +1,7 @@
-package com.cs2340.teama.m5.views;
+package com.cs2340.teama.views;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;

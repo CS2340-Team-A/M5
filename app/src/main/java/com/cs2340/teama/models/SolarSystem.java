@@ -1,7 +1,7 @@
-package com.cs2340.teama.m5.models;
+package com.cs2340.teama.models;
 
-import com.cs2340.teama.m5.models.enums.Resources;
-import com.cs2340.teama.m5.models.enums.TechLevel;
+import com.cs2340.teama.models.enums.Resources;
+import com.cs2340.teama.models.enums.TechLevel;
 
 import java.util.List;
 

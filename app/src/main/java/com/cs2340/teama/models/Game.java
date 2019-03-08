@@ -1,4 +1,4 @@
-package com.cs2340.teama.m5.models;
+package com.cs2340.teama.models;
 
 public class Game {
     private Universe universe;

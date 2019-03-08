@@ -1,11 +1,14 @@
-package com.cs2340.teama.m5.viewModels;
+package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
 
-import com.cs2340.teama.m5.models.Coordinates;
-import com.cs2340.teama.m5.models.Game;
-import com.cs2340.teama.m5.models.Planet;
-import com.cs2340.teama.m5.models.SolarSystem;
+import com.cs2340.teama.models.Coordinates;
+import com.cs2340.teama.models.Game;
+import com.cs2340.teama.models.Planet;
+import com.cs2340.teama.models.SolarSystem;
+import com.cs2340.teama.models.TradeGood;
+
+import java.util.List;
 
 public class PlanetViewModel extends ViewModel {
 
@@ -23,5 +26,9 @@ public class PlanetViewModel extends ViewModel {
 
     public CharSequence getPlanetInfo() {
         return this.getPlanet().getInfo();
+    }
+
+    public List<TradeGood> getPlanetGoodsList() {
+        return this.getPlanet().getTradeGoods();
     }
 }

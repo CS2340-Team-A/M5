@@ -1,10 +1,10 @@
-package com.cs2340.teama.m5.viewModels;
+package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
 
-import com.cs2340.teama.m5.models.Game;
-import com.cs2340.teama.m5.models.Player;
-import com.cs2340.teama.m5.models.Universe;
+import com.cs2340.teama.models.Game;
+import com.cs2340.teama.models.Player;
+import com.cs2340.teama.models.Universe;
 
 public class ConfigViewModel extends ViewModel {
 

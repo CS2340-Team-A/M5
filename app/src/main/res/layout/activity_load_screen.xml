@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".views.LoadScreenActivity">
+    tools:context="com.cs2340.teama.views.LoadScreenActivity">
 
     <ImageView
         android:id="@+id/imageView2"

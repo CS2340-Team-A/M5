@@ -1,7 +1,7 @@
-package com.cs2340.teama.m5.models;
+package com.cs2340.teama.models;
 
-import com.cs2340.teama.m5.models.enums.ShipType;
-import com.cs2340.teama.m5.models.enums.SkillType;
+import com.cs2340.teama.models.enums.ShipType;
+import com.cs2340.teama.models.enums.SkillType;
 
 public class Player {
     private String name;
