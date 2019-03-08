@@ -1,4 +1,4 @@
-package com.cs2340.teama.m5;
+package com.cs2340.teama;
 
 import org.junit.Test;
 

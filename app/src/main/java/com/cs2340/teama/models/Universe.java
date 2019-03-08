@@ -1,8 +1,8 @@
-package com.cs2340.teama.m5.models;
+package com.cs2340.teama.models;
 
-import com.cs2340.teama.m5.models.enums.TechLevel;
-import com.cs2340.teama.m5.models.enums.Resources;
-import com.cs2340.teama.m5.models.Coordinates;
+import com.cs2340.teama.models.enums.TechLevel;
+import com.cs2340.teama.models.enums.Resources;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -78,6 +78,10 @@ public class Universe {
 
             solarSystems.add(new SolarSystem(systemName, coords, techLevel, resources));
         }
+    }
+
+    public List<SolarSystem> getSolarSystems() {
+        return solarSystems;
     }
 
     @Override

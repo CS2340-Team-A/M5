@@ -9,14 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.BlankActivity"></activity>
-        <activity android:name=".views.ConfigActivity">
+        <activity android:name="com.cs2340.teama.views.ConfigActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.cs2340.teama.views.PlanetActivity"
+            android:label="@string/title_activity_planet"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cs2340.teama.views.LoadScreenActivity" />
+        <activity
+            android:name="com.cs2340.teama.views.MarketPlaceActivity"
+            android:label="@string/title_activity_market_place"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

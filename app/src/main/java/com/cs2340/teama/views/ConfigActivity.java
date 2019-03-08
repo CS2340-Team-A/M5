@@ -1,4 +1,4 @@
-package com.cs2340.teama.m5.views;
+package com.cs2340.teama.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -16,11 +16,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.cs2340.teama.m5.R;
-import com.cs2340.teama.m5.models.Universe;
-import com.cs2340.teama.m5.models.enums.GameDifficulty;
-import com.cs2340.teama.m5.models.Player;
-import com.cs2340.teama.m5.models.enums.SkillType;
-import com.cs2340.teama.m5.viewModels.ConfigViewModel;
+import com.cs2340.teama.models.Coordinates;
+import com.cs2340.teama.models.Universe;
+import com.cs2340.teama.models.enums.GameDifficulty;
+import com.cs2340.teama.models.Player;
+import com.cs2340.teama.models.enums.SkillType;
+import com.cs2340.teama.viewModels.ConfigViewModel;
 
 public class ConfigActivity extends AppCompatActivity {
 
@@ -79,12 +80,21 @@ public class ConfigActivity extends AppCompatActivity {
 
                     } else {
 
+                        // Create Universe
+                        /* Note all of this Universe Creation should probably take place in the
+                         viewModel or models*/
+                        Universe universe = new Universe();
+                        Log.d("Edit", "Created Universe: \n" + universe);
+
                         GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
                         if (nameGiven.getText().toString().length() == 0) {
                             throw new IllegalArgumentException();
                         }
-                        Player player = new Player(nameGiven.getText().toString());
+
+                        Coordinates startingCoords = universe.getSolarSystems().get(0).getCoordinates();
+
+                        Player player = new Player(nameGiven.getText().toString(), startingCoords);
 
                         player.incrementSkill(SkillType.FIGHTER, fight);
                         player.incrementSkill(SkillType.ENGINEER, engin);
@@ -94,12 +104,11 @@ public class ConfigActivity extends AppCompatActivity {
 
                         Log.d("Edit", "Got new player" + player);
 
-                        viewModel.addPlayer(player);
 
-                        // Create Universe
-                        Universe universe = new Universe();
-                        Log.d("Edit", "Created Universe: \n" + universe);
 
+
+
+                        viewModel.addPlayerUniverse(player, universe);
                         openBlankActivity();
 
                     }
@@ -118,7 +127,7 @@ public class ConfigActivity extends AppCompatActivity {
     }
 
     public void openBlankActivity() {
-        Intent intent = new Intent(this, BlankActivity.class);
+        Intent intent = new Intent(this, LoadScreenActivity.class);
         startActivity(intent);
     }
     public void showToast() {

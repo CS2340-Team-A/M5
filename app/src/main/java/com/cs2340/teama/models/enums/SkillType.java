@@ -1,4 +1,4 @@
-package com.cs2340.teama.m5.models.enums;
+package com.cs2340.teama.models.enums;
 
 public enum SkillType {
     PILOT(0), FIGHTER(0), TRADER(0), ENGINEER(0);

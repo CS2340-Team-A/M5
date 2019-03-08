@@ -1,19 +1,22 @@
-package com.cs2340.teama.m5.models;
+package com.cs2340.teama.models;
 
-import com.cs2340.teama.m5.models.enums.ShipType;
-import com.cs2340.teama.m5.models.enums.SkillType;
+import com.cs2340.teama.models.enums.ShipType;
+import com.cs2340.teama.models.enums.SkillType;
 
 public class Player {
     private String name;
     private SkillType[] skills;
     private ShipType ship;
     private int credits;
+    private Coordinates coordinates;
 
-    public Player(String name) {
+    public Player(String name, Coordinates coordinates1) {
+        this.coordinates = coordinates1;
         this.name = name;
         this.ship = ShipType.GNAT;
         skills = SkillType.values();
         credits = 1000;
+
     }
 
     public void incrementSkill(SkillType skill, int increase) {
@@ -54,5 +57,9 @@ public class Player {
         playerString = playerString + "Player's ship is the " + getShip() + ".\n";
         playerString = playerString + "Player has " + getCredits() + " credits.";
         return playerString;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 }
