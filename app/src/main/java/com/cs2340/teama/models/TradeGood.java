@@ -40,6 +40,6 @@ public class TradeGood {
      */
     @Override
     public String toString() {
-        return goodType + "with price Ç" + value + " takes up " + volume + " units of cargo space.";
+        return goodType + " with price Ç" + value + " takes up " + volume + " units of cargo space.";
     }
 }
