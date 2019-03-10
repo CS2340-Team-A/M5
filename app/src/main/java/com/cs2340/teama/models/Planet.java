@@ -2,27 +2,53 @@ package com.cs2340.teama.models;
 
 import android.util.Log;
 
+import com.cs2340.teama.models.enums.GoodType;
+import com.cs2340.teama.models.enums.TechLevel;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Planet {
     private String name;
     private String planetInfo;
+    private TechLevel tLv;
     private List<TradeGood> tradeGoods;
-
+    private Random random = new Random();
     Planet(String name) {
         this.name = name;
-        this.planetInfo = "Generic Planet Info: \n" +
-                "\nThis planet exists and the player is probably on it";
+        int lv = (int)(random.nextDouble() * 8);
+        for(TechLevel tl: TechLevel.values()) {
+            if(tl.getTechLv() == lv) {
+                this.tLv = tl;
+                break;
+            }
+        }
+        this.planetInfo = "Generic Planet Info: \n"
+                + "\nThis planet exists and the player is probably on it"
+                + "\nThis planet is at the " + tLv + " age with technological level of "
+                + tLv.getTechLv();
         //here probably call to a tradeGoods factory
-        Log.d("Debug", "Planet Created: " + this);
-        TradeGood t1 = new TradeGood(1200.12);
-        TradeGood t2 = new TradeGood(1000.34);
-        TradeGood t3 = new TradeGood(800.72);
-        this.tradeGoods = new ArrayList<TradeGood>();
-        this.tradeGoods.add(t1);
-        this.tradeGoods.add(t2);
-        this.tradeGoods.add(t3);
+        tradeGoods = new ArrayList<>();
+        for(GoodType good: GoodType.values()) {
+            if(good.getMTLP() <= tLv.getTechLv() || good.getMTLU() <= tLv.getTechLv()) {
+                boolean addVariance = random.nextDouble() < 0.5;
+                int price = good.getBasePrice();
+
+                if (good.getMTLP() > tLv.getTechLv()) {
+                    price += good.getIPL() * (tLv.getTechLv()-good.getMTLU());
+                } else {
+                    price += good.getIPL() * (tLv.getTechLv()-good.getMTLP());
+                }
+
+                if (addVariance) {
+                    double varianceFactor = (random.nextDouble() * (good.getVar() + 1));
+                    price += good.getBasePrice() * varianceFactor;
+                }
+
+                tradeGoods.add(new TradeGood(price, good));
+            }
+        }
     }
 
     @Override
@@ -37,6 +63,10 @@ public class Planet {
 
     public String getInfo() {
         return planetInfo;
+    }
+
+    public TechLevel getTLv() {
+        return tLv;
     }
 
     public List<TradeGood> getTradeGoods() {

@@ -69,9 +69,10 @@ public class ConfigActivity extends AppCompatActivity {
                     int fight = Integer.parseInt(fighter.getText().toString());
                     int trad = Integer.parseInt(trader.getText().toString());
                     int engin = Integer.parseInt(engineer.getText().toString());
-
+                    Log.d("Edit", pil + " " + fight + " " + trad + " " + engin);
 
                     if (viewModel.calculatePoints(pil, fight, trad, engin)) {
+                        Log.d("Edit", "" + viewModel.calculatePoints(pil, fight, trad, engin));
                         showToast();
                         pilot.invalidate();
                         fighter.invalidate();
@@ -79,7 +80,7 @@ public class ConfigActivity extends AppCompatActivity {
                         engineer.invalidate();
 
                     } else {
-
+                        Log.d("Edit", "" + viewModel.calculatePoints(pil, fight, trad, engin));
                         // Create Universe
                         /* Note all of this Universe Creation should probably take place in the
                          viewModel or models*/
