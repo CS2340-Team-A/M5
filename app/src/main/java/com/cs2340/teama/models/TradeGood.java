@@ -7,18 +7,14 @@ import com.cs2340.teama.models.enums.GoodType;
 public class TradeGood {
 
     private double value;
-    private int volume;
+    private int quantity;
     private GoodType goodType;
 
-    public TradeGood(double value, GoodType gT) {
-        this(value, gT, 1);
-    }
-
-    public TradeGood(double value, GoodType gT, int volume) {
+    public TradeGood(double value, GoodType gT, int quantity) {
         this.value = value;
         this.goodType = gT;
-        this.volume = volume;
-        Log.d("Edit","Created good " + gT + " with value " + value +" and volume " + volume);
+        this.quantity = quantity;
+        Log.d("Edit","Created good " + gT + " with value " + value +" and quantity " + quantity);
     }
 
     public double getValue() {
@@ -26,7 +22,7 @@ public class TradeGood {
     }
 
     public int getVolume() {
-        return volume;
+        return quantity;
     }
 
     public GoodType getGoodType() {
@@ -40,6 +36,6 @@ public class TradeGood {
      */
     @Override
     public String toString() {
-        return goodType + " with price Ç" + value + " takes up " + volume + " units of cargo space.";
+        return goodType + " with price Ç" + value + " takes up " + quantity + " units of cargo space.";
     }
 }
