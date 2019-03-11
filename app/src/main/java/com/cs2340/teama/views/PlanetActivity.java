@@ -15,21 +15,48 @@ import com.cs2340.teama.viewModels.PlanetViewModel;
 public class PlanetActivity extends AppCompatActivity {
 
     private PlanetViewModel viewModel;
+    private Button travel;
+    private Button market;
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_planet);
+//        viewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
+//
+//
+//        TextView planetName = (TextView) findViewById(R.id.planet_name);
+//        planetName.setText(viewModel.getPlanetName());
+//
+//        TextView planetInfo = findViewById(R.id.planet_info);
+//        planetInfo.setText(viewModel.getPlanetInfo());
+//
+//        Button goToMarket = findViewById(R.id.planet_trade);
+//
+//        goToMarket.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("Edit", "goToMarket Button Pushed");
+//                startMarket();
+//            }
+//        });
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_planet);
+        setContentView(R.layout.planet);
         viewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
 
 
-        TextView planetName = (TextView) findViewById(R.id.planet_name);
+        TextView planetName = findViewById(R.id.planet_name);
         planetName.setText(viewModel.getPlanetName());
 
         TextView planetInfo = findViewById(R.id.planet_info);
         planetInfo.setText(viewModel.getPlanetInfo());
 
-        Button goToMarket = findViewById(R.id.planet_trade);
+        Button goToMarket = findViewById(R.id.market_button);
 
         goToMarket.setOnClickListener(new View.OnClickListener() {
             @Override
