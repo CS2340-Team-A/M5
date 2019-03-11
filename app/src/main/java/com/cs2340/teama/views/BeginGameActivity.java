@@ -16,7 +16,7 @@ public class BeginGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_begin_game);
 
-        BeginGame = findViewById(R.id.BeginGameButton);
+        BeginGame = findViewById(R.id.begin_button);
         BeginGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
