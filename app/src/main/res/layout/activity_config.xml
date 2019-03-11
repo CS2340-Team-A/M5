@@ -7,7 +7,7 @@
     tools:context="com.cs2340.teama.views.ConfigActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/medicineText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
@@ -15,15 +15,15 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
+        android:hint="Name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:hint="Name"
         app:layout_constraintBottom_toTopOf="@+id/fighter_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name_text"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <Spinner
         android:id="@+id/difficulty_spinner"
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/medicineText" />
 
     <EditText
         android:id="@+id/editText5"

@@ -49,7 +49,7 @@ public class ConfigActivity extends AppCompatActivity {
         trader = findViewById(R.id.trader_number);
         engineer = findViewById(R.id.editText5);
         startGame = findViewById(R.id.begin_game_button);
-        nameGiven = findViewById(R.id.editText);
+        nameGiven = findViewById(R.id.medicineText);
 
         /*
         Set up the spinner
