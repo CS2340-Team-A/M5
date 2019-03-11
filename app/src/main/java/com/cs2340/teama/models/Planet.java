@@ -34,9 +34,9 @@ public class Planet {
                 break;
             }
         }
-        this.planetInfo = "Generic Planet Info: \n"
-                + "\nThis planet exists and the player is probably on it"
-                + "\nThis planet is at the " + tLv + " age with technological level of "
+        this.planetInfo = "Planet Info: \n"
+                + name + "\nhas the following resource: " + resources.toString()
+                + "\nIt is at the " + tLv + " age with technological level of "
                 + tLv.getTechLv();
         //here probably call to a tradeGoods factory
         tradeGoods = new ArrayList<>();
