@@ -27,7 +27,7 @@ public class LoadScreenActivity extends AppCompatActivity {
             public void run() {
                 startPlanetActivity();
             }
-        },5000);
+        },2000);
 
 
 
