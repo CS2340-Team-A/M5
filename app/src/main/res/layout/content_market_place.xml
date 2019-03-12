@@ -270,24 +270,26 @@
         android:text="Quantity" />
 
     <Button
-        android:id="@+id/buy_button"
-        android:layout_width="61dp"
-        android:layout_height="374dp"
+        android:id="@+id/buy_robots"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="29dp"
         android:layout_toEndOf="@+id/robotsText"
-        android:text="Buy" />
+        android:text="Buy"
+        android:enabled="false"/>
 
     <Button
-        android:id="@+id/sell_button"
-        android:layout_width="61dp"
-        android:layout_height="374dp"
+        android:id="@+id/sell_robots"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="144dp"
-        android:layout_toEndOf="@+id/buy_button"
-        android:text="Sell" />
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="29dp"
+        android:layout_toEndOf="@+id/buy_robots"
+        android:text="Sell"
+        android:enabled="false"/>
 
     <TextView
         android:id="@+id/textView15"
@@ -310,5 +312,203 @@
         android:layout_marginBottom="32dp"
         android:layout_toEndOf="@+id/cargoSpace"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/buy_narcotics"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_robots"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/narcoticsText"
+        android:text="Buy"
+        android:enabled="false" />
+
+    <Button
+        android:id="@+id/buy_machines"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_narcotics"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/machinesText"
+        android:text="Buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_medicine"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_machines"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="21dp"
+        android:layout_toEndOf="@+id/medicineText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_firearms"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_medicine"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@+id/firearmsText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_games"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_firearms"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/gamesText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_ore"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_games"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="13dp"
+        android:layout_toEndOf="@+id/oreText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_food"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_ore"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="19dp"
+        android:layout_toEndOf="@+id/foodText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_furs"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_food"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="12dp"
+        android:layout_toEndOf="@+id/fursText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buy_water"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/buy_furs"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/waterText"
+        android:text="buy"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_narcotics"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_robots"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/buy_narcotics"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_machines"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_narcotics"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/buy_machines"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_medicine"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_machines"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="21dp"
+        android:layout_toEndOf="@+id/buy_medicine"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_firearms"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_medicine"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@+id/buy_firearms"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_games"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_firearms"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toEndOf="@+id/buy_games"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_ore"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_games"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="13dp"
+        android:layout_toEndOf="@+id/buy_ore"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_food"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_ore"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="19dp"
+        android:layout_toEndOf="@+id/buy_food"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_furs"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_food"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="12dp"
+        android:layout_toEndOf="@+id/buy_furs"
+        android:text="sell"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/sell_water"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/sell_furs"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/buy_water"
+        android:text="sell"
+        android:enabled="false"/>
 
 </RelativeLayout>

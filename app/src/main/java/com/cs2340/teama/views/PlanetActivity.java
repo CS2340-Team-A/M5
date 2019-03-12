@@ -17,6 +17,8 @@ public class PlanetActivity extends AppCompatActivity {
     private PlanetViewModel viewModel;
     private Button travel;
     private Button market;
+    private Button goToMarket;
+    private Button goTravel;
 
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -56,19 +58,19 @@ public class PlanetActivity extends AppCompatActivity {
         TextView planetInfo = findViewById(R.id.planet_info);
         planetInfo.setText(viewModel.getPlanetInfo());
 
-        Button goToMarket = findViewById(R.id.market_button);
+        goToMarket = findViewById(R.id.market_button);
+
 
         goToMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Edit", "goToMarket Button Pushed");
-                startMarket();
+                openMarketActivity();
             }
         });
 
     }
 
-    private void startMarket() {
+    private void openMarketActivity() {
         Intent intent = new Intent(this, MarketPlaceActivity.class);
         this.startActivity(intent);
     }
