@@ -27,6 +27,18 @@
             android:name="com.cs2340.teama.views.MarketPlaceActivity"
             android:label="@string/title_activity_market_place"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cs2340.teama.views.MarketPlaceWelcomeActivity"
+            android:label="@string/title_activity_market_place"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cs2340.teama.views.MarketPlaceBuyActivity"
+            android:label="@string/title_activity_market_place"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cs2340.teama.views.MarketPlaceSellActivity"
+            android:label="@string/title_activity_market_place"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

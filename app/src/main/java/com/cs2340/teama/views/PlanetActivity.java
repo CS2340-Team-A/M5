@@ -71,7 +71,7 @@ public class PlanetActivity extends AppCompatActivity {
     }
 
     private void openMarketActivity() {
-        Intent intent = new Intent(this, MarketPlaceActivity.class);
+        Intent intent = new Intent(this, MarketPlaceWelcomeActivity.class);
         this.startActivity(intent);
     }
 
