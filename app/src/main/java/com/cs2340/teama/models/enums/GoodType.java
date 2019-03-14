@@ -1,16 +1,16 @@
 package com.cs2340.teama.models.enums;
 
 public enum GoodType {
-    Water(0, 0, 2, 30, 3, 4, Resources.LOTS_OF_WATER, Resources.DESERT),
-    Furs(0, 0, 0, 250, 10, 10, Resources.RICH_FAUNA, Resources.LIFELESS),
-    Food(1, 0, 1, 100, 5, 5, Resources.RICH_SOIL, Resources.POOR_SOIL),
-    Ore(2, 2, 3, 350, 20, 10, Resources.MINERAL_RICH, Resources.MINERAL_POOR),
-    Games(3, 1, 6, 250, -10, 5, Resources.ARTISTIC, Resources.NO_SPECIAL_RESOURCES),
-    Firearms(3, 1, 5, 1250, -75, 100, Resources.WARLIKE, Resources.NO_SPECIAL_RESOURCES),
-    Medicine(4, 1, 6, 650, -20, 10, Resources.LOTS_OF_HERBS, Resources.NO_SPECIAL_RESOURCES),
-    Machines(4, 3, 5, 900, -30, 5, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES),
-    Narcotics(5, 0, 5, 3500, -125, 150, Resources.WEIRD_MUSHROOMS, Resources.NO_SPECIAL_RESOURCES),
-    Robots(6, 4, 7, 5000, -150, 100, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES);
+    WATER(0, 0, 2, 30, 3, 4, Resources.LOTS_OF_WATER, Resources.DESERT),
+    FURS(0, 0, 0, 250, 10, 10, Resources.RICH_FAUNA, Resources.LIFELESS),
+    FOOD(1, 0, 1, 100, 5, 5, Resources.RICH_SOIL, Resources.POOR_SOIL),
+    ORE(2, 2, 3, 350, 20, 10, Resources.MINERAL_RICH, Resources.MINERAL_POOR),
+    GAMES(3, 1, 6, 250, -10, 5, Resources.ARTISTIC, Resources.NO_SPECIAL_RESOURCES),
+    FIREARMS(3, 1, 5, 1250, -75, 100, Resources.WARLIKE, Resources.NO_SPECIAL_RESOURCES),
+    MEDICINE(4, 1, 6, 650, -20, 10, Resources.LOTS_OF_HERBS, Resources.NO_SPECIAL_RESOURCES),
+    MACHINES(4, 3, 5, 900, -30, 5, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES),
+    NARCOTICS(5, 0, 5, 3500, -125, 150, Resources.WEIRD_MUSHROOMS, Resources.NO_SPECIAL_RESOURCES),
+    ROBOTS(6, 4, 7, 5000, -150, 100, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES);
 
     private int MTLP, MTLU, TTP, basePrice, IPL, var;
     private Resources CR, ER;
