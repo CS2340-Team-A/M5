@@ -6,14 +6,14 @@ import com.cs2340.teama.models.enums.SkillType;
 public class Player {
     private String name;
     private SkillType[] skills;
-    private ShipType ship;
+    private Ship ship;
     private int credits;
     private Coordinates coordinates;
 
     public Player(String name, Coordinates coordinates1) {
         this.coordinates = coordinates1;
         this.name = name;
-        this.ship = ShipType.GNAT;
+        this.ship = new Ship(ShipType.GNAT);
         skills = SkillType.values();
         credits = 1000;
 
@@ -35,6 +35,15 @@ public class Player {
         return credits >= good.getValue();
     }
 
+    public boolean canSell(TradeGood good) {
+        for(TradeGood g: ship.getCargoHold()) {
+            if(g.getGoodType() == good.getGoodType() && g.getVolume()>0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String getName() {
         return name;
     }
@@ -43,12 +52,12 @@ public class Player {
         return skills;
     }
 
-    public ShipType getShip() {
+    public Ship getShip() {
         return ship;
     }
 
-    public void setCredits(int newCreditValue) {
-        this.credits = newCreditValue;
+    public void incrementCredits(TradeGood good) {
+        this.credits += good.getValue();
     }
 
     public int getCredits() {
