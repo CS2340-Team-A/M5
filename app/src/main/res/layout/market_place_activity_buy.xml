@@ -189,7 +189,7 @@
         android:id="@+id/water_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/furs_text"
@@ -199,7 +199,7 @@
         android:id="@+id/furs_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="56dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/food_text"
@@ -209,7 +209,7 @@
         android:id="@+id/food_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="56dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/ore_text"
@@ -219,7 +219,7 @@
         android:id="@+id/ore_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="55dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/games_text"
@@ -229,7 +229,7 @@
         android:id="@+id/games_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/firearms_text"
@@ -239,7 +239,7 @@
         android:id="@+id/firearms_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
+        android:layout_marginStart="49dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/medicine_text"
@@ -249,7 +249,7 @@
         android:id="@+id/medicine_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/machines_text"
@@ -259,7 +259,7 @@
         android:id="@+id/machines_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/narcotics_text"
@@ -269,7 +269,7 @@
         android:id="@+id/narcotics_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/robots_text"
@@ -279,7 +279,7 @@
         android:id="@+id/robots_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="32dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -368,9 +368,120 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
         android:layout_marginBottom="8dp"
-        android:text="Quantity in Market"
+        android:text="# in Market"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/water_text"
         app:layout_constraintStart_toEndOf="@+id/textView41" />
+
+    <TextView
+        android:id="@+id/water_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/furs_price"
+        app:layout_constraintEnd_toStartOf="@+id/water_button" />
+
+    <TextView
+        android:id="@+id/furs_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/food_price"
+        app:layout_constraintEnd_toStartOf="@+id/furs_button" />
+
+    <TextView
+        android:id="@+id/food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ore_price"
+        app:layout_constraintEnd_toStartOf="@+id/food_button" />
+
+    <TextView
+        android:id="@+id/ore_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/games_price"
+        app:layout_constraintEnd_toStartOf="@+id/ore_button" />
+
+    <TextView
+        android:id="@+id/games_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/firearms_price"
+        app:layout_constraintEnd_toStartOf="@+id/game_button" />
+
+    <TextView
+        android:id="@+id/firearms_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/medicine_price"
+        app:layout_constraintEnd_toStartOf="@+id/firearms_button" />
+
+    <TextView
+        android:id="@+id/medicine_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/machines_price"
+        app:layout_constraintEnd_toStartOf="@+id/medicine_button" />
+
+    <TextView
+        android:id="@+id/machines_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/narcotics_price"
+        app:layout_constraintEnd_toStartOf="@+id/machines_button" />
+
+    <TextView
+        android:id="@+id/narcotics_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/robots_price"
+        app:layout_constraintEnd_toStartOf="@+id/narcotics_button" />
+
+    <TextView
+        android:id="@+id/robots_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/robots_button" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="Price"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/water_price"
+        app:layout_constraintStart_toEndOf="@+id/textView42" />
 
 </android.support.constraint.ConstraintLayout>

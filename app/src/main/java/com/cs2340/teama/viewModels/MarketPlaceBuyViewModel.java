@@ -39,6 +39,16 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         return 0;
     }
 
+    public double getGoodValue(GoodType goodName) {
+        List<TradeGood> goods = getPlanetGoodsList();
+        for (TradeGood curGood : goods) {
+            if (curGood.getGoodType() == goodName) {
+                return curGood.getValue();
+            }
+        }
+        return 0;
+    }
+
     public int getPlayerCredits() {
         return getPlayer().getCredits();
     }

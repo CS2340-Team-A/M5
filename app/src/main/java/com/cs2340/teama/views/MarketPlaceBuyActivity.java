@@ -17,7 +17,7 @@ import com.cs2340.teama.viewModels.PlanetViewModel;
 /**
  * View for the marketplace buy scree.
  *
- * TODO: Link Player's ship's cargohold and Player's money
+ * TODO: Link Player's ship's cargohold
  */
 public class MarketPlaceBuyActivity extends AppCompatActivity {
 
@@ -44,6 +44,17 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
     private TextView robots_text;
     private TextView games_text;
     private TextView food_text;
+
+    private TextView water_price;
+    private TextView fur_price;
+    private TextView ore_price;
+    private TextView firearms_price;
+    private TextView medicine_price;
+    private TextView machine_price;
+    private TextView narcotics_price;
+    private TextView robots_price;
+    private TextView games_price;
+    private TextView food_price;
 
     private TextView money_text;
     private TextView cargo_text;
@@ -76,6 +87,17 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
         robots_text = findViewById(R.id.robots_text);
         games_text = findViewById(R.id.games_text);
         food_text = findViewById(R.id.food_text);
+
+        water_price = findViewById(R.id.water_price);
+        fur_price = findViewById(R.id.furs_price);
+        ore_price = findViewById(R.id.ore_price);
+        firearms_price = findViewById(R.id.firearms_price);
+        medicine_price = findViewById(R.id.medicine_price);
+        machine_price = findViewById(R.id.machines_price);
+        narcotics_price = findViewById(R.id.narcotics_price);
+        robots_price = findViewById(R.id.robots_price);
+        games_price = findViewById(R.id.games_price);
+        food_price = findViewById(R.id.food_price);
 
         money_text = findViewById(R.id.money_text);
         cargo_text = findViewById(R.id.cargo_text);
@@ -190,6 +212,17 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
         robots_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ROBOTS)));
         games_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.GAMES)));
         food_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FOOD)));
+
+        water_price.setText(Double.toString(viewModel.getGoodValue(GoodType.WATER)));
+        fur_price.setText(Double.toString(viewModel.getGoodValue(GoodType.FURS)));
+        ore_price.setText(Double.toString(viewModel.getGoodValue(GoodType.ORE)));
+        firearms_price.setText(Double.toString(viewModel.getGoodValue(GoodType.FIREARMS)));
+        medicine_price.setText(Double.toString(viewModel.getGoodValue(GoodType.MEDICINE)));
+        machine_price.setText(Double.toString(viewModel.getGoodValue(GoodType.MACHINES)));
+        narcotics_price.setText(Double.toString(viewModel.getGoodValue(GoodType.NARCOTICS)));
+        robots_price.setText(Double.toString(viewModel.getGoodValue(GoodType.ROBOTS)));
+        games_price.setText(Double.toString(viewModel.getGoodValue(GoodType.GAMES)));
+        food_price.setText(Double.toString(viewModel.getGoodValue(GoodType.FOOD)));
 
         money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
     }
