@@ -27,6 +27,14 @@ public class Player {
         }
     }
 
+    public void decrementCredits(TradeGood good) {
+        credits -= good.getValue();
+    }
+
+    public boolean canBuy(TradeGood good) {
+        return credits >= good.getValue();
+    }
+
     public String getName() {
         return name;
     }

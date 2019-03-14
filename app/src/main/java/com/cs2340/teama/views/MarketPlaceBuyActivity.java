@@ -1,20 +1,28 @@
 package com.cs2340.teama.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.cs2340.teama.m5.R;
+import com.cs2340.teama.models.TradeGood;
+import com.cs2340.teama.models.enums.GoodType;
+import com.cs2340.teama.viewModels.MarketPlaceBuyViewModel;
+import com.cs2340.teama.viewModels.PlanetViewModel;
 
 /**
  * View for the marketplace buy scree.
  *
- * TODO: Link TextViews to Planet List<TradeGood>.
  * TODO: Link Player's ship's cargohold and Player's money
  */
 public class MarketPlaceBuyActivity extends AppCompatActivity {
+
+    private MarketPlaceBuyViewModel viewModel;
+
     private Button buy_water_button;
     private Button buy_fur_button;
     private Button buy_ore_button;
@@ -37,10 +45,15 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
     private TextView games_text;
     private TextView food_text;
 
+    private TextView money_text;
+    private TextView cargo_text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market_place_activity_buy);
+
+        viewModel = ViewModelProviders.of(this).get(MarketPlaceBuyViewModel.class);
 
         buy_water_button = findViewById(R.id.water_button);
         buy_fur_button = findViewById(R.id.furs_button);
@@ -53,74 +66,131 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
         buy_games_button = findViewById(R.id.game_button);
         buy_food_button = findViewById(R.id.food_button);
 
+        water_text = findViewById(R.id.water_text);
+        fur_text = findViewById(R.id.furs_text);
+        ore_text = findViewById(R.id.ore_text);
+        firearms_text = findViewById(R.id.firearms_text);
+        medicine_text = findViewById(R.id.medicine_text);
+        machine_text = findViewById(R.id.machines_text);
+        narcotics_text = findViewById(R.id.narcotics_text);
+        robots_text = findViewById(R.id.robots_text);
+        games_text = findViewById(R.id.games_text);
+        food_text = findViewById(R.id.food_text);
+
+        money_text = findViewById(R.id.money_text);
+        cargo_text = findViewById(R.id.cargo_text);
+
         buy_water_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy water button pressed");
+                viewModel.purchase(GoodType.WATER);
+                water_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.WATER)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_fur_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy fur button pressed");
+                viewModel.purchase(GoodType.FURS);
+                fur_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FURS)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_ore_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy ore button pressed");
+                viewModel.purchase(GoodType.ORE);
+                ore_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ORE)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_firearms_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy ore button pressed");
+                viewModel.purchase(GoodType.FIREARMS);
+                firearms_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FIREARMS)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_medicine_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy medicine button pressed");
+                viewModel.purchase(GoodType.MEDICINE);
+                medicine_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.MEDICINE)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_machines_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy machines button pressed");
+                viewModel.purchase(GoodType.MACHINES);
+                machine_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.MACHINES)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_narcotics_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy narcotics button pressed");
+                viewModel.purchase(GoodType.NARCOTICS);
+                narcotics_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.NARCOTICS)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_robots_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy robots button pressed");
+                viewModel.purchase(GoodType.ROBOTS);
+                robots_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ROBOTS)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_games_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy games button pressed");
+                viewModel.purchase(GoodType.GAMES);
+                games_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.GAMES)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
 
         buy_food_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("Edit", "Buy food button pressed");
+                viewModel.purchase(GoodType.FOOD);
+                food_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FOOD)));
+                money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
             }
         });
+
+        water_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.WATER)));
+        fur_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FURS)));
+        ore_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ORE)));
+        firearms_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FIREARMS)));
+        medicine_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.MEDICINE)));
+        machine_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.MACHINES)));
+        narcotics_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.NARCOTICS)));
+        robots_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ROBOTS)));
+        games_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.GAMES)));
+        food_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FOOD)));
+
+        money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
     }
 }

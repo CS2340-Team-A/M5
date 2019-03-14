@@ -24,20 +24,24 @@ public class Planet {
     private Resources resources;
     private List<TradeGood> tradeGoods;
     private Random random = new Random();
+
     Planet(String name, Resources res) {
         this.resources = res;
         this.name = name;
         int lv = (int)(random.nextDouble() * 8);
+
         for(TechLevel tl: TechLevel.values()) {
             if(tl.getTechLv() == lv) {
                 this.tLv = tl;
                 break;
             }
         }
+
         this.planetInfo = "Planet Info: \n"
                 + name + "\nhas the following resource: " + resources.toString()
                 + "\nIt is at the " + tLv + " age with technological level of "
                 + tLv.getTechLv();
+
         //here probably call to a tradeGoods factory
         tradeGoods = new ArrayList<>();
         for(GoodType good: GoodType.values()) {

@@ -29,6 +29,18 @@ public class TradeGood {
         return goodType;
     }
 
+    public boolean decrementVolume() {
+        if (quantity == 0) {
+            return false;
+        }
+        quantity--;
+        return true;
+    }
+
+    public boolean inStock() {
+        return quantity > 0;
+    }
+
     /**
      * Note I made the Ç the money sign in this game for fun
      *

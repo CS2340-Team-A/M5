@@ -3,6 +3,7 @@ package com.cs2340.teama.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,6 +28,7 @@ public class MarketPlaceWelcomeActivity extends AppCompatActivity {
         buy_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Edit", "Buy button pressed");
                 openMarketPlaceBuyActivity();
             }
         });
@@ -34,6 +36,7 @@ public class MarketPlaceWelcomeActivity extends AppCompatActivity {
         sell_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Edit", "Sell button pressed");
                 openMarketPlaceSellActivity();
             }
         });
