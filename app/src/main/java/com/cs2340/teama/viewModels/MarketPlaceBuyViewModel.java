@@ -1,6 +1,7 @@
 package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Game;
@@ -53,15 +54,24 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         return getPlayer().getCredits();
     }
 
-
+    public String getCargoSpace() {
+        return Integer.toString(getPlayer().getShip().getNumGoodsStored()) + " / " +
+                Integer.toString(getPlayer().getShip().getShipType().getCargoSpace());
+    }
 
     public void purchase(GoodType goodName) {
         List<TradeGood> goods = getPlanetGoodsList();
         for (TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
                 if (getPlayer().canBuy(curGood) && curGood.inStock()) {
-                    curGood.decrementVolume();
-                    getPlayer().decrementCredits(curGood);
+                    boolean wasSuccessful = getPlayer().getShip().addToCargoHold(new TradeGood(0,
+                            curGood.getGoodType(), 1));
+                    if(wasSuccessful) {
+                        curGood.decrementVolume(1);
+                        getPlayer().decrementCredits(curGood);
+                    } else  {
+                        Log.d("Debug", "Unsuccessful purchase because cargo hold is full");
+                    }
                 }
             }
         }

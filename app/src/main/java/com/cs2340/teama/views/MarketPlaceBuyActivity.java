@@ -109,6 +109,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.WATER);
                 water_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.WATER)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -119,6 +120,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.FURS);
                 fur_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FURS)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -129,6 +131,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.ORE);
                 ore_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ORE)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -139,6 +142,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.FIREARMS);
                 firearms_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FIREARMS)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -149,6 +153,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.MEDICINE);
                 medicine_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.MEDICINE)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -159,6 +164,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.MACHINES);
                 machine_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.MACHINES)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -169,6 +175,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.NARCOTICS);
                 narcotics_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.NARCOTICS)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -179,6 +186,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.ROBOTS);
                 robots_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.ROBOTS)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -189,6 +197,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.GAMES);
                 games_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.GAMES)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -199,6 +208,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
                 viewModel.purchase(GoodType.FOOD);
                 food_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.FOOD)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+                cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }
         });
 
@@ -225,5 +235,6 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
         food_price.setText(Double.toString(viewModel.getGoodValue(GoodType.FOOD)));
 
         money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
+        cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
     }
 }

@@ -1,6 +1,7 @@
 package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Game;
@@ -39,6 +40,12 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * @return
      */
     public int getGoodVolume(GoodType goodName) {
+        List<TradeGood> goods = getPlayer().getShip().getCargoHold();
+        for (TradeGood curGood : goods) {
+            if (curGood.getGoodType() == goodName) {
+                return curGood.getVolume();
+            }
+        }
         return 0;
     }
 
@@ -46,8 +53,9 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * returns number of slots available in the cargohold
      * @return
      */
-    public int getCargoHoldSpaceAvailable(){
-        return 0;
+    public String getCargoSpace() {
+        return Integer.toString(getPlayer().getShip().getNumGoodsStored()) + " / " +
+                Integer.toString(getPlayer().getShip().getShipType().getCargoSpace());
     }
 
     public double getGoodValue(GoodType goodName) {
@@ -62,5 +70,23 @@ public class MarketPlaceSellViewModel extends ViewModel {
 
     public int getPlayerCredits() {
         return getPlayer().getCredits();
+    }
+
+    public void sell(GoodType goodName) {
+        List<TradeGood> goods = getPlayer().getShip().getCargoHold();
+        for (TradeGood curGood : goods) {
+            if (curGood.getGoodType() == goodName) {
+                if (getPlayer().canSell(curGood)) {
+                    getPlayer().getShip().removeFromCargoHold(new TradeGood(0,
+                            curGood.getGoodType(), 1));
+                    List<TradeGood> gs = getPlanetGoodsList();
+                    for (TradeGood cG : gs) {
+                        if(cG.getGoodType() == goodName) {
+                            getPlayer().incrementCredits(cG);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

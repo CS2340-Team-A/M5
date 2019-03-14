@@ -29,11 +29,15 @@ public class TradeGood {
         return goodType;
     }
 
-    public boolean decrementVolume() {
-        if (quantity == 0) {
+    public void incrementVolume(int volAdded) {
+        quantity += volAdded;
+    }
+
+    public boolean decrementVolume(int volRemoved) {
+        if (quantity < volRemoved) {
             return false;
         }
-        quantity--;
+        quantity -= volRemoved;
         return true;
     }
 
