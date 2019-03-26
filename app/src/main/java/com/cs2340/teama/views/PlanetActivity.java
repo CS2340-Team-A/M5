@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.cs2340.teama.m5.R;
 import com.cs2340.teama.viewModels.PlanetViewModel;
+import com.cs2340.teama.views.TravelActivity;
 
 public class PlanetActivity extends AppCompatActivity {
 
@@ -59,7 +60,7 @@ public class PlanetActivity extends AppCompatActivity {
         planetInfo.setText(viewModel.getPlanetInfo());
 
         goToMarket = findViewById(R.id.market_button);
-
+        travel = findViewById(R.id.travel_button);
 
         goToMarket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +68,13 @@ public class PlanetActivity extends AppCompatActivity {
                 openMarketActivity();
             }
         });
+        travel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTravelActivity();
+            }
+        });
+
 
     }
 
@@ -75,5 +83,9 @@ public class PlanetActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    private void openTravelActivity() {
+        Intent intent = new Intent(this, TravelActivity.class);
+        this.startActivity(intent);
+    }
 
 }
