@@ -14,10 +14,7 @@ public class PlanetViewModel extends ViewModel {
 
 
     private Planet getPlanet() {
-        Coordinates planetCoords = Game.game.getPlayer().getCoordinates();
-        SolarSystem s = SolarSystem.findSolarSystemByCoords(
-                Game.game.getUniverse().getSolarSystems(), planetCoords);
-        return s.getPlanet();
+        return Game.game.getPlanet();
     }
 
     public CharSequence getPlanetName() {

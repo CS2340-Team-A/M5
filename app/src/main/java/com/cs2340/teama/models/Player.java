@@ -79,4 +79,10 @@ public class Player {
     public Coordinates getCoordinates() {
         return coordinates;
     }
+
+    public void travel(Coordinates destCoord) {
+        ship.travelDist(Coordinates.distTo(coordinates, destCoord));
+        this.coordinates = destCoord;
+
+    }
 }

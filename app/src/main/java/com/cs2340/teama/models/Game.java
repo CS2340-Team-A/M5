@@ -19,4 +19,11 @@ public class Game {
     public Universe getUniverse() {
         return universe;
     }
+
+    public Planet getPlanet() {
+        Coordinates planetCoords = Game.game.getPlayer().getCoordinates();
+        SolarSystem s = SolarSystem.findSolarSystemByCoords(
+                Game.game.getUniverse().getSolarSystems(), planetCoords);
+        return s.getPlanet();
+    }
 }
