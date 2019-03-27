@@ -7,6 +7,8 @@ import java.util.List;
 
 public class SolarSystem {
 
+
+
     private String name;
     private Coordinates coordinates;
     private TechLevel techLevel;
@@ -36,6 +38,10 @@ public class SolarSystem {
 
     public Planet getPlanet() {
         return planet;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
