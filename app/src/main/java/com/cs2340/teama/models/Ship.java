@@ -13,7 +13,7 @@ public class Ship {
     private List<TradeGood> cargoHold;
     private int numGoodsStored;
     private double fuel;
-    private static final double FUEL_EFFICIENCY = 27.0;
+    private static final double FUEL_EFFICIENCY = 1.0;
     private double fuelCapacity;
 
 
@@ -24,8 +24,8 @@ public class Ship {
         }
         this.shipType = shipType;
         numGoodsStored = 0;
-        this.fuel = 1000;
-        this.fuelCapacity = 2000;
+        this.fuel = 200;
+        this.fuelCapacity = 200;
     }
 
     public ShipType  getShipType() {
