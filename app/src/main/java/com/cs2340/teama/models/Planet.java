@@ -38,7 +38,8 @@ public class Planet {
         }
 
         this.planetInfo = "Planet Info: \n"
-                + name + "\nhas the following resource: " + resources.toString()
+                + "Name: " + name + "\n"
+                + name + " has the following resource: " + resources.toString()
                 + "\nIt is at the " + tLv + " age with technological level of "
                 + tLv.getTechLv();
 

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -53,7 +54,19 @@ public class TravelActivity extends AppCompatActivity {
         planetInfoContent = findViewById(R.id.travel_planet_info_content);
 
         //TODO: change this so it changes when you select a new planet
-        planetInfoContent.setText(viewModel.getPlanetInfo());
+        setPlanetInfoContentText();
+
+        planet_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parView, View selV, int pos, long id) {
+                setPlanetInfoContentText();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                //Do Nothing
+            }
+        });
 
         ship = viewModel.getShip();
 
@@ -81,7 +94,7 @@ public class TravelActivity extends AppCompatActivity {
 
     private void doTravel(int planetPos) {
         viewModel.travelTo(planetPos);
-        Intent intent = new Intent(this, PlanetActivity.class);
+        Intent intent = new Intent(this, TravelAnimationActivity.class);
         this.startActivity(intent);
     }
 
@@ -90,6 +103,11 @@ public class TravelActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-
+    private void setPlanetInfoContentText() {
+        CharSequence txt = "Current " + viewModel.getPlanetInfo() + "\n";
+        txt = txt + "\nSelected " + viewModel.getPlanetList().get((int)
+                planet_spinner.getSelectedItemPosition()).getInfo();
+        planetInfoContent.setText(txt);
+    }
 
 }

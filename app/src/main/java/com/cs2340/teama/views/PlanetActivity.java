@@ -33,7 +33,7 @@ public class PlanetActivity extends AppCompatActivity {
         planetName.setText(viewModel.getPlanetName());
 
         TextView planetInfo = findViewById(R.id.planet_info);
-        planetInfo.setText(viewModel.getPlanetInfo());
+        planetInfo.setText("Current " +  viewModel.getPlanetInfo());
 
         goToMarket = findViewById(R.id.market_button);
         travel = findViewById(R.id.travel_button);
