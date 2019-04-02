@@ -42,6 +42,10 @@
             android:name="com.cs2340.teama.views.TravelActivity"
             android:label="@string/title_activity_travel"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="com.cs2340.teama.views.PirateAttackActivity"
+            android:label="PirateAttackActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.cs2340.teama.views.TravelAnimationActivity"  />
     </application>
 

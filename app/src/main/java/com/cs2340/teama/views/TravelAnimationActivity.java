@@ -1,5 +1,6 @@
 package com.cs2340.teama.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cs2340.teama.m5.R;
+import com.cs2340.teama.viewModels.TravelAnimationViewModel;
 
 public class TravelAnimationActivity extends AppCompatActivity {
+
+    private TravelAnimationViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
         img.setImageResource(R.drawable.launching_off);
         TextView text = findViewById(R.id.wait_text);
         text.setText("Preparing for launch off . . .");
+        viewModel = ViewModelProviders.of(this).get(TravelAnimationViewModel.class);
     }
 
     @Override
@@ -52,8 +57,15 @@ public class TravelAnimationActivity extends AppCompatActivity {
     }
 
     private void startPlanetActivity() {
-        Intent intent = new Intent(this, PlanetActivity.class);
-        this.startActivity(intent);
-        this.finish();
+        if (viewModel.pirateAttack()) {
+            Log.d("Edit", "Pirate Attack");
+            Intent intent = new Intent(this, PirateAttackActivity.class);
+            this.startActivity(intent);
+            this.finish();
+        } else {
+            Intent intent = new Intent(this, PlanetActivity.class);
+            this.startActivity(intent);
+            this.finish();
+        }
     }
 }

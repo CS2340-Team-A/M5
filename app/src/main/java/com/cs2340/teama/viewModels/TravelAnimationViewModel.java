@@ -13,24 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class TravelViewModel extends ViewModel {
+public class TravelAnimationViewModel extends ViewModel {
+
+
+    public boolean pirateAttack() {
+        Random rand = new Random();
+        int a = rand.nextInt(100);
+        Log.d("Edit", "Random value: " + Integer.toString(a));
+        return a < ATTACK_PROBABILITY;
+    }
 
     private final int ATTACK_PROBABILITY = 10;
 
     private Planet getPlanet() {
         return Game.game.getPlanet();
-    }
-
-    public CharSequence getPlanetName() {
-        return this.getPlanet().getName();
-    }
-
-    public CharSequence getPlanetInfo() {
-        return this.getPlanet().getInfo();
-    }
-
-    public Ship getShip() {
-        return Game.game.getPlayer().getShip();
     }
 
     /**
@@ -52,26 +48,6 @@ public class TravelViewModel extends ViewModel {
         return reachablePlanets;
     }
 
-    /**
-     * Gets a list of reachable planets
-     * @return List of Reachable Planets
-     */
-    public List<String> getPlanetNameList() {
-        List<String> reachablePlanets = new ArrayList<String>();
-        Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
-        double distToPlanet;
-        Ship ship = Game.game.getPlayer().getShip();
-        for (SolarSystem system : Game.game.getUniverse().getSolarSystems()) {
-
-            distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
-            if (ship.canTravelDist(distToPlanet)) {
-                reachablePlanets.add(system.getPlanet().getName());
-            }
-
-        }
-        return reachablePlanets;
-    }
-
     private List<SolarSystem> getSolarSystems() {
         List<SolarSystem> reachableSystems = new ArrayList<SolarSystem>();
         Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
@@ -86,12 +62,6 @@ public class TravelViewModel extends ViewModel {
 
         }
         return reachableSystems;
-    }
-
-    public boolean pirateAttack() {
-        Random rand = new Random(2);
-        return rand.nextInt(100) < 10;
-        //return false;
     }
 
     public void travelTo(int planetPos) {
