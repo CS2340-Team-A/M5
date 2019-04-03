@@ -10,14 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Planet is a possible location for a the player to be located on. It contians several attributes
+ * that determine the price of goods that are sold in the Planet's marketplace.
+ *
+ * production factor - VALUE SHOULD BE ADJUSTED TO CHANGE THE OVERALL PRODUCTION ON ANY GIVEN PLANET
+ * resourceQuantityAdjust - Factor that adjusts production of a given good in the scenario that the
+ * resources of the planet
+ * TTPQuantityAdjust - factor based on planet's tech level matching the optimal tech level for
+ * production of the given good
+ */
 public class Planet {
-    private final int productionFactor = 70; //VALUE SHOULD BE ADJUSTED TO CHANGE THE OVERALL
-                                            // PRODUCTION ON ANY GIVEN PLANET
-    private final int resourceQuantityAdjust = 4; //Factor that adjusts production of a given good
-                                                //in the scenario that the resources of the planet
-                                                //planet benefits or negatively affects its production
-    private final int TTPQuantityAdjust = 5; //factor based on planet's tech level matching the optimal
-                                                //tech level for production of the given good
+    private final int PRODUCTION_FACTOR = 70;
+    private final int RESOURCE_QUANTITIY_FACTOR = 4;
+    private final int TTP_QUANTITY_FACTOR = 5;
     private String name;
     private String planetInfo;
     private TechLevel tLv;
@@ -60,16 +66,16 @@ public class Planet {
                     double varianceFactor = (random.nextDouble() * (good.getVar() + 1));
                     price += good.getBasePrice() * varianceFactor;
                 }
-                int quantity = (int)(random.nextDouble() * productionFactor)
-                        - TTPQuantityAdjust*Math.abs(good.getTTP() - tLv.getTechLv());
+                int quantity = (int)(random.nextDouble() * PRODUCTION_FACTOR)
+                        - RESOURCE_QUANTITIY_FACTOR*Math.abs(good.getTTP() - tLv.getTechLv());
                 while(quantity <= 1) {
-                    quantity = (int)(random.nextDouble() * productionFactor)
-                            - TTPQuantityAdjust*Math.abs(good.getTTP() - tLv.getTechLv());
+                    quantity = (int)(random.nextDouble() * PRODUCTION_FACTOR)
+                            - TTP_QUANTITY_FACTOR*Math.abs(good.getTTP() - tLv.getTechLv());
                 }
                 if(this.resources == good.getCR()) {
-                    quantity *= resourceQuantityAdjust;
+                    quantity *= RESOURCE_QUANTITIY_FACTOR;
                 } else if(this.resources == good.getER()) {
-                    quantity /= resourceQuantityAdjust;
+                    quantity /= RESOURCE_QUANTITIY_FACTOR;
                 }
                 tradeGoods.add(new TradeGood(price, good, quantity));
             }

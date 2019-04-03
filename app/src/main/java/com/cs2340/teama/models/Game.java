@@ -1,5 +1,8 @@
 package com.cs2340.teama.models;
 
+/**
+ * Game currently being played. Top-level class.
+ */
 public class Game {
     private Universe universe;
     private Player player;
