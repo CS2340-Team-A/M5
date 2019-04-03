@@ -1,5 +1,8 @@
 package com.cs2340.teama.models;
 
+/**
+ * Coordinates represent the location of a Planet in the SpaceTrader Universe
+ */
 public class Coordinates {
     private int x;
     private int y;
@@ -9,6 +12,12 @@ public class Coordinates {
         this.y = y;
     }
 
+    /**
+     * Calculates the Euclidean distance between two coordinates
+     * @param c1 Coordinate
+     * @param c2 Coordinate
+     * @return distance
+     */
     public static double distTo(Coordinates c1, Coordinates c2) {
         double x = c2.x-c1.x;
         double y = c2.y-c1.y;
