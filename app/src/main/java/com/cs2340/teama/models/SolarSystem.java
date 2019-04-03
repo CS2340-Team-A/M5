@@ -6,9 +6,6 @@ import com.cs2340.teama.models.enums.TechLevel;
 import java.util.List;
 
 public class SolarSystem {
-
-
-
     private String name;
     private Coordinates coordinates;
     private TechLevel techLevel;
