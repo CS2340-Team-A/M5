@@ -5,8 +5,6 @@ import com.cs2340.teama.models.TradeGood;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.Required;
 
 public class ShipModel extends RealmObject {
     private String shipName;
@@ -68,4 +66,21 @@ public class ShipModel extends RealmObject {
     public void setCargoHold(RealmList<TradeGoodModel> cargoHold) {
         this.cargoHold = cargoHold;
     }
+
+    public void removeFromCargoHold(String cargoType, int volume) {
+        for (TradeGoodModel tradeGoodModel: cargoHold) {
+            if (cargoType.equals(tradeGoodModel.getType())) {
+                tradeGoodModel.removeQuantity(volume);
+            }
+        }
+    }
+
+    public void addToCargoHold(String cargoType, int volume) {
+        for (TradeGoodModel tradeGoodModel: cargoHold) {
+            if (cargoType.equals(tradeGoodModel.getType())) {
+                tradeGoodModel.addQuantity(volume);
+            }
+        }
+    }
+
 }

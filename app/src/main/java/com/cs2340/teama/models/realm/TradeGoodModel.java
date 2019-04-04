@@ -1,19 +1,22 @@
 package com.cs2340.teama.models.realm;
 
-import android.util.Log;
+
+import android.annotation.SuppressLint;
 
 import com.cs2340.teama.models.TradeGood;
-import com.cs2340.teama.models.enums.GoodType;
 
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.Required;
+import io.realm.RealmResults;
+import io.realm.annotations.LinkingObjects;
 
 public class TradeGoodModel extends RealmObject {
 
     private String type;
     private int quantity;
     private double value;
+
+    @LinkingObjects("tradeGoods")
+    private final RealmResults<SolarSystemModel> system = null;
 
     public TradeGoodModel() {}
 
@@ -45,5 +48,17 @@ public class TradeGoodModel extends RealmObject {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public void removeQuantity(int amount) {
+        this.quantity -= amount;
+    }
+
+    public void addQuantity(int amount) {
+        this.quantity += amount;
+    }
+
+    public void decrementQuantity() {
+        this.quantity--;
     }
 }

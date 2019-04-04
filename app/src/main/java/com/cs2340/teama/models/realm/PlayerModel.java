@@ -4,7 +4,6 @@ import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.enums.SkillType;
 
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 
 public class PlayerModel extends RealmObject {
 
@@ -88,6 +87,14 @@ public class PlayerModel extends RealmObject {
 
     public void setCredits(int credits) {
         this.credits = credits;
+    }
+
+    public void decrementCredits(TradeGoodModel model) {
+        this.credits -= model.getValue();
+    }
+
+    public void incrementCredits(double amount) {
+        this.credits += amount;
     }
 
     public void setTraderSkillPoints(int traderSkillPoints) {

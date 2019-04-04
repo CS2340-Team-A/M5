@@ -10,8 +10,12 @@ import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.GoodType;
+import com.cs2340.teama.models.realm.PlayerModel;
+import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.List;
+
+import io.realm.Realm;
 
 /**
  * TODO: implement getGoodVolume
@@ -74,15 +78,32 @@ public class MarketPlaceSellViewModel extends ViewModel {
 
     public void sell(GoodType goodName) {
         List<TradeGood> goods = getPlayer().getShip().getCargoHold();
-        for (TradeGood curGood : goods) {
+        for (final TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
                 if (getPlayer().canSell(curGood)) {
                     getPlayer().getShip().removeFromCargoHold(new TradeGood(0,
                             curGood.getGoodType(), 1));
                     List<TradeGood> gs = getPlanetGoodsList();
-                    for (TradeGood cG : gs) {
+                    for (final TradeGood cG : gs) {
                         if(cG.getGoodType() == goodName) {
                             getPlayer().incrementCredits(cG);
+
+                            Realm realm = Realm.getDefaultInstance();
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
+                                    PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
+                                    if (playerModel != null) {
+                                        playerModel.incrementCredits(cG.getValue());
+                                        playerModel.getShip().
+                                                removeFromCargoHold(
+                                                        curGood.getGoodType().toString(),
+                                                        1
+                                                );
+                                    }
+                                }
+                            });
+                            realm.close();
                         }
                     }
                 }

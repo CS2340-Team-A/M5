@@ -10,8 +10,13 @@ import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.GoodType;
+import com.cs2340.teama.models.realm.PlayerModel;
+import com.cs2340.teama.models.realm.SolarSystemModel;
+import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.List;
+
+import io.realm.Realm;
 
 public class MarketPlaceBuyViewModel extends ViewModel {
 
@@ -61,7 +66,7 @@ public class MarketPlaceBuyViewModel extends ViewModel {
 
     public void purchase(GoodType goodName) {
         List<TradeGood> goods = getPlanetGoodsList();
-        for (TradeGood curGood : goods) {
+        for (final TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
                 if (getPlayer().canBuy(curGood) && curGood.inStock()) {
                     boolean wasSuccessful = getPlayer().getShip().addToCargoHold(new TradeGood(0,
@@ -69,6 +74,29 @@ public class MarketPlaceBuyViewModel extends ViewModel {
                     if(wasSuccessful) {
                         curGood.decrementVolume(1);
                         getPlayer().decrementCredits(curGood);
+
+                        Realm realm = Realm.getDefaultInstance();
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                TradeGoodModel tgm = realm.where(TradeGoodModel.class)
+                                        .equalTo("system.name", Game.game.getPlanet().getName())
+                                        .equalTo("type", curGood.getGoodType().toString())
+                                        .findFirst();
+                                if (tgm != null) {
+                                    tgm.decrementQuantity();
+                                }
+                                PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
+                                if (playerModel != null) {
+                                    playerModel.decrementCredits(tgm);
+                                    playerModel.getShip().addToCargoHold(
+                                            curGood.getGoodType().toString(),
+                                            1
+                                    );
+                                }
+                            }
+                        });
+                        realm.close();
                     } else  {
                         Log.d("Debug", "Unsuccessful purchase because cargo hold is full");
                     }
