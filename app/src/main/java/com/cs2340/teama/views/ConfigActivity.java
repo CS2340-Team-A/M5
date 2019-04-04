@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.cs2340.teama.m5.R;
 import com.cs2340.teama.models.Coordinates;
-import com.cs2340.teama.models.Game;
 import com.cs2340.teama.models.Universe;
 import com.cs2340.teama.models.enums.GameDifficulty;
 import com.cs2340.teama.models.Player;
@@ -38,10 +37,6 @@ public class ConfigActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Game.game != null) {
-            Intent intent = new Intent(this, LoadScreenActivity.class);
-            startActivity(intent);
-        }
         setContentView(R.layout.activity_config);
         viewModel = ViewModelProviders.of(this).get(ConfigViewModel.class);
 

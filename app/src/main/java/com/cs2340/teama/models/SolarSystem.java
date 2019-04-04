@@ -2,6 +2,7 @@ package com.cs2340.teama.models;
 
 import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.enums.TechLevel;
+import com.cs2340.teama.models.realm.SolarSystemModel;
 
 import java.util.List;
 
@@ -11,11 +12,18 @@ public class SolarSystem {
     private TechLevel techLevel;
     private Planet planet;
 
+    public SolarSystem(SolarSystemModel ssm) {
+        this.name = ssm.getName();
+        this.coordinates = new Coordinates(ssm.getXCoords(), ssm.getYCoords());
+        this.techLevel = TechLevel.valueOf(ssm.getTechLevel());
+        this.planet = new Planet(ssm);
+    }
+
     public SolarSystem(String name, Coordinates coordinates, TechLevel techLevel, Resources resources) {
         this.name = name;
         this.coordinates = coordinates;
         this.techLevel = techLevel;
-        this.planet = new Planet(name, resources);
+        this.planet = new Planet(name, resources, techLevel);
     }
 
     public static SolarSystem findSolarSystemByCoords(List<SolarSystem> solarSystems, Coordinates planetCoords) {

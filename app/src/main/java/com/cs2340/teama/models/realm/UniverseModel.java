@@ -9,7 +9,6 @@ import io.realm.annotations.PrimaryKey;
 
 public class UniverseModel extends RealmObject {
 
-    private int id;
     private RealmList<SolarSystemModel> solarSystems;
 
     public UniverseModel() {}

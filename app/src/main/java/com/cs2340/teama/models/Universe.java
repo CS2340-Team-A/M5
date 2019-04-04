@@ -2,6 +2,7 @@ package com.cs2340.teama.models;
 
 import com.cs2340.teama.models.enums.TechLevel;
 import com.cs2340.teama.models.enums.Resources;
+import com.cs2340.teama.models.realm.SolarSystemModel;
 import com.cs2340.teama.models.realm.UniverseModel;
 
 import java.util.ArrayList;
@@ -45,7 +46,10 @@ public class Universe {
     private List<SolarSystem> solarSystems;
 
     public Universe(UniverseModel universeModel) {
-
+        this.solarSystems = new ArrayList<>();
+        for (SolarSystemModel ssm: universeModel.getSolarSystems()) {
+            solarSystems.add(new SolarSystem(ssm));
+        }
     }
 
     public Universe() {

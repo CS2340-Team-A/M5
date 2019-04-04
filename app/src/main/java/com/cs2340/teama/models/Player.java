@@ -14,6 +14,18 @@ public class Player {
     public Player(PlayerModel playerModel) {
         this.name = playerModel.getName();
         this.coordinates = new Coordinates(playerModel.getXCoords(), playerModel.getYCoords());
+        this.credits = playerModel.getCredits();
+        this.ship = new Ship(playerModel.getShip());
+        this.skills = new SkillType[SkillType.values().length];
+        this.skills[0] = SkillType.PILOT;
+        this.skills[0].incrementSkillPointBy(playerModel.getPilotSkillPoints());
+        this.skills[1] = SkillType.FIGHTER;
+        this.skills[1].incrementSkillPointBy(playerModel.getFighterSkillPoints());
+        this.skills[2] = SkillType.TRADER;
+        this.skills[2].incrementSkillPointBy(playerModel.getTraderSkillPoints());
+        this.skills[3] = SkillType.ENGINEER;
+        this.skills[3].incrementSkillPointBy(playerModel.getEngineerSkillPoints());
+
     }
 
 

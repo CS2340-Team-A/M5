@@ -5,6 +5,8 @@ import android.util.Log;
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.enums.TechLevel;
+import com.cs2340.teama.models.realm.SolarSystemModel;
+import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,29 +27,25 @@ public class Planet {
     private final int RESOURCE_QUANTITIY_FACTOR = 4;
     private final int TTP_QUANTITY_FACTOR = 5;
     private String name;
-    private String planetInfo;
     private TechLevel tLv;
     private Resources resources;
     private List<TradeGood> tradeGoods;
     private Random random = new Random();
 
-    Planet(String name, Resources res) {
+    public Planet(SolarSystemModel ssm) {
+        this.name = ssm.getName();
+        this.resources = Resources.valueOf(ssm.getResourcesName());
+        this.tLv = TechLevel.valueOf(ssm.getTechLevel());
+        this.tradeGoods = new ArrayList<>();
+        for (TradeGoodModel tgm: ssm.getTradeGoods()) {
+            this.tradeGoods.add(new TradeGood(tgm));
+        }
+    }
+
+    Planet(String name, Resources res, TechLevel techLevel) {
         this.resources = res;
         this.name = name;
-        int lv = (int)(random.nextDouble() * 8);
-
-        for(TechLevel tl: TechLevel.values()) {
-            if(tl.getTechLv() == lv) {
-                this.tLv = tl;
-                break;
-            }
-        }
-
-        this.planetInfo = "Planet Info: \n"
-                + "Name: " + name + "\n"
-                + name + " has the following resource: " + resources.toString()
-                + "\nIt is at the " + tLv + " age with technological level of "
-                + tLv.getTechLv();
+        this.tLv = techLevel;
 
         //here probably call to a tradeGoods factory
         tradeGoods = new ArrayList<>();
@@ -84,7 +82,7 @@ public class Planet {
 
     @Override
     public String toString() {
-        return "Planet: " + this.name + "\n" + planetInfo;
+        return "Planet: " + this.name + "\n" + getInfo();
     }
 
     /** Getters **/
@@ -93,7 +91,11 @@ public class Planet {
     }
 
     public String getInfo() {
-        return planetInfo;
+        return "Planet Info: \n"
+                + "Name: " + name + "\n"
+                + name + " has the following resource: " + resources.toString()
+                + "\nIt is at the " + tLv + " age with technological level of "
+                + tLv.getTechLv();
     }
 
     public TechLevel getTLv() {

@@ -9,7 +9,6 @@ import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
 public class ShipModel extends RealmObject {
-    private int id;
     private String shipName;
     private int numGoodsStored;
     private double fuel;

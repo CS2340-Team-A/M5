@@ -45,6 +45,42 @@ public class SolarSystemModel extends RealmObject {
         this.xCoords = x;
         this.yCoords = y;
     }
+
+    public int getXCoords() {
+        return xCoords;
+    }
+
+    public void setXCoords(int xCoords) {
+        this.xCoords = xCoords;
+    }
+
+    public int getYCoords() {
+        return yCoords;
+    }
+
+    public void setYCoords(int yCoords) {
+        this.yCoords = yCoords;
+    }
+
+    public String getTechLevel() {
+        return techLevel;
+    }
+
+    public void setTechLevel(String techLevel) {
+        this.techLevel = techLevel;
+    }
+
+    public String getResourcesName() {
+        return resourcesName;
+    }
+
+    public void setResourcesName(String resourcesName) {
+        this.resourcesName = resourcesName;
+    }
+
+    public RealmList<TradeGoodModel> getTradeGoods() {
+        return this.tradeGoods;
+    }
 }
 
 

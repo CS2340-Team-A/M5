@@ -11,7 +11,6 @@ import io.realm.annotations.Required;
 
 public class TradeGoodModel extends RealmObject {
 
-    private int id;
     private String type;
     private int quantity;
     private double value;
@@ -38,5 +37,13 @@ public class TradeGoodModel extends RealmObject {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
     }
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.cs2340.teama.m5.R;
+import com.cs2340.teama.models.Game;
 
 public class BeginGameActivity extends AppCompatActivity {
     private Button BeginGame;
@@ -25,6 +26,9 @@ public class BeginGameActivity extends AppCompatActivity {
     }
     public void openConfigActivity() {
         Intent intent = new Intent(this, ConfigActivity.class);
+        if (Game.game != null) {
+            intent = new Intent(this, LoadScreenActivity.class);
+        }
         startActivity(intent);
     }
 }

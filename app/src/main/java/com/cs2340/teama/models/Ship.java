@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.enums.ShipType;
+import com.cs2340.teama.models.realm.ShipModel;
+import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,16 @@ public class Ship {
     private static final double FUEL_EFFICIENCY = 1.0;
     private double fuelCapacity;
 
+    public Ship(ShipModel shipModel) {
+        this.shipType = ShipType.valueOf(shipModel.getShipName());
+        this.numGoodsStored = shipModel.getNumGoodsStored();
+        this.fuel = shipModel.getFuel();
+        this.fuelCapacity = shipModel.getFuelCapacity();
+        this.cargoHold = new ArrayList<>();
+        for (TradeGoodModel tradeGoodModel: shipModel.getCargoHold()) {
+            cargoHold.add(new TradeGood(tradeGoodModel));
+        }
+    }
 
     public Ship (ShipType shipType) {
         this.cargoHold = new ArrayList<TradeGood>();
