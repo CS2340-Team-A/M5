@@ -1,17 +1,36 @@
 package com.cs2340.teama.models.realm;
 
+import com.cs2340.teama.models.SolarSystem;
+import com.cs2340.teama.models.TradeGood;
+
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class SolarSystemModel extends RealmObject {
 
-    @PrimaryKey
     private String name;
 
     private int xCoords;
     private int yCoords;
-    private int techLevel;
-    private int resourcesName;
+    private String techLevel;
+    private String resourcesName;
+    private RealmList<TradeGoodModel> tradeGoods;
+
+    public SolarSystemModel() {}
+
+    public SolarSystemModel(SolarSystem solarSystem) {
+        this.name = solarSystem.getName();
+        this.xCoords = solarSystem.getCoordinates().getX();
+        this.yCoords = solarSystem.getCoordinates().getY();
+        this.techLevel = solarSystem.getPlanet().getTLv().toString();
+        this.resourcesName = solarSystem.getPlanet().getResources().toString();
+        this.tradeGoods = new RealmList<>();
+        for (TradeGood tradeGood: solarSystem.getPlanet().getTradeGoods()) {
+            tradeGoods.add(new TradeGoodModel(tradeGood));
+        }
+    }
+
 
 
     public String getName() {
@@ -25,22 +44,6 @@ public class SolarSystemModel extends RealmObject {
     public void setCoordinates(int x, int y) {
         this.xCoords = x;
         this.yCoords = y;
-    }
-
-    public int getTechLevel() {
-        return techLevel;
-    }
-
-    public void setTechLevel(int techLevel) {
-        this.techLevel = techLevel;
-    }
-
-    public int getResourcesName() {
-        return resourcesName;
-    }
-
-    public void setResourcesName(int resourcesName) {
-        this.resourcesName = resourcesName;
     }
 }
 

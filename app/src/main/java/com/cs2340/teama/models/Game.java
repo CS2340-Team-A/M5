@@ -9,7 +9,6 @@ public class Game {
 
     public static Game game = null;
 
-
     public Game(Player p, Universe u) {
         this.player = p;
         this.universe = u;

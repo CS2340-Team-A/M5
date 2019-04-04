@@ -1,12 +1,13 @@
 package com.cs2340.teama.models.realm;
 
+import com.cs2340.teama.models.Player;
+import com.cs2340.teama.models.enums.SkillType;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.Required;
 
 public class PlayerModel extends RealmObject {
 
-    @PrimaryKey
     private String name;
     
     private int credits;
@@ -19,7 +20,31 @@ public class PlayerModel extends RealmObject {
     private int xCoordinates;
     private int yCoordinates;
 
+    public PlayerModel() {
 
+    }
+
+    public PlayerModel(Player player) {
+        this.xCoordinates = player.getCoordinates().getX();
+        this.yCoordinates = player.getCoordinates().getY();
+        this.credits = player.getCredits();
+        for (SkillType skillType: player.getSkills()) {
+            switch (skillType.toString()) {
+                case "PILOT":
+                    this.pilotSkillPoints = skillType.getSkillPointsAllocated();
+                    break;
+                case "FIGHTER":
+                    this.fighterSkillPoints = skillType.getSkillPointsAllocated();
+                    break;
+                case "TRADER":
+                    this.traderSkillPoints = skillType.getSkillPointsAllocated();
+                case "ENGINEER":
+                    this.engineerSkillPoints = skillType.getSkillPointsAllocated();
+                    break;
+            }
+        }
+        this.ship = new ShipModel(player.getShip());
+    }
 
     public int getEngineerSkillPoints() {
         return engineerSkillPoints;
@@ -80,5 +105,13 @@ public class PlayerModel extends RealmObject {
     public void setCoordinates(int x, int y) {
         this.xCoordinates = x;
         this.yCoordinates = y;
+    }
+
+    public int getXCoords() {
+        return this.xCoordinates;
+    }
+
+    public int getYCoords() {
+        return this.yCoordinates;
     }
 }

@@ -2,6 +2,7 @@ package com.cs2340.teama.models;
 
 import com.cs2340.teama.models.enums.ShipType;
 import com.cs2340.teama.models.enums.SkillType;
+import com.cs2340.teama.models.realm.PlayerModel;
 
 public class Player {
     private String name;
@@ -9,6 +10,12 @@ public class Player {
     private Ship ship;
     private int credits;
     private Coordinates coordinates;
+
+    public Player(PlayerModel playerModel) {
+        this.name = playerModel.getName();
+        this.coordinates = new Coordinates(playerModel.getXCoords(), playerModel.getYCoords());
+    }
+
 
     public Player(String name, Coordinates coordinates1) {
         this.coordinates = coordinates1;

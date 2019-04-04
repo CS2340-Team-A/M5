@@ -2,6 +2,7 @@ package com.cs2340.teama.models;
 
 import com.cs2340.teama.models.enums.TechLevel;
 import com.cs2340.teama.models.enums.Resources;
+import com.cs2340.teama.models.realm.UniverseModel;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -42,6 +43,10 @@ public class Universe {
     private static final int xBound = 500;
     private static final int yBound = 500;
     private List<SolarSystem> solarSystems;
+
+    public Universe(UniverseModel universeModel) {
+
+    }
 
     public Universe() {
         Random rng = new Random();
