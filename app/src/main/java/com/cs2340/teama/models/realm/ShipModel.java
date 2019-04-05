@@ -71,6 +71,7 @@ public class ShipModel extends RealmObject {
         for (TradeGoodModel tradeGoodModel: cargoHold) {
             if (cargoType.equals(tradeGoodModel.getType())) {
                 tradeGoodModel.removeQuantity(volume);
+                numGoodsStored -= volume;
             }
         }
     }
@@ -79,6 +80,7 @@ public class ShipModel extends RealmObject {
         for (TradeGoodModel tradeGoodModel: cargoHold) {
             if (cargoType.equals(tradeGoodModel.getType())) {
                 tradeGoodModel.addQuantity(volume);
+                numGoodsStored += volume;
             }
         }
     }

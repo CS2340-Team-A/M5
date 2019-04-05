@@ -19,7 +19,7 @@ public class Application extends android.app.Application {
         Realm.init(this);
         RealmConfiguration config = new RealmConfiguration.Builder().name("spacetraders.realm").build();
         Realm.setDefaultConfiguration(config);
-//        Realm.deleteRealm(config);
+        //Realm.deleteRealm(config);
 
         Realm realm = Realm.getDefaultInstance();
         try {

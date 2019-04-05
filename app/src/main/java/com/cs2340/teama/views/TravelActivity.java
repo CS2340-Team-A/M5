@@ -17,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.cs2340.teama.m5.R;
-import com.cs2340.teama.models.Planet;
 import com.cs2340.teama.models.Ship;
 import com.cs2340.teama.viewModels.TravelViewModel;
 
@@ -52,8 +51,6 @@ public class TravelActivity extends AppCompatActivity {
         planet_spinner.setAdapter(planet_adapter);
 
         planetInfoContent = findViewById(R.id.travel_planet_info_content);
-
-        //TODO: change this so it changes when you select a new planet
         setPlanetInfoContentText();
 
         planet_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
