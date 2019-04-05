@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ship {
-    private ShipType shipType;
-    private List<TradeGood> cargoHold;
+    private final ShipType shipType;
+    private final List<TradeGood> cargoHold;
     private int numGoodsStored;
     private double fuel;
-    private double fuelCapacity;
+    private final double fuelCapacity;
 
     public static final double FUEL_EFFICIENCY = 1.0;
 
@@ -31,7 +31,7 @@ public class Ship {
     }
 
     public Ship (ShipType shipType) {
-        this.cargoHold = new ArrayList<TradeGood>();
+        this.cargoHold = new ArrayList<>();
         for(GoodType t: GoodType.values()) {
             cargoHold.add(new TradeGood(0, t, 0));
         }

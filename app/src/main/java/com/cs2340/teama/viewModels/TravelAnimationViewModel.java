@@ -32,7 +32,7 @@ public class TravelAnimationViewModel extends ViewModel {
      * Gets a list of reachable planets
      * @return List of Reachable Planets*/
     public List<Planet> getPlanetList(){
-        List<Planet> reachablePlanets = new ArrayList<Planet>();
+        List<Planet> reachablePlanets = new ArrayList<>();
         Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
         double distToPlanet;
         Ship ship = Game.game.getPlayer().getShip();
@@ -48,7 +48,7 @@ public class TravelAnimationViewModel extends ViewModel {
     }
 
     private List<SolarSystem> getSolarSystems() {
-        List<SolarSystem> reachableSystems = new ArrayList<SolarSystem>();
+        List<SolarSystem> reachableSystems = new ArrayList<>();
         Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
         double distToPlanet;
         Ship ship = Game.game.getPlayer().getShip();

@@ -1,8 +1,6 @@
 package com.cs2340.teama.models.realm;
 
 
-import android.annotation.SuppressLint;
-
 import com.cs2340.teama.models.TradeGood;
 
 import io.realm.RealmObject;

@@ -43,7 +43,7 @@ public class Universe {
     };
     private static final int xBound = 500;
     private static final int yBound = 500;
-    private List<SolarSystem> solarSystems;
+    private final List<SolarSystem> solarSystems;
 
     public Universe(UniverseModel universeModel) {
         this.solarSystems = new ArrayList<>();

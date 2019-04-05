@@ -12,8 +12,14 @@ public enum GoodType {
     NARCOTICS(5, 0, 5, 3500, -125, 150, Resources.WEIRD_MUSHROOMS, Resources.NO_SPECIAL_RESOURCES),
     ROBOTS(6, 4, 7, 5000, -150, 100, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES);
 
-    private int MTLP, MTLU, TTP, basePrice, IPL, var;
-    private Resources CR, ER;
+    private final int MTLP;
+    private final int MTLU;
+    private final int TTP;
+    private final int basePrice;
+    private final int IPL;
+    private final int var;
+    private final Resources CR;
+    private final Resources ER;
 
     GoodType(int mtlp, int mtlu, int ttp, int baseP, int ipl, int v, Resources cr, Resources er) {
         this.MTLP = mtlp;

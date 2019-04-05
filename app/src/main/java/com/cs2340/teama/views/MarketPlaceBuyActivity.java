@@ -8,11 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.cs2340.teama.m5.R;
-import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.viewModels.MarketPlaceBuyViewModel;
-import com.cs2340.teama.viewModels.PlanetViewModel;
+import com.cs2340.teama.R;
 
 /**
  * View for the marketplace buy scree.
@@ -57,6 +55,8 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
 
     private TextView money_text;
     private TextView cargo_text;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

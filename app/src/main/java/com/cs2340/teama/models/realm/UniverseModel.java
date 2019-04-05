@@ -5,7 +5,6 @@ import com.cs2340.teama.models.Universe;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 
 public class UniverseModel extends RealmObject {
 

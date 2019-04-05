@@ -15,13 +15,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.cs2340.teama.m5.R;
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Universe;
 import com.cs2340.teama.models.enums.GameDifficulty;
 import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.enums.SkillType;
 import com.cs2340.teama.viewModels.ConfigViewModel;
+
+import com.cs2340.teama.R;
 
 public class ConfigActivity extends AppCompatActivity {
 

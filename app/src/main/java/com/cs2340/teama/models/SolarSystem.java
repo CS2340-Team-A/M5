@@ -7,10 +7,10 @@ import com.cs2340.teama.models.realm.SolarSystemModel;
 import java.util.List;
 
 public class SolarSystem {
-    private String name;
-    private Coordinates coordinates;
-    private TechLevel techLevel;
-    private Planet planet;
+    private final String name;
+    private final Coordinates coordinates;
+    private final TechLevel techLevel;
+    private final Planet planet;
 
     public SolarSystem(SolarSystemModel ssm) {
         this.name = ssm.getName();

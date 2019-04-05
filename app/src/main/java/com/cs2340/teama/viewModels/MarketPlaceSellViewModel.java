@@ -1,7 +1,6 @@
 package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
-import android.util.Log;
 
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Game;
@@ -11,7 +10,6 @@ import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.realm.PlayerModel;
-import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.List;
 

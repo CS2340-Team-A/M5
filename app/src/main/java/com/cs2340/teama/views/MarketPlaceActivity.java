@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-import com.cs2340.teama.m5.R;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.cs2340.teama.R;
 
 /**
  * Note that the ViewModel for this class is PlanetViewModel.
@@ -199,7 +199,7 @@ public class MarketPlaceActivity extends AppCompatActivity implements OnClickLis
                 break;
         }
     }
-    private TextWatcher listen = new TextWatcher() {
+    private final TextWatcher listen = new TextWatcher() {
 
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {

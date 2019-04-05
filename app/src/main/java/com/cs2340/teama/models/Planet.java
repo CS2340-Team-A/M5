@@ -1,7 +1,5 @@
 package com.cs2340.teama.models;
 
-import android.util.Log;
-
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.enums.TechLevel;
@@ -23,10 +21,11 @@ import java.util.Random;
  * production of the given good
  */
 public class Planet {
-    private String name;
-    private TechLevel tLv;
-    private Resources resources;
-    private List<TradeGood> tradeGoods;
+    private final String name;
+    private final TechLevel tLv;
+    private final Resources resources;
+    private final List<TradeGood> tradeGoods;
+
 
     public Planet(SolarSystemModel ssm) {
         this.name = ssm.getName();

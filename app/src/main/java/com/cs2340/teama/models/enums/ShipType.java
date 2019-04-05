@@ -1,11 +1,11 @@
 package com.cs2340.teama.models.enums;
 
 public enum ShipType {
-    GNAT(20);
+    GNAT();
 
-    private int cargoSpace;
-    ShipType(int cargoSpace) {
-        this.cargoSpace = cargoSpace;
+    private final int cargoSpace;
+    ShipType() {
+        this.cargoSpace = 20;
     }
 
     public int getCargoSpace() {

@@ -11,7 +11,6 @@ import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.realm.PlayerModel;
-import com.cs2340.teama.models.realm.SolarSystemModel;
 import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.List;

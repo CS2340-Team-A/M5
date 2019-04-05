@@ -21,8 +21,7 @@ public class Application extends android.app.Application {
         Realm.setDefaultConfiguration(config);
         //Realm.deleteRealm(config);
 
-        Realm realm = Realm.getDefaultInstance();
-        try {
+        try (Realm realm = Realm.getDefaultInstance()) {
             PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
             UniverseModel universeModel = realm.where(UniverseModel.class).findFirst();
             if (playerModel != null && universeModel != null) {
@@ -30,10 +29,8 @@ public class Application extends android.app.Application {
                 Universe universe = new Universe(universeModel);
                 Game.game = new Game(player, universe);
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             Log.e("Error Occured", e.toString());
-        } finally {
-            realm.close();
         }
     }
 

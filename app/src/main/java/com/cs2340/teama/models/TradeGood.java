@@ -7,9 +7,9 @@ import com.cs2340.teama.models.realm.TradeGoodModel;
 
 public class TradeGood {
 
-    private double value;
+    private final double value;
     private int quantity;
-    private GoodType goodType;
+    private final GoodType goodType;
 
     public TradeGood(TradeGoodModel tgm) {
         this.value = tgm.getValue();

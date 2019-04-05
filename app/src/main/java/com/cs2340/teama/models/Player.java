@@ -4,12 +4,17 @@ import com.cs2340.teama.models.enums.ShipType;
 import com.cs2340.teama.models.enums.SkillType;
 import com.cs2340.teama.models.realm.PlayerModel;
 
+/**
+ * Player class this represents the user in the game and all of the attributes and actions
+ * the user has and can take.
+ */
 public class Player {
-    private String name;
-    private SkillType[] skills;
-    private Ship ship;
+    private final String name;
+    private final SkillType[] skills;
+    private final Ship ship;
     private int credits;
     private Coordinates coordinates;
+
 
     public Player(PlayerModel playerModel) {
         this.name = playerModel.getName();

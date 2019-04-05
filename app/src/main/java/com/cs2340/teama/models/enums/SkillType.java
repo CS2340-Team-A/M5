@@ -1,12 +1,12 @@
 package com.cs2340.teama.models.enums;
 
 public enum SkillType {
-    PILOT(0), FIGHTER(0), TRADER(0), ENGINEER(0);
+    PILOT(), FIGHTER(), TRADER(), ENGINEER();
 
     private int skillPointsAllocated;
 
-    SkillType(int initSkillPts) {
-        skillPointsAllocated = initSkillPts;
+    SkillType() {
+        skillPointsAllocated = 0;
     }
 
     public int getSkillPointsAllocated() {

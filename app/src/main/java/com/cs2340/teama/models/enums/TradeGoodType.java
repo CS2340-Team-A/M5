@@ -32,16 +32,16 @@ public enum TradeGoodType {
     Narcotics	  (5, 0, 5, 3500, -125, 150,  Resources.WEIRD_MUSHROOMS, null, 2000, 3000),
     Robots	  (6, 4, 7, 5000, -150, 100, null, null, 3500, 5000);
 
-    private int MTLP;
-    private int MTLU;
-    private int TTP;
-    private int base_price;
-    private	int IPL;
-    private int Var;
-    private Resources CR;
-    private Resources ER;
-    private int MTL;
-    private int MTH;
+    private final int MTLP;
+    private final int MTLU;
+    private final int TTP;
+    private final int base_price;
+    private final int IPL;
+    private final int Var;
+    private final Resources CR;
+    private final Resources ER;
+    private final int MTL;
+    private final int MTH;
 
     TradeGoodType(int MTLP, int MTLU, int TTP, int base_price,	int IPL, int Var,
                 Resources CR, Resources ER, int MTL, int MTH) {

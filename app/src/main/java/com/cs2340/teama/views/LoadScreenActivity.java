@@ -8,8 +8,6 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.cs2340.teama.m5.R;
-
 public class LoadScreenActivity extends AppCompatActivity {
 
     @Override
