@@ -10,14 +10,13 @@ import com.cs2340.teama.m5.R;
 import com.cs2340.teama.models.Game;
 
 public class BeginGameActivity extends AppCompatActivity {
-    private Button BeginGame;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_begin_game);
 
-        BeginGame = findViewById(R.id.begin_button);
-        BeginGame.setOnClickListener(new View.OnClickListener() {
+        Button beginGame = findViewById(R.id.begin_button);
+        beginGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openConfigActivity();
