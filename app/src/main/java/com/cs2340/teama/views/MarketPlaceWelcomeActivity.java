@@ -14,16 +14,13 @@ import com.cs2340.teama.m5.R;
  */
 public class MarketPlaceWelcomeActivity extends AppCompatActivity {
 
-    private Button buy_button;
-    private Button sell_button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market_place_activity_welcome);
 
-        buy_button = findViewById(R.id.buy_button);
-        sell_button = findViewById(R.id.sell_button);
+        Button buy_button = findViewById(R.id.buy_button);
+        Button sell_button = findViewById(R.id.sell_button);
 
         buy_button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -30,7 +30,6 @@ public class ConfigActivity extends AppCompatActivity {
     private EditText pilot;
     private EditText trader;
     private EditText engineer;
-    private Button startGame;
     private EditText nameGiven;
     private ConfigViewModel viewModel;
 
@@ -48,7 +47,7 @@ public class ConfigActivity extends AppCompatActivity {
         pilot = findViewById(R.id.fighter_number);
         trader = findViewById(R.id.trader_number);
         engineer = findViewById(R.id.editText5);
-        startGame = findViewById(R.id.begin_game_button);
+        Button startGame = findViewById(R.id.begin_game_button);
         nameGiven = findViewById(R.id.medicineText);
 
         /*

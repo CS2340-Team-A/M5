@@ -15,10 +15,7 @@ import com.cs2340.teama.views.TravelActivity;
 
 public class PlanetActivity extends AppCompatActivity {
 
-    private PlanetViewModel viewModel;
-    private Button travel;
     private Button market;
-    private Button goToMarket;
     private Button goTravel;
 
 
@@ -26,7 +23,7 @@ public class PlanetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planet);
-        viewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
+        PlanetViewModel viewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
 
 
         TextView planetName = findViewById(R.id.planet_name);
@@ -35,8 +32,8 @@ public class PlanetActivity extends AppCompatActivity {
         TextView planetInfo = findViewById(R.id.planet_info);
         planetInfo.setText("Current " +  viewModel.getPlanetInfo());
 
-        goToMarket = findViewById(R.id.market_button);
-        travel = findViewById(R.id.travel_button);
+        Button goToMarket = findViewById(R.id.market_button);
+        Button travel = findViewById(R.id.travel_button);
 
         goToMarket.setOnClickListener(new View.OnClickListener() {
             @Override

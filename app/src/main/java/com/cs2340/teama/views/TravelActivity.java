@@ -22,16 +22,10 @@ import com.cs2340.teama.viewModels.TravelViewModel;
 
 public class TravelActivity extends AppCompatActivity {
 
-    private Button travel_button;
-    private Button backButton;
     private Spinner planet_spinner;
-    private CardView planet_info_cardView;
     private TextView planetInfoContent;
-    private ProgressBar fuelBar;
 
     private TravelViewModel viewModel;
-
-    private Ship ship;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -40,10 +34,10 @@ public class TravelActivity extends AppCompatActivity {
         setContentView(R.layout.travel);
         viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
 
-        travel_button = findViewById(R.id.travel_button);
-        backButton = findViewById(R.id.back_from_travel);
+        Button travel_button = findViewById(R.id.travel_button);
+        Button backButton = findViewById(R.id.back_from_travel);
         planet_spinner = findViewById(R.id.travel_spinner);
-        planet_info_cardView = findViewById(R.id.planet_info_cardView);
+        CardView planet_info_cardView = findViewById(R.id.planet_info_cardView);
 
         final ArrayAdapter<String> planet_adapter = new ArrayAdapter(
                 this, android.R.layout.simple_spinner_item, viewModel.getPlanetNameList());
@@ -65,11 +59,11 @@ public class TravelActivity extends AppCompatActivity {
             }
         });
 
-        ship = viewModel.getShip();
+        Ship ship = viewModel.getShip();
 
-        fuelBar = findViewById(R.id.fuel_bar);
+        ProgressBar fuelBar = findViewById(R.id.fuel_bar);
         fuelBar.setMax(100);
-        fuelBar.setProgress((int) (ship.getFuel()*100/ship.getFuelCapacity()), true);
+        fuelBar.setProgress((int) (ship.getFuel()*100/ ship.getFuelCapacity()), true);
 
         travel_button.setOnClickListener(new View.OnClickListener() {
             @Override

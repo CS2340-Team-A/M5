@@ -20,10 +20,9 @@ public class TravelAnimationViewModel extends ViewModel {
         Random rand = new Random();
         int a = rand.nextInt(100);
         Log.d("Edit", "Random value: " + Integer.toString(a));
+        int ATTACK_PROBABILITY = 10;
         return a < ATTACK_PROBABILITY;
     }
-
-    private final int ATTACK_PROBABILITY = 10;
 
     private Planet getPlanet() {
         return Game.game.getPlanet();

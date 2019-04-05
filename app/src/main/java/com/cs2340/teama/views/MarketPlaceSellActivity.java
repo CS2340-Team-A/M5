@@ -23,11 +23,6 @@ public class MarketPlaceSellActivity extends AppCompatActivity {
     private MarketPlaceSellViewModel viewModel;
 
 
-    private Button sell_water_button;
-    private Button sell_fur_button;
-    private Button sell_ore_button;
-    private Button sell_firearms_button;
-    private Button sell_medicine_button;
     private Button sell_machines_button;
     private Button sell_narcotics_button;
     private Button sell_robots_button;
@@ -66,11 +61,11 @@ public class MarketPlaceSellActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(this).get(MarketPlaceSellViewModel.class);
 
-        sell_water_button = findViewById(R.id.water_button);
-        sell_fur_button = findViewById(R.id.furs_button);
-        sell_ore_button = findViewById(R.id.ore_button);
-        sell_firearms_button = findViewById(R.id.firearms_button);
-        sell_medicine_button = findViewById(R.id.medicine_button);
+        Button sell_water_button = findViewById(R.id.water_button);
+        Button sell_fur_button = findViewById(R.id.furs_button);
+        Button sell_ore_button = findViewById(R.id.ore_button);
+        Button sell_firearms_button = findViewById(R.id.firearms_button);
+        Button sell_medicine_button = findViewById(R.id.medicine_button);
         sell_machines_button = findViewById(R.id.machines_button);
         sell_narcotics_button = findViewById(R.id.narcotics_button);
         sell_robots_button = findViewById(R.id.robots_button);

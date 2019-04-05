@@ -23,14 +23,10 @@ import java.util.Random;
  * production of the given good
  */
 public class Planet {
-    private final int PRODUCTION_FACTOR = 70;
-    private final int RESOURCE_QUANTITIY_FACTOR = 4;
-    private final int TTP_QUANTITY_FACTOR = 5;
     private String name;
     private TechLevel tLv;
     private Resources resources;
     private List<TradeGood> tradeGoods;
-    private Random random = new Random();
 
     public Planet(SolarSystemModel ssm) {
         this.name = ssm.getName();
@@ -51,6 +47,7 @@ public class Planet {
         tradeGoods = new ArrayList<>();
         for(GoodType good: GoodType.values()) {
             if(good.getMTLP() <= tLv.getTechLv() || good.getMTLU() <= tLv.getTechLv()) {
+                Random random = new Random();
                 boolean addVariance = random.nextDouble() < 0.5;
                 int price = good.getBasePrice();
 
@@ -64,11 +61,14 @@ public class Planet {
                     double varianceFactor = (random.nextDouble() * (good.getVar() + 1));
                     price += good.getBasePrice() * varianceFactor;
                 }
+                int RESOURCE_QUANTITIY_FACTOR = 4;
+                int PRODUCTION_FACTOR = 70;
                 int quantity = (int)(random.nextDouble() * PRODUCTION_FACTOR)
-                        - RESOURCE_QUANTITIY_FACTOR*Math.abs(good.getTTP() - tLv.getTechLv());
+                        - RESOURCE_QUANTITIY_FACTOR *Math.abs(good.getTTP() - tLv.getTechLv());
                 while(quantity <= 1) {
+                    int TTP_QUANTITY_FACTOR = 5;
                     quantity = (int)(random.nextDouble() * PRODUCTION_FACTOR)
-                            - TTP_QUANTITY_FACTOR*Math.abs(good.getTTP() - tLv.getTechLv());
+                            - TTP_QUANTITY_FACTOR *Math.abs(good.getTTP() - tLv.getTechLv());
                 }
                 if(this.resources == good.getCR()) {
                     quantity *= RESOURCE_QUANTITIY_FACTOR;

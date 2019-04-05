@@ -23,7 +23,6 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
 
     private MarketPlaceBuyViewModel viewModel;
 
-    private Button buy_water_button;
     private Button buy_fur_button;
     private Button buy_ore_button;
     private Button buy_firearms_button;
@@ -66,7 +65,7 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(this).get(MarketPlaceBuyViewModel.class);
 
-        buy_water_button = findViewById(R.id.water_button);
+        Button buy_water_button = findViewById(R.id.water_button);
         buy_fur_button = findViewById(R.id.furs_button);
         buy_ore_button = findViewById(R.id.ore_button);
         buy_firearms_button = findViewById(R.id.firearms_button);

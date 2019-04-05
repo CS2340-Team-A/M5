@@ -15,16 +15,13 @@ import com.cs2340.teama.viewModels.PirateAttackViewModel;
 
 public class PirateAttackActivity extends AppCompatActivity {
 
-    private Button continue_button;
-    private PirateAttackViewModel viewModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pirate_attack);
 
-        continue_button = findViewById(R.id.continue_button);
-        viewModel = ViewModelProviders.of(this).get(PirateAttackViewModel.class);
+        Button continue_button = findViewById(R.id.continue_button);
+        PirateAttackViewModel viewModel = ViewModelProviders.of(this).get(PirateAttackViewModel.class);
 
         viewModel.pillage();
 
