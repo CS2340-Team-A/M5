@@ -85,11 +85,20 @@ public class Planet {
         return "Planet: " + this.name + "\n" + getInfo();
     }
 
-    /** Getters **/
+    /**
+     * Method to get the planet's name
+     *
+     * @return name
+     ***/
     public String getName() {
         return name;
     }
 
+    /**
+     * Method to get the planet's info in a string
+     *
+     * @return info
+     */
     public String getInfo() {
         return "Planet Info: \n"
                 + "Name: " + name + "\n"
@@ -98,14 +107,29 @@ public class Planet {
                 + tLv.getTechLv();
     }
 
+    /**
+     * Method to get the planet's tech level
+     *
+     * @return techlevel
+     */
     public TechLevel getTLv() {
         return tLv;
     }
 
+    /**
+     * Method to get the Resources on the planet instance
+     *
+     * @return resources
+     */
     public Resources getResources() {
         return resources;
     }
 
+    /**
+     * Method that gets the TradeGoods on a planet instance
+     *
+     * @return tradeGoods
+     */
     public List<TradeGood> getTradeGoods() {
         return this.tradeGoods;
     }
