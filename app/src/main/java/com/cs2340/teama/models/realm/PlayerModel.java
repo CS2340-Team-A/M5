@@ -1,5 +1,6 @@
 package com.cs2340.teama.models.realm;
 
+import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.enums.SkillType;
 
@@ -120,5 +121,9 @@ public class PlayerModel extends RealmObject {
 
     public int getYCoords() {
         return this.yCoordinates;
+    }
+
+    public Coordinates getCoordinates() {
+        return new Coordinates(this.getXCoords(), this.getYCoords());
     }
 }

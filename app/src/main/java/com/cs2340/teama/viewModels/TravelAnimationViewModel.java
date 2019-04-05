@@ -63,15 +63,4 @@ public class TravelAnimationViewModel extends ViewModel {
         }
         return reachableSystems;
     }
-
-    public void travelTo(int planetPos) {
-        Planet planet = this.getPlanetList().get(planetPos);
-        Log.d("Edit", "Got planet " + planet);
-
-        SolarSystem system = this.getSolarSystems().get(planetPos);
-        Coordinates destCoord = system.getCoordinates();
-
-        Game.game.getPlayer().travel(destCoord);
-
-    }
 }

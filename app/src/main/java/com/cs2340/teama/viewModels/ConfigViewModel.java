@@ -24,6 +24,7 @@ public class ConfigViewModel extends ViewModel {
                     realm.copyToRealm(stagedUniverse);
                 }
             });
+            realm.close();
             Game.game = new Game(p, u);
         }
     }

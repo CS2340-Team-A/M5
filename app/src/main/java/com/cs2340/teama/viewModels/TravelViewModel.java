@@ -8,10 +8,14 @@ import com.cs2340.teama.models.Game;
 import com.cs2340.teama.models.Planet;
 import com.cs2340.teama.models.Ship;
 import com.cs2340.teama.models.SolarSystem;
+import com.cs2340.teama.models.realm.PlayerModel;
+import com.cs2340.teama.models.realm.ShipModel;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import io.realm.Realm;
 
 public class TravelViewModel extends ViewModel {
 
@@ -99,9 +103,25 @@ public class TravelViewModel extends ViewModel {
         Log.d("Edit", "Got planet " + planet);
 
         SolarSystem system = this.getSolarSystems().get(planetPos);
-        Coordinates destCoord = system.getCoordinates();
+        final Coordinates destCoord = system.getCoordinates();
 
         Game.game.getPlayer().travel(destCoord);
 
+        Realm realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
+                if (playerModel != null) {
+                    ShipModel shipModel = playerModel.getShip();
+                    shipModel.removeFuel(Coordinates.distTo(
+                            playerModel.getCoordinates(),
+                            destCoord
+                    ) / Ship.FUEL_EFFICIENCY);
+                    playerModel.setCoordinates(destCoord.getX(), destCoord.getY());
+                }
+            }
+        });
+        realm.close();
     }
 }

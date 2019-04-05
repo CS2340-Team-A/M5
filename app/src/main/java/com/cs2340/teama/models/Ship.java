@@ -15,8 +15,9 @@ public class Ship {
     private List<TradeGood> cargoHold;
     private int numGoodsStored;
     private double fuel;
-    private static final double FUEL_EFFICIENCY = 1.0;
     private double fuelCapacity;
+
+    public static final double FUEL_EFFICIENCY = 1.0;
 
     public Ship(ShipModel shipModel) {
         this.shipType = ShipType.valueOf(shipModel.getShipName());
@@ -96,7 +97,7 @@ public class Ship {
         if (!canTravelDist(distance)) {
             throw new RuntimeException("Not enough fuel to travel distance");
         } else {
-            fuel -= distance/ FUEL_EFFICIENCY;
+            fuel -= distance / FUEL_EFFICIENCY;
             Log.d("Edit", "Fuel level at " + fuel);
         }
     }

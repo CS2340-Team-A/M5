@@ -83,4 +83,8 @@ public class ShipModel extends RealmObject {
         }
     }
 
+    public void removeFuel(double fuel) {
+        this.fuel -= fuel;
+    }
+
 }
