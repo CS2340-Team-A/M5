@@ -22,7 +22,7 @@ import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.enums.SkillType;
 import com.cs2340.teama.viewModels.ConfigViewModel;
 
-import com.cs2340.teama.R;
+import com.cs2340.teama.m5.R;
 
 public class ConfigActivity extends AppCompatActivity {
 

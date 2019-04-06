@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.cs2340.teama.m5.R;
 
 import com.cs2340.teama.viewModels.TravelAnimationViewModel;
 

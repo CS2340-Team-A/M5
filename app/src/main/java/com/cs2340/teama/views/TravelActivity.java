@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.cs2340.teama.models.Ship;
 import com.cs2340.teama.viewModels.TravelViewModel;
 
-import com.cs2340.teama.R;
+import com.cs2340.teama.m5.R;
 
 public class TravelActivity extends AppCompatActivity {
 

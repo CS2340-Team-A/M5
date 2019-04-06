@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.cs2340.teama.m5.R;
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.viewModels.MarketPlaceSellViewModel;
 

@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import com.cs2340.teama.m5.R;
+
 
 /**
  * View for the market welcome screen. All features have been implemented.

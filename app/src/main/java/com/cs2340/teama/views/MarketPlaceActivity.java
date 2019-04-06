@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cs2340.teama.R;
+import com.cs2340.teama.m5.R;
 
 /**
  * Note that the ViewModel for this class is PlanetViewModel.

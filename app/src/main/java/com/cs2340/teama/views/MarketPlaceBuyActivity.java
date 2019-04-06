@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.viewModels.MarketPlaceBuyViewModel;
-import com.cs2340.teama.R;
+import com.cs2340.teama.m5.R;
 
 /**
  * View for the marketplace buy scree.
