@@ -1,5 +1,8 @@
 package com.cs2340.teama.models.enums;
 
+/**
+ *
+ */
 public enum GoodType {
     WATER(0, 0, 2, 30, 3, 4, Resources.LOTS_OF_WATER, Resources.DESERT),
     FURS(0, 0, 0, 250, 10, 10, Resources.RICH_FAUNA, Resources.LIFELESS),

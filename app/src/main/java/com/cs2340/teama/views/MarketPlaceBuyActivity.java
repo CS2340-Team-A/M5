@@ -21,16 +21,6 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
 
     private MarketPlaceBuyViewModel viewModel;
 
-    private Button buy_fur_button;
-    private Button buy_ore_button;
-    private Button buy_firearms_button;
-    private Button buy_medicine_button;
-    private Button buy_machines_button;
-    private Button buy_narcotics_button;
-    private Button buy_robots_button;
-    private Button buy_games_button;
-    private Button buy_food_button;
-
     private TextView water_text;
     private TextView fur_text;
     private TextView ore_text;
@@ -41,17 +31,6 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
     private TextView robots_text;
     private TextView games_text;
     private TextView food_text;
-
-    private TextView water_price;
-    private TextView fur_price;
-    private TextView ore_price;
-    private TextView firearms_price;
-    private TextView medicine_price;
-    private TextView machine_price;
-    private TextView narcotics_price;
-    private TextView robots_price;
-    private TextView games_price;
-    private TextView food_price;
 
     private TextView money_text;
     private TextView cargo_text;
@@ -66,15 +45,15 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(MarketPlaceBuyViewModel.class);
 
         Button buy_water_button = findViewById(R.id.water_button);
-        buy_fur_button = findViewById(R.id.furs_button);
-        buy_ore_button = findViewById(R.id.ore_button);
-        buy_firearms_button = findViewById(R.id.firearms_button);
-        buy_medicine_button = findViewById(R.id.medicine_button);
-        buy_machines_button = findViewById(R.id.machines_button);
-        buy_narcotics_button = findViewById(R.id.narcotics_button);
-        buy_robots_button = findViewById(R.id.robots_button);
-        buy_games_button = findViewById(R.id.game_button);
-        buy_food_button = findViewById(R.id.food_button);
+        Button buy_fur_button = findViewById(R.id.furs_button);
+        Button buy_ore_button = findViewById(R.id.ore_button);
+        Button buy_firearms_button = findViewById(R.id.firearms_button);
+        Button buy_medicine_button = findViewById(R.id.medicine_button);
+        Button buy_machines_button = findViewById(R.id.machines_button);
+        Button buy_narcotics_button = findViewById(R.id.narcotics_button);
+        Button buy_robots_button = findViewById(R.id.robots_button);
+        Button buy_games_button = findViewById(R.id.game_button);
+        Button buy_food_button = findViewById(R.id.food_button);
 
         water_text = findViewById(R.id.water_text);
         fur_text = findViewById(R.id.furs_text);
@@ -87,16 +66,16 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
         games_text = findViewById(R.id.games_text);
         food_text = findViewById(R.id.food_text);
 
-        water_price = findViewById(R.id.water_price);
-        fur_price = findViewById(R.id.furs_price);
-        ore_price = findViewById(R.id.ore_price);
-        firearms_price = findViewById(R.id.firearms_price);
-        medicine_price = findViewById(R.id.medicine_price);
-        machine_price = findViewById(R.id.machines_price);
-        narcotics_price = findViewById(R.id.narcotics_price);
-        robots_price = findViewById(R.id.robots_price);
-        games_price = findViewById(R.id.games_price);
-        food_price = findViewById(R.id.food_price);
+        TextView water_price = findViewById(R.id.water_price);
+        TextView fur_price = findViewById(R.id.furs_price);
+        TextView ore_price = findViewById(R.id.ore_price);
+        TextView firearms_price = findViewById(R.id.firearms_price);
+        TextView medicine_price = findViewById(R.id.medicine_price);
+        TextView machine_price = findViewById(R.id.machines_price);
+        TextView narcotics_price = findViewById(R.id.narcotics_price);
+        TextView robots_price = findViewById(R.id.robots_price);
+        TextView games_price = findViewById(R.id.games_price);
+        TextView food_price = findViewById(R.id.food_price);
 
         money_text = findViewById(R.id.money_text);
         cargo_text = findViewById(R.id.cargo_text);

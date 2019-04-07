@@ -22,6 +22,9 @@ public class Game {
         return universe;
     }
 
+    /**
+     * @return
+     */
     public Planet getPlanet() {
         Coordinates planetCoords = Game.game.getPlayer().getCoordinates();
         SolarSystem s = SolarSystem.findSolarSystemByCoords(

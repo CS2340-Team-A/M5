@@ -71,7 +71,7 @@ public class TravelActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("Edit", "Travel Button Pressed. Traveling to "
                         + planet_spinner.getSelectedItem());
-                doTravel((int) planet_spinner.getSelectedItemPosition());
+                doTravel(planet_spinner.getSelectedItemPosition());
             }
         });
 
@@ -97,7 +97,7 @@ public class TravelActivity extends AppCompatActivity {
 
     private void setPlanetInfoContentText() {
         CharSequence txt = "Current " + viewModel.getPlanetInfo() + "\n";
-        txt = txt + "\nSelected " + viewModel.getPlanetList().get((int)
+        txt = txt + "\nSelected " + viewModel.getPlanetList().get(
                 planet_spinner.getSelectedItemPosition()).getInfo();
         planetInfoContent.setText(txt);
     }

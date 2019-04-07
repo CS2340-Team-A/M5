@@ -12,20 +12,25 @@ public class SolarSystem {
     private final TechLevel techLevel;
     private final Planet planet;
 
-    public SolarSystem(SolarSystemModel ssm) {
+    SolarSystem(SolarSystemModel ssm) {
         this.name = ssm.getName();
         this.coordinates = new Coordinates(ssm.getXCoords(), ssm.getYCoords());
         this.techLevel = TechLevel.valueOf(ssm.getTechLevel());
         this.planet = new Planet(ssm);
     }
 
-    public SolarSystem(String name, Coordinates coordinates, TechLevel techLevel, Resources resources) {
+    SolarSystem(String name, Coordinates coordinates, TechLevel techLevel, Resources resources) {
         this.name = name;
         this.coordinates = coordinates;
         this.techLevel = techLevel;
         this.planet = new Planet(name, resources, techLevel);
     }
 
+    /**
+     * @param solarSystems
+     * @param planetCoords
+     * @return
+     */
     public static SolarSystem findSolarSystemByCoords(List<SolarSystem> solarSystems, Coordinates planetCoords) {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);

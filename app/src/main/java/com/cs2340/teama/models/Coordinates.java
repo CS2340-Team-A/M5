@@ -21,8 +21,7 @@ public class Coordinates {
     public static double distTo(Coordinates c1, Coordinates c2) {
         double x = c2.x-c1.x;
         double y = c2.y-c1.y;
-        double dist = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
-        return dist;
+        return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
     }
 
     public int getX() {

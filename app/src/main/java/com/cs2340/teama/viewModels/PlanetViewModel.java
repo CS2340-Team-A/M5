@@ -23,9 +23,4 @@ public class PlanetViewModel extends ViewModel {
         return this.getPlanet().getInfo();
     }
 
-    public List<TradeGood> getPlanetGoodsList() {
-        return this.getPlanet().getTradeGoods();
-    }
-
-
 }

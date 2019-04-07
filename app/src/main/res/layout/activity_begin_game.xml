@@ -8,12 +8,14 @@
 
     <Button
         android:id="@+id/begin_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
+        android:layout_marginStart="290dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         android:text="New Game"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="New Game" />
 
@@ -31,13 +33,15 @@
 
     <Button
         android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="290dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="90dp"
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/begin_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="Continue" />
 
 
