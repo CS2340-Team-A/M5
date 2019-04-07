@@ -10,6 +10,8 @@ import com.cs2340.teama.m5.R;
 
 import com.cs2340.teama.models.Game;
 
+import io.realm.Realm;
+
 public class BeginGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +25,35 @@ public class BeginGameActivity extends AppCompatActivity {
                 openConfigActivity();
             }
         });
-    }
-    public void openConfigActivity() {
-        Intent intent = new Intent(this, ConfigActivity.class);
-        if (Game.game != null) {
-            intent = new Intent(this, LoadScreenActivity.class);
+
+        Button continueButton = findViewById(R.id.continue_button);
+        if (Game.game == null) {
+            continueButton.setVisibility(View.INVISIBLE);
         }
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLoadingActivity();
+            }
+        });
+
+    }
+
+    public void openLoadingActivity() {
+        Intent intent = new Intent(this, LoadScreenActivity.class);
         startActivity(intent);
+    }
+
+    public void openConfigActivity() {
+        Realm realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.deleteAll();
+            }
+        });
+        Intent intent = new Intent(this, ConfigActivity.class);
+        startActivity(intent);
+
     }
 }
