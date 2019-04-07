@@ -30,11 +30,6 @@ public class ConfigViewModel extends ViewModel {
     }
 
     public boolean calculatePoints(int p, int f, int e, int t) {
-        if ((p + f + e + t) != 16 || (p + f + e + t) > 16 ||
-                (p + f + e + t) < 16) {
-            return true;
-        } else {
-            return false;
-        }
+        return (p + f + e + t) != 16;
     }
 }

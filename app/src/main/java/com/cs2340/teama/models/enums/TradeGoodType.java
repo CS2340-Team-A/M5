@@ -58,43 +58,43 @@ public enum TradeGoodType {
 
     }
 
-    public int getMTLP() {
-        return MTLP;
-    }
-
-    public int getMTLU() {
-        return MTLU;
-    }
-
-    public int getTTP() {
-        return TTP;
-    }
-
-    public int getBase_price() {
-        return base_price;
-    }
-
-    public int getIPL() {
-        return IPL;
-    }
-
-    public int getVar() {
-        return Var;
-    }
-
-    public Resources getCR() {
-        return CR;
-    }
-
-    public Resources getER() {
-        return ER;
-    }
-
-    public int getMTL() {
-        return MTL;
-    }
-
-    public int getMTH() {
-        return MTH;
-    }
+//    public int getMTLP() {
+//        return MTLP;
+//    }
+//
+//    public int getMTLU() {
+//        return MTLU;
+//    }
+//
+//    public int getTTP() {
+//        return TTP;
+//    }
+//
+//    public int getBase_price() {
+//        return base_price;
+//    }
+//
+//    public int getIPL() {
+//        return IPL;
+//    }
+//
+//    public int getVar() {
+//        return Var;
+//    }
+//
+//    public Resources getCR() {
+//        return CR;
+//    }
+//
+//    public Resources getER() {
+//        return ER;
+//    }
+//
+//    public int getMTL() {
+//        return MTL;
+//    }
+//
+//    public int getMTH() {
+//        return MTH;
+//    }
 }

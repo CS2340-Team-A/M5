@@ -19,7 +19,7 @@ public class Ship {
 
     public static final double FUEL_EFFICIENCY = 1.0;
 
-    public Ship(ShipModel shipModel) {
+    Ship(ShipModel shipModel) {
         this.shipType = ShipType.valueOf(shipModel.getShipName());
         this.numGoodsStored = shipModel.getNumGoodsStored();
         this.fuel = shipModel.getFuel();
@@ -30,7 +30,7 @@ public class Ship {
         }
     }
 
-    public Ship (ShipType shipType) {
+    Ship (ShipType shipType) {
         this.cargoHold = new ArrayList<>();
         for(GoodType t: GoodType.values()) {
             cargoHold.add(new TradeGood(0, t, 0));
@@ -61,6 +61,10 @@ public class Ship {
         return fuelCapacity;
     }
 
+    /**
+     * @param addedGood
+     * @return
+     */
     public boolean addToCargoHold(TradeGood addedGood) {
         if((addedGood.getVolume()+numGoodsStored) > shipType.getCargoSpace()) {
             return false;
@@ -75,25 +79,34 @@ public class Ship {
         return false;
     }
 
-    public boolean removeFromCargoHold(TradeGood removedGood) {
+    /**
+     * @param removedGood
+     */
+    public void removeFromCargoHold(TradeGood removedGood) {
         for(TradeGood g: cargoHold) {
             if(g.getGoodType() == removedGood.getGoodType()) {
                 if(g.getVolume() < removedGood.getVolume()) {
-                    return false;
+                    return;
                 }
                 g.decrementVolume(removedGood.getVolume());
                 numGoodsStored -= removedGood.getVolume();
-                return true;
+                return;
             }
         }
-        return false;
     }
 
+    /**
+     * @param distance
+     * @return
+     */
     public boolean canTravelDist(double distance) {
         return distance/ FUEL_EFFICIENCY < fuel;
     }
 
-    public void travelDist(double distance) {
+    /**
+     * @param distance
+     */
+    void travelDist(double distance) {
         if (!canTravelDist(distance)) {
             throw new RuntimeException("Not enough fuel to travel distance");
         } else {

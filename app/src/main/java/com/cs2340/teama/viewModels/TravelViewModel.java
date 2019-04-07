@@ -19,14 +19,8 @@ import io.realm.Realm;
 
 public class TravelViewModel extends ViewModel {
 
-    private final int ATTACK_PROBABILITY = 10;
-
     private Planet getPlanet() {
         return Game.game.getPlanet();
-    }
-
-    public CharSequence getPlanetName() {
-        return this.getPlanet().getName();
     }
 
     public CharSequence getPlanetInfo() {
@@ -90,12 +84,6 @@ public class TravelViewModel extends ViewModel {
 
         }
         return reachableSystems;
-    }
-
-    public boolean pirateAttack() {
-        Random rand = new Random(2);
-        return rand.nextInt(100) < 10;
-        //return false;
     }
 
     public void travelTo(int planetPos) {

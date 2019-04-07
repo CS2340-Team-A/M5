@@ -51,14 +51,25 @@ public class Player {
         }
     }
 
+    /**
+     * @param good
+     */
     public void decrementCredits(TradeGood good) {
         credits -= good.getValue();
     }
 
+    /**
+     * @param good
+     * @return
+     */
     public boolean canBuy(TradeGood good) {
         return credits >= good.getValue();
     }
 
+    /**
+     * @param good
+     * @return
+     */
     public boolean canSell(TradeGood good) {
         for(TradeGood g: ship.getCargoHold()) {
             if(g.getGoodType() == good.getGoodType() && g.getVolume()>0) {
@@ -80,6 +91,9 @@ public class Player {
         return ship;
     }
 
+    /**
+     * @param good
+     */
     public void incrementCredits(TradeGood good) {
         this.credits += good.getValue();
     }

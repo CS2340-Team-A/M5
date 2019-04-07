@@ -32,14 +32,14 @@ public class MarketPlaceSellViewModel extends ViewModel {
         return Game.game.getPlayer();
     }
 
-    public List<TradeGood> getPlanetGoodsList() {
+    private List<TradeGood> getPlanetGoodsList() {
         return this.getPlanet().getTradeGoods();
     }
 
     /**
-     * returns the quantity of the good present in the ship's cargohold
-     * @param goodName
-     * @return
+     * returns the quantity of the good present in the ship's cargo hold
+     * @param goodName the good specified
+     * @return the count of the good in the cargo hold
      */
     public int getGoodVolume(GoodType goodName) {
         List<TradeGood> goods = getPlayer().getShip().getCargoHold();
@@ -52,8 +52,8 @@ public class MarketPlaceSellViewModel extends ViewModel {
     }
 
     /**
-     * returns number of slots available in the cargohold
-     * @return
+     * returns number of slots available in the cargo hold
+     * @return available space
      */
     public String getCargoSpace() {
         return Integer.toString(getPlayer().getShip().getNumGoodsStored()) + " / " +

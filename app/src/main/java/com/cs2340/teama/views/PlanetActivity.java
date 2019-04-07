@@ -13,10 +13,6 @@ import com.cs2340.teama.m5.R;
 
 public class PlanetActivity extends AppCompatActivity {
 
-    private Button market;
-    private Button goTravel;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

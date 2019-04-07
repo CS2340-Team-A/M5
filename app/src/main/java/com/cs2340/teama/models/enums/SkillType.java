@@ -1,5 +1,8 @@
 package com.cs2340.teama.models.enums;
 
+/**
+ *
+ */
 public enum SkillType {
     PILOT(), FIGHTER(), TRADER(), ENGINEER();
 
@@ -13,6 +16,9 @@ public enum SkillType {
         return skillPointsAllocated;
     }
 
+    /**
+     * @param increase
+     */
     public void incrementSkillPointBy(int increase) {
         this.skillPointsAllocated += increase;
     }

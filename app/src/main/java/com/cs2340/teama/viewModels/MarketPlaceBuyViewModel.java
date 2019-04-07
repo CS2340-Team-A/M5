@@ -30,7 +30,7 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         return Game.game.getPlayer();
     }
 
-    public List<TradeGood> getPlanetGoodsList() {
+    private List<TradeGood> getPlanetGoodsList() {
         return this.getPlanet().getTradeGoods();
     }
 

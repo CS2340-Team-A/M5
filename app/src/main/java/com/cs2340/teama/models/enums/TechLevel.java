@@ -1,5 +1,8 @@
 package com.cs2340.teama.models.enums;
 
+/**
+ *
+ */
 public enum TechLevel {
     PreAgriculture(0),
     Agriculture(1),
@@ -16,6 +19,9 @@ public enum TechLevel {
         techLv = lv;
     }
 
+    /**
+     * @return
+     */
     public int getTechLv() {
         return techLv;
     }

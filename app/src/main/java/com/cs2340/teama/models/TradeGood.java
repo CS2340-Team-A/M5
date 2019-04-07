@@ -36,16 +36,15 @@ public class TradeGood {
         return goodType;
     }
 
-    public void incrementVolume(int volAdded) {
+    void incrementVolume(int volAdded) {
         quantity += volAdded;
     }
 
-    public boolean decrementVolume(int volRemoved) {
+    public void decrementVolume(int volRemoved) {
         if (quantity < volRemoved) {
-            return false;
+            return;
         }
         quantity -= volRemoved;
-        return true;
     }
 
     public boolean inStock() {
