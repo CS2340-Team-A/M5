@@ -30,7 +30,7 @@ public class Ship {
         }
     }
 
-    Ship (ShipType shipType) {
+    public Ship (ShipType shipType) {
         this.cargoHold = new ArrayList<>();
         for(GoodType t: GoodType.values()) {
             cargoHold.add(new TradeGood(0, t, 0));
