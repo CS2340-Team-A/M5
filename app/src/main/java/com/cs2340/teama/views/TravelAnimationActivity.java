@@ -36,7 +36,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
             public void run() {
                 switchPic1();
             }
-        },2000);
+        },1500);
 
         Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
@@ -44,7 +44,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
             public void run() {
                 switchPic2();
             }
-        },4000);
+        },3000);
 
         Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
@@ -52,7 +52,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
             public void run() {
                 startPlanetActivity();
             }
-        },6000);
+        },4500);
     }
 
     private void switchPic1() {
