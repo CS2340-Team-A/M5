@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/planet_background"
+    android:background="@drawable/planet_0">
 
     <Button
         android:id="@+id/travel_button"
@@ -20,25 +22,11 @@
         android:id="@+id/market_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="32dp"
         android:text="Market"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/travel_button"
-        app:layout_constraintTop_toBottomOf="@+id/planet_info"
-        app:layout_constraintVertical_bias="0.802" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="172dp"
-        android:layout_height="175dp"
-        android:layout_marginStart="119dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/red_planet_foreground" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/planet_name"
@@ -49,6 +37,8 @@
         android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textSize="32sp"
+        android:textColor= "#ffffff"
+        android:fontFamily="@font/nexa_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,12 +46,14 @@
 
     <TextView
         android:id="@+id/planet_info"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="288dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nexa_bold"
         android:text="TextView"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet_name" />

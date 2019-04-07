@@ -25,6 +25,9 @@ public class Planet {
     private final TechLevel tLv;
     private final Resources resources;
     private final List<TradeGood> tradeGoods;
+    private int id;
+    private static int count = 0;
+    private final int numberOfPlanetPictures = 7;
 
 
     public Planet(SolarSystemModel ssm) {
@@ -32,6 +35,8 @@ public class Planet {
         this.resources = Resources.valueOf(ssm.getResourcesName());
         this.tLv = TechLevel.valueOf(ssm.getTechLevel());
         this.tradeGoods = new ArrayList<>();
+        this.id = count % numberOfPlanetPictures;
+        count++;
         for (TradeGoodModel tgm: ssm.getTradeGoods()) {
             this.tradeGoods.add(new TradeGood(tgm));
         }
@@ -41,6 +46,8 @@ public class Planet {
         this.resources = res;
         this.name = name;
         this.tLv = techLevel;
+        this.id = count % numberOfPlanetPictures;
+        count++;
 
         //here probably call to a tradeGoods factory
         tradeGoods = new ArrayList<>();
@@ -113,6 +120,10 @@ public class Planet {
      */
     public TechLevel getTLv() {
         return tLv;
+    }
+
+    public int getId() {
+        return id;
     }
 
     /**

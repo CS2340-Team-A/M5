@@ -23,4 +23,10 @@ public class PlanetViewModel extends ViewModel {
         return this.getPlanet().getInfo();
     }
 
+    public int getPlanetID() {
+        return this.getPlanet().getId();
+    }
+
+
+
 }
