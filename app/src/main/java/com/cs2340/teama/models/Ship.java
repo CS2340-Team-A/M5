@@ -96,15 +96,26 @@ public class Ship {
     }
 
     /**
-     * @param distance
-     * @return
+     * Checks current fuel level to see if it can travel said distance. If the
+     * distance is negative or too far for the ship to travel on current fuel
+     * levels, the method will return false. It will return true otherwise.
+     *
+     * @param distance distance value
+     * @return if it can travel the distance
      */
     public boolean canTravelDist(double distance) {
-        return distance/ FUEL_EFFICIENCY < fuel;
+        if (distance >= 0 ) {
+            return distance / FUEL_EFFICIENCY < fuel;
+        } else {
+            return false;
+        }
+
     }
 
     /**
-     * @param distance
+     * Attempts to travel the distance inputted.
+     *
+     * @param distance the distance to travel must be >= 0
      */
     void travelDist(double distance) {
         if (!canTravelDist(distance)) {
