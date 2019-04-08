@@ -38,6 +38,7 @@ public class PlayerModel extends RealmObject {
                     break;
                 case "TRADER":
                     this.traderSkillPoints = skillType.getSkillPointsAllocated();
+                    break;
                 case "ENGINEER":
                     this.engineerSkillPoints = skillType.getSkillPointsAllocated();
                     break;

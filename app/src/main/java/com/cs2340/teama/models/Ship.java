@@ -83,9 +83,12 @@ public class Ship {
      * @param removedGood
      */
     public void removeFromCargoHold(TradeGood removedGood) {
+        if(removedGood == null) {
+            throw new IllegalArgumentException("Inputted Trade good is null");
+        }
         for(TradeGood g: cargoHold) {
             if(g.getGoodType() == removedGood.getGoodType()) {
-                if(g.getVolume() < removedGood.getVolume()) {
+                if(g.getVolume() < removedGood.getVolume() || removedGood.getVolume() < 0) {
                     return;
                 }
                 g.decrementVolume(removedGood.getVolume());

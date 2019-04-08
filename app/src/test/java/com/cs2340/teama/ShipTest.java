@@ -9,6 +9,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShipTest {
 
     private Ship ship;
@@ -73,5 +76,121 @@ public class ShipTest {
                 ship.getNumGoodsStored(),
                 addAmount
         );
+    }
+
+    //Animesh's Individual JUnit Test Code for M10
+    @Test
+    public void testRemoveFromCargoHold() {
+        final int defaultVal = 0;
+        final int initWaterQ =  2;
+        final int initFirearmQ = 5;
+        final int initFoodQ = 13;
+        List<TradeGood> initialCargoHoldStore = new ArrayList<>();
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.WATER, initWaterQ));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FURS, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FOOD, initFoodQ));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.ORE, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.GAMES, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FIREARMS, initFirearmQ));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.MEDICINE, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.MACHINES, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.NARCOTICS, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.ROBOTS, 0));
+
+        for(TradeGood t: initialCargoHoldStore) {
+            ship.addToCargoHold(t);
+        }
+        List<TradeGood> shipCargoHoldStore = ship.getCargoHold();
+        boolean isEqual = true;
+        for (int i  = 0; i < shipCargoHoldStore.size(); i++) {
+            if (shipCargoHoldStore.get(i).getVolume() != initialCargoHoldStore.get(i)
+                    .getVolume()) {
+                isEqual = false;
+                break;
+            }
+        }
+        ship.removeFromCargoHold(new TradeGood(defaultVal, GoodType.FOOD, 14));
+        Assert.assertTrue("Shouldn't remove anything from cargo hold if there isn't "
+                + "enough of that particular good in store", isEqual);
+
+        int removeFoodAmount = (int)(Math.random() * 13);
+        ship.removeFromCargoHold(new TradeGood(defaultVal, GoodType.FOOD, removeFoodAmount));
+        initialCargoHoldStore.get(2).decrementVolume(removeFoodAmount);
+        shipCargoHoldStore =  ship.getCargoHold();
+        isEqual = true;
+        for (int i  = 0; i < shipCargoHoldStore.size(); i++) {
+            if (shipCargoHoldStore.get(i).getVolume() != initialCargoHoldStore.get(i)
+                    .getVolume()) {
+                isEqual = false;
+                break;
+            }
+        }
+        Assert.assertTrue("Should remove the specified good by the correct amount when at"
+                + " least that much is present in the cargo hold", isEqual);
+        Assert.assertEquals("numGoodsStore should be decremented appropriately when a certain "
+                + "amount of a particular good is removed", initFirearmQ + initFoodQ
+                + initWaterQ - removeFoodAmount, ship.getNumGoodsStored());
+
+        TradeGood nonExistentGood = new TradeGood(defaultVal, null, 1);
+        ship.removeFromCargoHold(nonExistentGood);
+        shipCargoHoldStore = ship.getCargoHold();
+        isEqual = true;
+        for (int i  = 0; i < shipCargoHoldStore.size(); i++) {
+            if (shipCargoHoldStore.get(i).getVolume() != initialCargoHoldStore.get(i)
+                    .getVolume()) {
+                isEqual = false;
+                break;
+            }
+        }
+        Assert.assertTrue("If an unknown good is inputted, nothing should be removed",
+                isEqual);
+        TradeGood negativeGood = new TradeGood(defaultVal, GoodType.FOOD, -1);
+        ship.removeFromCargoHold(negativeGood);
+        shipCargoHoldStore = ship.getCargoHold();
+        isEqual = true;
+        for (int i  = 0; i < shipCargoHoldStore.size(); i++) {
+            if (shipCargoHoldStore.get(i).getVolume() != initialCargoHoldStore.get(i)
+                    .getVolume()) {
+                isEqual = false;
+                break;
+            }
+        }
+        Assert.assertTrue("If an good with negative quantity is inputted, nothing should"
+                + " be removed", isEqual);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testRemoveFromCargoHoldException() {
+        final int defaultVal = 0;
+        final int initWaterQ =  2;
+        final int initFirearmQ = 5;
+        final int initFoodQ = 13;
+        List<TradeGood> initialCargoHoldStore = new ArrayList<>();
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.WATER, initWaterQ));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FURS, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FOOD, initFoodQ));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.ORE, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.GAMES, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FIREARMS, initFirearmQ));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.MEDICINE, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.MACHINES, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.NARCOTICS, 0));
+        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.ROBOTS, 0));
+
+        for(TradeGood t: initialCargoHoldStore) {
+            ship.addToCargoHold(t);
+        }
+        ship.removeFromCargoHold(null);
+        List<TradeGood> shipCargoHoldStore = ship.getCargoHold();
+        boolean isEqual = true;
+        for (int i  = 0; i < shipCargoHoldStore.size(); i++) {
+            if (shipCargoHoldStore.get(i).getVolume() != initialCargoHoldStore.get(i)
+                    .getVolume()) {
+                isEqual = false;
+                break;
+            }
+        }
+        Assert.assertTrue("Shouldn't remove anything from cargo hold if input is null",
+                isEqual);
     }
 }
