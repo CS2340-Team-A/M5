@@ -158,39 +158,4 @@ public class ShipTest {
         Assert.assertTrue("If an good with negative quantity is inputted, nothing should"
                 + " be removed", isEqual);
     }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testRemoveFromCargoHoldException() {
-        final int defaultVal = 0;
-        final int initWaterQ =  2;
-        final int initFirearmQ = 5;
-        final int initFoodQ = 13;
-        List<TradeGood> initialCargoHoldStore = new ArrayList<>();
-        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.WATER, initWaterQ));
-        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FURS, 0));
-        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FOOD, initFoodQ));
-        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.ORE, 0));
-        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.GAMES, 0));
-        initialCargoHoldStore.add(new TradeGood(defaultVal, GoodType.FIREARMS, initFirearmQ));
-        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.MEDICINE, 0));
-        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.MACHINES, 0));
-        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.NARCOTICS, 0));
-        initialCargoHoldStore.add(new TradeGood(defaultVal,GoodType.ROBOTS, 0));
-
-        for(TradeGood t: initialCargoHoldStore) {
-            ship.addToCargoHold(t);
-        }
-        ship.removeFromCargoHold(null);
-        List<TradeGood> shipCargoHoldStore = ship.getCargoHold();
-        boolean isEqual = true;
-        for (int i  = 0; i < shipCargoHoldStore.size(); i++) {
-            if (shipCargoHoldStore.get(i).getVolume() != initialCargoHoldStore.get(i)
-                    .getVolume()) {
-                isEqual = false;
-                break;
-            }
-        }
-        Assert.assertTrue("Shouldn't remove anything from cargo hold if input is null",
-                isEqual);
-    }
 }
