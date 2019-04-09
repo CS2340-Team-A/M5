@@ -23,7 +23,4 @@ public class UniverseModel extends RealmObject {
         return solarSystems;
     }
 
-    public void setSolarSystems(RealmList<SolarSystemModel> solarSystems) {
-        this.solarSystems = solarSystems;
-    }
 }

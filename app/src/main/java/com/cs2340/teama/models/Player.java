@@ -79,10 +79,6 @@ public class Player {
         return false;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public SkillType[] getSkills() {
         return skills;
     }

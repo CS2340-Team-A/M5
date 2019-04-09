@@ -25,7 +25,7 @@ public class Planet {
     private final TechLevel tLv;
     private final Resources resources;
     private final List<TradeGood> tradeGoods;
-    private int id;
+    private final int id;
     private static int count = 0;
     private final int numberOfPlanetPictures = 7;
 

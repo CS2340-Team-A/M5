@@ -6,10 +6,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+
 import com.cs2340.teama.m5.R;
 
 import com.cs2340.teama.viewModels.TravelAnimationViewModel;
@@ -56,12 +54,12 @@ public class TravelAnimationActivity extends AppCompatActivity {
     }
 
     private void switchPic1() {
-        RelativeLayout layout =(RelativeLayout)findViewById(R.id.space_travel_1);
+        RelativeLayout layout = findViewById(R.id.space_travel_1);
         layout.setBackgroundResource(R.drawable.space_travel_2);
     }
 
     private void switchPic2() {
-        RelativeLayout layout =(RelativeLayout)findViewById(R.id.space_travel_1);
+        RelativeLayout layout = findViewById(R.id.space_travel_1);
         layout.setBackgroundResource(R.drawable.space_travel);
     }
 

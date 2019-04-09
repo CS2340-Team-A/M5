@@ -39,12 +39,12 @@ public class BeginGameActivity extends AppCompatActivity {
 
     }
 
-    public void openLoadingActivity() {
+    private void openLoadingActivity() {
         Intent intent = new Intent(this, LoadScreenActivity.class);
         startActivity(intent);
     }
 
-    public void openConfigActivity() {
+    private void openConfigActivity() {
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {
             @Override

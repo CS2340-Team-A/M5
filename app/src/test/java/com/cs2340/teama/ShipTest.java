@@ -31,7 +31,6 @@ public class ShipTest {
                         ship.getShipType().getCargoSpace() + 1
                 )
         );
-                ;
         Assert.assertFalse(
                 "should return false if cargo space is full",
                 addSuccess

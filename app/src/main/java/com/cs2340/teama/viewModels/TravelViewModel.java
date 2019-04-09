@@ -13,7 +13,6 @@ import com.cs2340.teama.models.realm.ShipModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import io.realm.Realm;
 

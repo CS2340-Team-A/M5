@@ -31,40 +31,20 @@ public class ShipModel extends RealmObject {
         return shipName;
     }
 
-    public void setShipName(String shipName) {
-        this.shipName = shipName;
-    }
-
     public int getNumGoodsStored() {
         return numGoodsStored;
-    }
-
-    public void setNumGoodsStored(int numGoodsStored) {
-        this.numGoodsStored = numGoodsStored;
     }
 
     public double getFuel() {
         return fuel;
     }
 
-    public void setFuel(double fuel) {
-        this.fuel = fuel;
-    }
-
     public double getFuelCapacity() {
         return fuelCapacity;
     }
 
-    public void setFuelCapacity(double fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
-    }
-
     public RealmList<TradeGoodModel> getCargoHold() {
         return cargoHold;
-    }
-
-    public void setCargoHold(RealmList<TradeGoodModel> cargoHold) {
-        this.cargoHold = cargoHold;
     }
 
     public void removeFromCargoHold(String cargoType, int volume) {

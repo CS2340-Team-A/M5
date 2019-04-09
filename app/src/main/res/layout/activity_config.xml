@@ -18,6 +18,7 @@
         android:hint="Name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:fontFamily="@font/nexa_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name_text"
         app:layout_constraintTop_toTopOf="parent"
@@ -129,6 +130,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="109dp"
         android:text="Name"
+        android:fontFamily="@font/nexa_bold"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,6 +142,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:text="Fighter Points"
+        android:fontFamily="@font/nexa_bold"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_text" />
 
@@ -150,6 +155,8 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="76dp"
         android:text="Pilot Points"
+        android:fontFamily="@font/nexa_bold"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/fighter_number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trader_text" />
@@ -161,6 +168,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="56dp"
         android:text="Trader Points"
+        android:fontFamily="@font/nexa_bold"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fighter_text" />
 
@@ -171,7 +180,21 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="56dp"
         android:text="Engineer Points"
+        android:fontFamily="@font/nexa_bold"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pilot_text" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:textSize="32sp"
+        android:text="Configure Ship"
+        android:fontFamily="@font/nexa_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

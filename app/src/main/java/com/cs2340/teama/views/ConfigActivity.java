@@ -127,11 +127,11 @@ public class ConfigActivity extends AppCompatActivity {
         });
     }
 
-    public void openBlankActivity() {
+    private void openBlankActivity() {
         Intent intent = new Intent(this, LoadScreenActivity.class);
         startActivity(intent);
     }
-    public void showToast() {
+    private void showToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_root));
 
@@ -143,7 +143,7 @@ public class ConfigActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public void showNameToast() {
+    private void showNameToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout_name, (ViewGroup) findViewById(R.id.toast_root_name));
 

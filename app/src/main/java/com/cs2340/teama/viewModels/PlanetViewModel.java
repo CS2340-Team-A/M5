@@ -4,9 +4,6 @@ import android.arch.lifecycle.ViewModel;
 
 import com.cs2340.teama.models.Game;
 import com.cs2340.teama.models.Planet;
-import com.cs2340.teama.models.TradeGood;
-
-import java.util.List;
 
 public class PlanetViewModel extends ViewModel {
 

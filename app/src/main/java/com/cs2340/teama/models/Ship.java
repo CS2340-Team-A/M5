@@ -37,8 +37,9 @@ public class Ship {
         }
         this.shipType = shipType;
         numGoodsStored = 0;
-        this.fuel = 200;
-        this.fuelCapacity = 200;
+        int INITIAL_FUEL = 500;
+        this.fuel = INITIAL_FUEL;
+        this.fuelCapacity = INITIAL_FUEL;
     }
 
     public ShipType  getShipType() {

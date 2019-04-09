@@ -39,12 +39,12 @@ public class MarketPlaceWelcomeActivity extends AppCompatActivity {
         });
     }
 
-    public void openMarketPlaceBuyActivity() {
+    private void openMarketPlaceBuyActivity() {
         Intent intent = new Intent(this, MarketPlaceBuyActivity.class);
         startActivity(intent);
     }
 
-    public void openMarketPlaceSellActivity() {
+    private void openMarketPlaceSellActivity() {
         Intent intent = new Intent(this, MarketPlaceSellActivity.class);
         startActivity(intent);
     }
