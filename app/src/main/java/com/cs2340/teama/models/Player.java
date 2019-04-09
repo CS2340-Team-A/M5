@@ -5,8 +5,8 @@ import com.cs2340.teama.models.enums.SkillType;
 import com.cs2340.teama.models.realm.PlayerModel;
 
 /**
- * Player class this represents the user in the game and all of the attributes and actions
- * the user has and can take.
+ * Player class this represents the user in the game and all of the attributes
+ * and actions the user has and can take.
  */
 public class Player {
     private final String name;
