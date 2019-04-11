@@ -21,7 +21,8 @@ public class TradeGood {
         this.value = value;
         this.goodType = gT;
         this.quantity = quantity;
-        Log.d("Edit","Created good " + gT + " with value " + value +" and quantity " + quantity);
+        Log.d("Edit","Created good " + gT + " with value " + value +
+                " and quantity " + quantity);
     }
 
     public double getValue() {

@@ -43,7 +43,8 @@ public class ShipTest {
         for (TradeGood tg: ship.getCargoHold()) {
             if (tg.getGoodType() == GoodType.WATER) {
                 Assert.assertEquals(
-                        "volume of the GoodType in the ship's cargo should be unchanged if the cargo space is full",
+                        "volume of the GoodType in the ship's cargo should be unchanged" +
+                                "if the cargo space is full",
                         tg.getVolume(),
                         0
                 );
@@ -60,7 +61,8 @@ public class ShipTest {
         for (TradeGood tg: ship.getCargoHold()) {
             if (tg.getGoodType() == GoodType.WATER) {
                 Assert.assertEquals(
-                        "volume of the GoodType in the ship's cargo updated by amount added",
+                        "volume of the GoodType in the ship's cargo updated by" +
+                                " amount added",
                         tg.getVolume(),
                         addAmount
                 );
@@ -126,7 +128,8 @@ public class ShipTest {
         }
         Assert.assertTrue("Should remove the specified good by the correct amount when at"
                 + " least that much is present in the cargo hold", isEqual);
-        Assert.assertEquals("numGoodsStore should be decremented appropriately when a certain "
+        Assert.assertEquals("numGoodsStore should be decremented appropriately when" +
+                " a certain "
                 + "amount of a particular good is removed", initFirearmQ + initFoodQ
                 + initWaterQ - removeFoodAmount, ship.getNumGoodsStored());
 

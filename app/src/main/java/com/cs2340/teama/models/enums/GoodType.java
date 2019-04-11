@@ -13,7 +13,8 @@ public enum GoodType {
     MEDICINE(4, 1, 6, 650, -20, 10, Resources.LOTS_OF_HERBS, Resources.NO_SPECIAL_RESOURCES),
     MACHINES(4, 3, 5, 900, -30, 5, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES),
     NARCOTICS(5, 0, 5, 3500, -125, 150, Resources.WEIRD_MUSHROOMS, Resources.NO_SPECIAL_RESOURCES),
-    ROBOTS(6, 4, 7, 5000, -150, 100, Resources.NO_SPECIAL_RESOURCES, Resources.NO_SPECIAL_RESOURCES);
+    ROBOTS(6, 4, 7, 5000, -150, 100, Resources.NO_SPECIAL_RESOURCES,
+            Resources.NO_SPECIAL_RESOURCES);
 
     private final int MTLP;
     private final int MTLU;

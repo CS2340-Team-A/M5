@@ -15,10 +15,6 @@ import java.util.List;
 
 import io.realm.Realm;
 
-/**
- * TODO: implement getGoodVolume
- * TODO: implement getCargoHoldSpaceAvailable
- */
 public class MarketPlaceSellViewModel extends ViewModel {
 
     private Planet getPlanet() {
@@ -90,7 +86,8 @@ public class MarketPlaceSellViewModel extends ViewModel {
                             realm.executeTransaction(new Realm.Transaction() {
                                 @Override
                                 public void execute(Realm realm) {
-                                    PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
+                                    PlayerModel playerModel = realm
+                                            .where(PlayerModel.class).findFirst();
                                     if (playerModel != null) {
                                         playerModel.incrementCredits(cG.getValue());
                                         playerModel.getShip().

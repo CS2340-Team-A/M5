@@ -148,7 +148,8 @@ public class MarketPlaceSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("Edit", "Sell narcotics button pressed");
                 viewModel.sell(GoodType.NARCOTICS);
-                narcotics_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.NARCOTICS)));
+                narcotics_text.setText(Integer.toString(
+                        viewModel.getGoodVolume(GoodType.NARCOTICS)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
                 cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }

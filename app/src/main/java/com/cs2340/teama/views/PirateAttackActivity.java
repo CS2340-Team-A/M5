@@ -20,7 +20,8 @@ public class PirateAttackActivity extends AppCompatActivity {
         setContentView(R.layout.pirate_attack);
 
         Button continue_button = findViewById(R.id.continue_button);
-        PirateAttackViewModel viewModel = ViewModelProviders.of(this).get(PirateAttackViewModel.class);
+        PirateAttackViewModel viewModel = ViewModelProviders.of(this)
+                .get(PirateAttackViewModel.class);
 
         viewModel.pillage();
 

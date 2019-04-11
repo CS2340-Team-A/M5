@@ -49,12 +49,14 @@ public class SolarSystemTest {
         List<SolarSystem> list = universe.getSolarSystems();
         list.remove(solarSystem);
         assertNull("Make sure we get null when"
-                + " our solar system isn't in the list", SolarSystem.findSolarSystemByCoords(list, myCoords));
+                + " our solar system isn't in the list", SolarSystem
+                .findSolarSystemByCoords(list, myCoords));
 
         list.add(solarSystem);
         myCoords = new Coordinates(1000,1000);
         assertNull("Make sure we get null when" +
-                " our solar system's coordinates don't match any coords", SolarSystem.findSolarSystemByCoords(list, myCoords));
+                " our solar system's coordinates don't match any coords", SolarSystem
+                .findSolarSystemByCoords(list, myCoords));
 
         //we should get an exception if we input and empty list
         list = (List<SolarSystem>) new LinkedList<SolarSystem>();

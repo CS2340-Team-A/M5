@@ -85,7 +85,8 @@ public class MarketPlaceBuyViewModel extends ViewModel {
                                 if (tgm != null) {
                                     tgm.decrementQuantity();
                                 }
-                                PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
+                                PlayerModel playerModel = realm
+                                        .where(PlayerModel.class).findFirst();
                                 if (playerModel != null) {
                                     playerModel.decrementCredits(tgm);
                                     playerModel.getShip().addToCargoHold(

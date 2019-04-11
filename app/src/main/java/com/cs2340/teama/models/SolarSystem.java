@@ -31,7 +31,8 @@ public class SolarSystem {
      * @param planetCoords
      * @return
      */
-    public static SolarSystem findSolarSystemByCoords(List<SolarSystem> solarSystems, Coordinates planetCoords) {
+    public static SolarSystem findSolarSystemByCoords(List<SolarSystem> solarSystems,
+                                                      Coordinates planetCoords) {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);
         for (SolarSystem s :solarSystems) {

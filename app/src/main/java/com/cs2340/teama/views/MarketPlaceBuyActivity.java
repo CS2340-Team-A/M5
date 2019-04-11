@@ -15,7 +15,6 @@ import com.cs2340.teama.m5.R;
 /**
  * View for the marketplace buy scree.
  *
- * TODO: Link Player's ship's cargohold
  */
 public class MarketPlaceBuyActivity extends AppCompatActivity {
 
@@ -151,7 +150,8 @@ public class MarketPlaceBuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("Edit", "Buy narcotics button pressed");
                 viewModel.purchase(GoodType.NARCOTICS);
-                narcotics_text.setText(Integer.toString(viewModel.getGoodVolume(GoodType.NARCOTICS)));
+                narcotics_text.setText(Integer.toString(
+                        viewModel.getGoodVolume(GoodType.NARCOTICS)));
                 money_text.setText("Money: " + Integer.toString(viewModel.getPlayerCredits()));
                 cargo_text.setText("Cargo Space: " + viewModel.getCargoSpace());
             }

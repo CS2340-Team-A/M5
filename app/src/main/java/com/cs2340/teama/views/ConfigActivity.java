@@ -93,7 +93,8 @@ public class ConfigActivity extends AppCompatActivity {
                             throw new IllegalArgumentException();
                         }
 
-                        Coordinates startingCoords = universe.getSolarSystems().get(0).getCoordinates();
+                        Coordinates startingCoords = universe
+                                .getSolarSystems().get(0).getCoordinates();
 
                         Player player = new Player(nameGiven.getText().toString(), startingCoords);
 
@@ -133,7 +134,8 @@ public class ConfigActivity extends AppCompatActivity {
     }
     private void showToast() {
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_root));
+        View layout = inflater
+                .inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_root));
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
@@ -145,7 +147,10 @@ public class ConfigActivity extends AppCompatActivity {
 
     private void showNameToast() {
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toast_layout_name, (ViewGroup) findViewById(R.id.toast_root_name));
+        View layout = inflater.inflate(
+                R.layout.toast_layout_name,
+                (ViewGroup) findViewById(R.id.toast_root_name)
+        );
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
