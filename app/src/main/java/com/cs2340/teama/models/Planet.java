@@ -28,6 +28,8 @@ public class Planet {
     private final int id;
     private static int count = 0;
     private final int numberOfPlanetPictures = 7;
+    private static final int PRODUCTION_FACTOR = 70;
+    private static final double VARIANCE_THRESHOLD = 0.5;
 
 
     public Planet(SolarSystemModel ssm) {
@@ -54,7 +56,7 @@ public class Planet {
         for(GoodType good: GoodType.values()) {
             if(good.getMTLP() <= tLv.getTechLv() || good.getMTLU() <= tLv.getTechLv()) {
                 Random random = new Random();
-                boolean addVariance = random.nextDouble() < 0.5;
+                boolean addVariance = random.nextDouble() < VARIANCE_THRESHOLD;
                 int price = good.getBasePrice();
 
                 if (good.getMTLP() > tLv.getTechLv()) {
@@ -68,7 +70,6 @@ public class Planet {
                     price += good.getBasePrice() * varianceFactor;
                 }
                 int RESOURCE_QUANTITIY_FACTOR = 4;
-                int PRODUCTION_FACTOR = 70;
                 int quantity = (int)(random.nextDouble() * PRODUCTION_FACTOR)
                         - RESOURCE_QUANTITIY_FACTOR *Math.abs(good.getTTP() - tLv.getTechLv());
                 while(quantity <= 1) {

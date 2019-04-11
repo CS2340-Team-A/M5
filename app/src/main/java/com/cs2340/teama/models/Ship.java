@@ -18,6 +18,7 @@ public class Ship {
     private final double fuelCapacity;
 
     public static final double FUEL_EFFICIENCY = 1.0;
+    private static final int INITIAL_FUEL = 500;
 
     Ship(ShipModel shipModel) {
         this.shipType = ShipType.valueOf(shipModel.getShipName());
@@ -37,7 +38,6 @@ public class Ship {
         }
         this.shipType = shipType;
         numGoodsStored = 0;
-        int INITIAL_FUEL = 500;
         this.fuel = INITIAL_FUEL;
         this.fuelCapacity = INITIAL_FUEL;
     }

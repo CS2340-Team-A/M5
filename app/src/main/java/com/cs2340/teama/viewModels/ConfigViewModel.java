@@ -12,6 +12,8 @@ import io.realm.Realm;
 
 public class ConfigViewModel extends ViewModel {
 
+    private static final int MIN_POINTS = 16;
+
     public void addPlayerUniverse(final Player p, final Universe u){
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {
@@ -29,6 +31,6 @@ public class ConfigViewModel extends ViewModel {
     }
 
     public boolean calculatePoints(int p, int f, int e, int t) {
-        return (p + f + e + t) != 16;
+        return (p + f + e + t) != ConfigViewModel.MIN_POINTS;
     }
 }

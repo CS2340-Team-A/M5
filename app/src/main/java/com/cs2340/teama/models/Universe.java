@@ -6,6 +6,7 @@ import com.cs2340.teama.models.realm.SolarSystemModel;
 import com.cs2340.teama.models.realm.UniverseModel;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -54,8 +55,8 @@ public class Universe {
 
     public Universe() {
         Random rng = new Random();
-        Set<String> nameSet = new HashSet<>();
-        Set<Coordinates> coordinatesSet = new HashSet<>();
+        Collection<String> nameSet = new HashSet<>();
+        Collection<Coordinates> coordinatesSet = new HashSet<>();
         int systemsLength = Universe.SYSTEM_NAMES.length;
         int resourcesLength = Resources.values().length;
         int techLevelLength = TechLevel.values().length;

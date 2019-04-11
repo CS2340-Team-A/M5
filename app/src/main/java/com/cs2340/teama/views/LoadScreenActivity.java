@@ -12,6 +12,8 @@ import com.cs2340.teama.m5.R;
 
 public class LoadScreenActivity extends AppCompatActivity {
 
+    private static final int DELAY_DURATION = 2000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class LoadScreenActivity extends AppCompatActivity {
             public void run() {
                 switchPic1();
             }
-        },2000);
+        },DELAY_DURATION);
 //        handler.removeCallbacks(new Runnable() {
 //            @Override
 //            public void run() {
@@ -43,7 +45,7 @@ public class LoadScreenActivity extends AppCompatActivity {
             public void run() {
                 switchPic2();
             }
-        },4000);
+        },DELAY_DURATION * 2);
 
         Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
@@ -51,7 +53,7 @@ public class LoadScreenActivity extends AppCompatActivity {
             public void run() {
                 startPlanetActivity();
             }
-        },6000);
+        },DELAY_DURATION * 3);
     }
 
     private void switchPic1() {

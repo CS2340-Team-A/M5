@@ -14,7 +14,9 @@ import com.cs2340.teama.viewModels.TravelAnimationViewModel;
 
 public class TravelAnimationActivity extends AppCompatActivity {
 
+
     private TravelAnimationViewModel viewModel;
+    private static final int DELAY_DURATION = 1500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
             public void run() {
                 switchPic1();
             }
-        },1500);
+        },DELAY_DURATION);
 
         Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
@@ -42,7 +44,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
             public void run() {
                 switchPic2();
             }
-        },3000);
+        },DELAY_DURATION * 2);
 
         Handler handler1 = new Handler();
         handler1.postDelayed(new Runnable() {
@@ -50,7 +52,7 @@ public class TravelAnimationActivity extends AppCompatActivity {
             public void run() {
                 startPlanetActivity();
             }
-        },4500);
+        },DELAY_DURATION * 3);
     }
 
     private void switchPic1() {
