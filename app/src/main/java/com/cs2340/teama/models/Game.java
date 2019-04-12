@@ -23,7 +23,7 @@ public class Game {
     }
 
     /**
-     * @return
+     * @return planet specefied
      */
     public Planet getPlanet() {
         Coordinates planetCoords = Game.game.getPlayer().getCoordinates();

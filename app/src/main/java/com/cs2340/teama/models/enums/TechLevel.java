@@ -20,7 +20,7 @@ public enum TechLevel {
     }
 
     /**
-     * @return
+     * @return associated tech level
      */
     public int getTechLv() {
         return techLv;

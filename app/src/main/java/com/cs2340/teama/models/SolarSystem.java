@@ -27,9 +27,9 @@ public class SolarSystem {
     }
 
     /**
-     * @param solarSystems
-     * @param planetCoords
-     * @return
+     * @param solarSystems solar system being searched
+     * @param planetCoords coordinate of solar system
+     * @return solar system with matching coordinates
      */
     public static SolarSystem findSolarSystemByCoords(List<SolarSystem> solarSystems,
                                                       Coordinates planetCoords) {

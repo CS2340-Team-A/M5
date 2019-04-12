@@ -63,8 +63,8 @@ public class Ship {
     }
 
     /**
-     * @param addedGood
-     * @return
+     * @param addedGood good to add to cargo hold
+     * @return if the good was successfully added
      */
     public boolean addToCargoHold(TradeGood addedGood) {
         if((addedGood.getVolume()+numGoodsStored) > shipType.getCargoSpace()) {
@@ -81,7 +81,7 @@ public class Ship {
     }
 
     /**
-     * @param removedGood
+     * @param removedGood good to be removed
      */
     public void removeFromCargoHold(TradeGood removedGood) {
         for(TradeGood g: cargoHold) {

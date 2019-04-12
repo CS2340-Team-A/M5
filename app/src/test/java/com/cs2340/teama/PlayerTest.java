@@ -10,6 +10,11 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+/**
+ * Tests written for the canSell() method in the Player class
+ *
+ * @author zjames7
+ */
 public class PlayerTest {
     private Player player;
 

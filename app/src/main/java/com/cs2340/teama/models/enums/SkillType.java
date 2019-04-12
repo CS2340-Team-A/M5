@@ -17,7 +17,7 @@ public enum SkillType {
     }
 
     /**
-     * @param increase
+     * @param increase value to increase skill points by
      */
     public void incrementSkillPointBy(int increase) {
         this.skillPointsAllocated += increase;
