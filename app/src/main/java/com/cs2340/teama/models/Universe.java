@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 public class Universe {
     private static final String[] SYSTEM_NAMES = new String[]{"Acamar",

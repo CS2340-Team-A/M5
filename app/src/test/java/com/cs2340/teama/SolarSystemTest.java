@@ -3,7 +3,6 @@ package com.cs2340.teama;
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.Universe;
-import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.enums.TechLevel;
 
 import org.junit.Before;
