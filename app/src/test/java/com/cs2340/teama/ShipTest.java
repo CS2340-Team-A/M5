@@ -19,7 +19,7 @@ public class ShipTest {
 
     @Before
     public void setup() {
-        ship = new Ship(ShipType.GNAT);
+        this.ship = new Ship(ShipType.GNAT);
     }
 
     @Test
