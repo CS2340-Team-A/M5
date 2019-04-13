@@ -13,6 +13,8 @@ import io.realm.Realm;
 
 public class PirateAttackViewModel extends ViewModel {
 
+    private final Game game = Game.getInstance();
+
     public void pillage() {
         List<TradeGood> goods = getPlayer().getShip().getCargoHold();
         for (final TradeGood curGood : goods) {
@@ -36,6 +38,6 @@ public class PirateAttackViewModel extends ViewModel {
     }
 
     private Player getPlayer(){
-        return Game.game.getPlayer();
+        return game.getPlayer();
     }
 }

@@ -27,7 +27,7 @@ public class ConfigViewModel extends ViewModel {
             }
         });
         realm.close();
-        Game.game = new Game(p, u);
+        Game.getInstance(p, u);
     }
 
     public boolean calculatePoints(int p, int f, int e, int t) {

@@ -25,10 +25,10 @@ public class Application extends android.app.Application {
         try (Realm realm = Realm.getDefaultInstance()) {
             PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
             UniverseModel universeModel = realm.where(UniverseModel.class).findFirst();
-            if (playerModel != null && universeModel != null) {
+            if ((playerModel != null) && (universeModel != null)) {
                 Player player = new Player(playerModel);
                 Universe universe = new Universe(universeModel);
-                Game.game = new Game(player, universe);
+                Game.getInstance(player, universe);
             }
         } catch (Exception e) {
             Log.e("Error Occured", e.toString());

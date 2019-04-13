@@ -72,7 +72,7 @@ public class Player {
      */
     public boolean canSell(TradeGood good) {
         for(TradeGood g: ship.getCargoHold()) {
-            if(g.getGoodType() == good.getGoodType() && g.getVolume()>0) {
+            if((g.getGoodType() == good.getGoodType()) && (g.getVolume() > 0)) {
                 return true;
             }
         }

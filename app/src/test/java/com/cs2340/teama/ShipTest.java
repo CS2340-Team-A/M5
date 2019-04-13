@@ -130,8 +130,8 @@ public class ShipTest {
                 + " least that much is present in the cargo hold", isEqual);
         Assert.assertEquals("numGoodsStore should be decremented appropriately when" +
                 " a certain "
-                + "amount of a particular good is removed", initFirearmQ + initFoodQ
-                + initWaterQ - removeFoodAmount, ship.getNumGoodsStored());
+                + "amount of a particular good is removed", (initFirearmQ + initFoodQ
+                + initWaterQ) - removeFoodAmount, ship.getNumGoodsStored());
 
         TradeGood nonExistentGood = new TradeGood(defaultVal, null, 1);
         ship.removeFromCargoHold(nonExistentGood);

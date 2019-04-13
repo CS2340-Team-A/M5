@@ -89,7 +89,7 @@ public class ConfigActivity extends AppCompatActivity {
 
                         GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
-                        if (nameGiven.getText().toString().length() == 0) {
+                        if (nameGiven.getText().toString().isEmpty()) {
                             throw new IllegalArgumentException();
                         }
 

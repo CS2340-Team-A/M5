@@ -43,7 +43,7 @@ public class Coordinates {
             return false;
         }
         Coordinates compCoords = (Coordinates) comp;
-        return compCoords.getX() == getX() && compCoords.getY() == getY();
+        return (compCoords.getX() == getX()) && (compCoords.getY() == getY());
     }
 
     @Override

@@ -13,7 +13,7 @@ public enum TechLevel {
     PostIndustrial(6),
     HiTech(7);
 
-    private int techLv = 0;
+    private final int techLv;
 
     TechLevel(int lv) {
         techLv = lv;

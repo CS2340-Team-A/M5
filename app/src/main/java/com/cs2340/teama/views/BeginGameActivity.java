@@ -27,7 +27,7 @@ public class BeginGameActivity extends AppCompatActivity {
         });
 
         Button continueButton = findViewById(R.id.continue_button);
-        if (Game.game == null) {
+        if (Game.getInstance() == null) {
             continueButton.setVisibility(View.INVISIBLE);
         }
         continueButton.setOnClickListener(new View.OnClickListener() {

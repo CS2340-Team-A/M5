@@ -3,15 +3,26 @@ package com.cs2340.teama.models;
 /**
  * Game currently being played. Top-level class.
  */
-public class Game {
+public final class Game {
     private final Universe universe;
     private final Player player;
 
-    public static Game game = null;
+    private static Game game;
 
-    public Game(Player p, Universe u) {
+    private Game(Player p, Universe u) {
         this.player = p;
         this.universe = u;
+    }
+
+    public static Game getInstance(Player p, Universe u) {
+        if (Game.game == null) {
+            Game.game = new Game(p, u);
+        }
+        return Game.game;
+    }
+
+    public static Game getInstance() {
+        return Game.game;
     }
 
     public Player getPlayer() {

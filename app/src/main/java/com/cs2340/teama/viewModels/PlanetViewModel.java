@@ -7,9 +7,10 @@ import com.cs2340.teama.models.Planet;
 
 public class PlanetViewModel extends ViewModel {
 
+    private final Game game = Game.getInstance();
 
     private Planet getPlanet() {
-        return Game.game.getPlanet();
+        return game.getPlanet();
     }
 
     public CharSequence getPlanetName() {

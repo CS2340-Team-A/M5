@@ -19,15 +19,17 @@ import io.realm.Realm;
 
 public class MarketPlaceBuyViewModel extends ViewModel {
 
+    private final Game game = Game.getInstance();
+
     private Planet getPlanet() {
-        Coordinates planetCoords = Game.game.getPlayer().getCoordinates();
+        Coordinates planetCoords = game.getPlayer().getCoordinates();
         SolarSystem s = SolarSystem.findSolarSystemByCoords(
-                Game.game.getUniverse().getSolarSystems(), planetCoords);
+                game.getUniverse().getSolarSystems(), planetCoords);
         return s.getPlanet();
     }
 
     private Player getPlayer(){
-        return Game.game.getPlayer();
+        return game.getPlayer();
     }
 
     private List<TradeGood> getPlanetGoodsList() {
@@ -79,7 +81,7 @@ public class MarketPlaceBuyViewModel extends ViewModel {
                             @Override
                             public void execute(Realm realm) {
                                 TradeGoodModel tgm = realm.where(TradeGoodModel.class)
-                                        .equalTo("system.name", Game.game.getPlanet().getName())
+                                        .equalTo("system.name", game.getPlanet().getName())
                                         .equalTo("type", curGood.getGoodType().toString())
                                         .findFirst();
                                 if (tgm != null) {

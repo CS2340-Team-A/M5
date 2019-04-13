@@ -17,15 +17,17 @@ import io.realm.Realm;
 
 public class MarketPlaceSellViewModel extends ViewModel {
 
+    private final Game game = Game.getInstance();
+
     private Planet getPlanet() {
-        Coordinates planetCoords = Game.game.getPlayer().getCoordinates();
+        Coordinates planetCoords = game.getPlayer().getCoordinates();
         SolarSystem s = SolarSystem.findSolarSystemByCoords(
-                Game.game.getUniverse().getSolarSystems(), planetCoords);
+                game.getUniverse().getSolarSystems(), planetCoords);
         return s.getPlanet();
     }
 
     private Player getPlayer(){
-        return Game.game.getPlayer();
+        return game.getPlayer();
     }
 
     private List<TradeGood> getPlanetGoodsList() {

@@ -18,8 +18,10 @@ import io.realm.Realm;
 
 public class TravelViewModel extends ViewModel {
 
+    private final Game game = Game.getInstance();
+
     private Planet getPlanet() {
-        return Game.game.getPlanet();
+        return game.getPlanet();
     }
 
     public CharSequence getPlanetInfo() {
@@ -27,7 +29,7 @@ public class TravelViewModel extends ViewModel {
     }
 
     public Ship getShip() {
-        return Game.game.getPlayer().getShip();
+        return game.getPlayer().getShip();
     }
 
     /**
@@ -35,10 +37,10 @@ public class TravelViewModel extends ViewModel {
      * @return List of Reachable Planets*/
     public List<Planet> getPlanetList(){
         List<Planet> reachablePlanets = new ArrayList<>();
-        Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
+        Coordinates playerCoords = game.getPlayer().getCoordinates();
         double distToPlanet;
-        Ship ship = Game.game.getPlayer().getShip();
-        for (SolarSystem system : Game.game.getUniverse().getSolarSystems()) {
+        Ship ship = game.getPlayer().getShip();
+        for (SolarSystem system : game.getUniverse().getSolarSystems()) {
 
             distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
             if (ship.canTravelDist(distToPlanet)) {
@@ -55,10 +57,10 @@ public class TravelViewModel extends ViewModel {
      */
     public List<String> getPlanetNameList() {
         List<String> reachablePlanets = new ArrayList<>();
-        Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
+        Coordinates playerCoords = game.getPlayer().getCoordinates();
         double distToPlanet;
-        Ship ship = Game.game.getPlayer().getShip();
-        for (SolarSystem system : Game.game.getUniverse().getSolarSystems()) {
+        Ship ship = game.getPlayer().getShip();
+        for (SolarSystem system : game.getUniverse().getSolarSystems()) {
 
             distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
             if (ship.canTravelDist(distToPlanet)) {
@@ -71,10 +73,10 @@ public class TravelViewModel extends ViewModel {
 
     private List<SolarSystem> getSolarSystems() {
         List<SolarSystem> reachableSystems = new ArrayList<>();
-        Coordinates playerCoords = Game.game.getPlayer().getCoordinates();
+        Coordinates playerCoords = game.getPlayer().getCoordinates();
         double distToPlanet;
-        Ship ship = Game.game.getPlayer().getShip();
-        for (SolarSystem system : Game.game.getUniverse().getSolarSystems()) {
+        Ship ship = game.getPlayer().getShip();
+        for (SolarSystem system : game.getUniverse().getSolarSystems()) {
 
             distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
             if (ship.canTravelDist(distToPlanet)) {
@@ -92,7 +94,7 @@ public class TravelViewModel extends ViewModel {
         SolarSystem system = this.getSolarSystems().get(planetPos);
         final Coordinates destCoord = system.getCoordinates();
 
-        Game.game.getPlayer().travel(destCoord);
+        game.getPlayer().travel(destCoord);
 
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {

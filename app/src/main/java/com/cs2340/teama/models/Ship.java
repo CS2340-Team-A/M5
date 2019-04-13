@@ -86,7 +86,7 @@ public class Ship {
     public void removeFromCargoHold(TradeGood removedGood) {
         for(TradeGood g: cargoHold) {
             if(g.getGoodType() == removedGood.getGoodType()) {
-                if(g.getVolume() < removedGood.getVolume() || removedGood.getVolume() < 0) {
+                if((g.getVolume() < removedGood.getVolume()) || (removedGood.getVolume() < 0)) {
                     return;
                 }
                 g.decrementVolume(removedGood.getVolume());
@@ -106,7 +106,7 @@ public class Ship {
      */
     public boolean canTravelDist(double distance) {
         if (distance >= 0 ) {
-            return distance / FUEL_EFFICIENCY < fuel;
+            return (distance / FUEL_EFFICIENCY) < fuel;
         } else {
             return false;
         }
