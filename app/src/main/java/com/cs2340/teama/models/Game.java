@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import java.util.List;
+
 /**
  * Game currently being played. Top-level class.
  */
@@ -67,16 +69,32 @@ public final class Game {
         return player.getShipCargoSpace();
     }
 
+    public List<TradeGood> getCargoHold() {
+        return player.getCargoHold();
+    }
+
     public boolean canBuy(TradeGood good) {
         return player.canBuy(good);
+    }
+
+    public boolean canSell(TradeGood good) {
+        return player.canSell(good);
     }
 
     public boolean addToPlayerCargoHold(TradeGood good) {
         return player.addToShipCargoHold(good);
     }
 
+    public void removeFromPlayerCargoHold(TradeGood good) {
+        player.removeFromShipCargoHold(good);
+    }
+
     public void decrementPlayerCredits(TradeGood good) {
         player.decrementCredits(good);
+    }
+
+    public void incrementPlayerCredits(TradeGood val) {
+        player.incrementCredits(val);
     }
     /**
      * @return planet specefied
@@ -85,6 +103,16 @@ public final class Game {
         Coordinates planetCoords = Game.game.player.getCoordinates();
         return SolarSystem.findSolarSystemPlanetByCoords(
                 Game.game.universe.getSolarSystems(), planetCoords);
+    }
+
+    public String getPlanetName() {
+        Coordinates planetCoords = Game.game.player.getCoordinates();
+        return SolarSystem.findSolarSystemPlanetNameByCoords(
+                Game.game.universe.getSolarSystems(), planetCoords);
+    }
+
+    public List<SolarSystem> getSolarSystems() {
+        return universe.getSolarSystems();
     }
 
     public Coordinates getPlayerCoordinates() {

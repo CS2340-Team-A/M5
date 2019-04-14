@@ -4,6 +4,8 @@ import com.cs2340.teama.models.enums.ShipType;
 import com.cs2340.teama.models.enums.SkillType;
 import com.cs2340.teama.models.realm.PlayerModel;
 
+import java.util.List;
+
 /**
  * Player class this represents the user in the game and all of the attributes
  * and actions the user has and can take.
@@ -120,6 +122,10 @@ public class Player {
         return credits;
     }
 
+    public List<TradeGood> getCargoHold() {
+        return ship.getCargoHold();
+    }
+
     public int getShipGoodsStored() {
         return ship.getNumGoodsStored();
     }
@@ -131,6 +137,11 @@ public class Player {
     public boolean addToShipCargoHold(TradeGood good) {
         return ship.addToCargoHold(good);
     }
+
+    public void removeFromShipCargoHold(TradeGood good) {
+        ship.removeFromCargoHold(good);
+    }
+
 
     @Override
     public String toString() {

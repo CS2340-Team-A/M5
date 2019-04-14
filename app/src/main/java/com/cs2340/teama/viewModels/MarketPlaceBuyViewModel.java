@@ -24,20 +24,20 @@ public class MarketPlaceBuyViewModel extends ViewModel {
 
     private final Game game = Game.getInstance();
 
-    private Planet getPlanet() {
-        Coordinates planetCoords = game.getPlayerCoordinates();
-        return SolarSystem.findSolarSystemPlanetByCoords(
-                game.getUniverse().getSolarSystems(), planetCoords);
-    }
+//    private Planet getPlanet() {
+//        Coordinates planetCoords = game.getPlayerCoordinates();
+//        return SolarSystem.findSolarSystemPlanetByCoords(
+//                game.getUniverse().getSolarSystems(), planetCoords);
+//    }
 
-    private Player getPlayer(){
-        return game.getPlayer();
-    }
+//    private Player getPlayer(){
+//        return game.getPlayer();
+//    }
 
     private List<TradeGood> getPlanetGoodsList() {
         Coordinates planetCoords = game.getPlayerCoordinates();
         return SolarSystem.findSolarSystemPlanetGoodsListByCoords(
-                game.getUniverse().getSolarSystems(), planetCoords);
+                game.getSolarSystems(), planetCoords);
     }
 
     /**
@@ -103,7 +103,7 @@ public class MarketPlaceBuyViewModel extends ViewModel {
                             @Override
                             public void execute(Realm realm) {
                                 TradeGoodModel tgm = realm.where(TradeGoodModel.class)
-                                        .equalTo("system.name", game.getPlanet().getName())
+                                        .equalTo("system.name", game.getPlanetName())
                                         .equalTo("type", curGood.getGoodType().toString())
                                         .findFirst();
                                 if (tgm != null) {
@@ -113,7 +113,7 @@ public class MarketPlaceBuyViewModel extends ViewModel {
                                         .where(PlayerModel.class).findFirst();
                                 if (playerModel != null) {
                                     playerModel.decrementCredits(tgm);
-                                    playerModel.getShip().addToCargoHold(
+                                    playerModel.addToShipCargoHold(
                                             curGood.getGoodType().toString(),
                                             1
                                     );

@@ -22,19 +22,21 @@ public class MarketPlaceSellViewModel extends ViewModel {
 
     private final Game game = Game.getInstance();
 
-    private Planet getPlanet() {
-        Coordinates planetCoords = game.getPlayer().getCoordinates();
-        SolarSystem s = SolarSystem.findSolarSystemByCoords(
-                game.getUniverse().getSolarSystems(), planetCoords);
-        return s.getPlanet();
-    }
-
-    private Player getPlayer(){
-        return game.getPlayer();
-    }
-
+//    private Planet getPlanet() {
+//        Coordinates planetCoords = game.getPlayer().getCoordinates();
+//        SolarSystem s = SolarSystem.findSolarSystemByCoords(
+//                game.getUniverse().getSolarSystems(), planetCoords);
+//        return s.getPlanet();
+//    }
+//
+//    private Player getPlayer(){
+//        return game.getPlayer();
+//    }
+//
     private List<TradeGood> getPlanetGoodsList() {
-        return this.getPlanet().getTradeGoods();
+        Coordinates planetCoords = game.getPlayerCoordinates();
+        return SolarSystem.findSolarSystemPlanetGoodsListByCoords(
+                game.getSolarSystems(), planetCoords);
     }
 
     /**
@@ -43,7 +45,7 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * @return the count of the good in the cargo hold
      */
     public int getGoodVolume(GoodType goodName) {
-        List<TradeGood> goods = getPlayer().getShip().getCargoHold();
+        List<TradeGood> goods = getPlanetGoodsList();
         for (TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
                 return curGood.getVolume();
@@ -57,8 +59,8 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * @return available space
      */
     public String getCargoSpace() {
-        return Integer.toString(getPlayer().getShip().getNumGoodsStored()) + " / " +
-                Integer.toString(getPlayer().getShip().getShipType().getCargoSpace());
+        return Integer.toString(game.getNumGoodsStored()) + " / " +
+                Integer.toString(game.getCargoSpace());
     }
 
     /**
@@ -78,23 +80,23 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * @return player credits
      */
     public int getPlayerCredits() {
-        return getPlayer().getCredits();
+        return getPlayerCredits();
     }
 
     /**
      * @param goodName good being purchased
      */
     public void sell(GoodType goodName) {
-        List<TradeGood> goods = getPlayer().getShip().getCargoHold();
+        List<TradeGood> goods = game.getCargoHold();
         for (final TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
-                if (getPlayer().canSell(curGood)) {
-                    getPlayer().getShip().removeFromCargoHold(new TradeGood(0,
+                if (game.canSell(curGood)) {
+                    game.removeFromPlayerCargoHold(new TradeGood(0,
                             curGood.getGoodType(), 1));
                     List<TradeGood> gs = getPlanetGoodsList();
                     for (final TradeGood cG : gs) {
                         if(cG.getGoodType() == goodName) {
-                            getPlayer().incrementCredits(cG);
+                            game.incrementPlayerCredits(cG);
 
                             Realm realm = Realm.getDefaultInstance();
                             realm.executeTransaction(new Realm.Transaction() {
@@ -104,8 +106,7 @@ public class MarketPlaceSellViewModel extends ViewModel {
                                             .where(PlayerModel.class).findFirst();
                                     if (playerModel != null) {
                                         playerModel.incrementCredits(cG.getValue());
-                                        playerModel.getShip().
-                                                removeFromCargoHold(
+                                        playerModel.removeFromCargoHold(
                                                         curGood.getGoodType().toString(),
                                                         1
                                                 );

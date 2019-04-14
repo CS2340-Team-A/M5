@@ -70,6 +70,18 @@ public class SolarSystem {
         return foundSolarSystem.planet.getTradeGoods();
     }
 
+    public static String findSolarSystemPlanetNameByCoords(List<SolarSystem> solarSystems,
+                                                                         Coordinates planetCoords) {
+        // here we should implement a good search algorithm or closest to algorithm
+        SolarSystem foundSolarSystem = solarSystems.get(0);
+        for (SolarSystem s :solarSystems) {
+            if (s.getCoordinates().equals(planetCoords)) {
+                foundSolarSystem = s;
+            }
+        }
+        return foundSolarSystem.planet.getName();
+    }
+
     /**
      * @return coordinates
      */

@@ -2,6 +2,7 @@ package com.cs2340.teama.models.realm;
 
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Player;
+import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.SkillType;
 
 import io.realm.RealmObject;
@@ -147,5 +148,13 @@ public class PlayerModel extends RealmObject {
      */
     public Coordinates getCoordinates() {
         return new Coordinates(this.getXCoords(), this.getYCoords());
+    }
+
+    public void addToShipCargoHold(String good, int vol) {
+        ship.addToCargoHold(good, vol);
+    }
+
+    public void removeFromCargoHold(String good, int vol) {
+        ship.removeFromCargoHold(good, vol);
     }
 }
