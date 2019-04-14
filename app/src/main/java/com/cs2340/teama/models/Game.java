@@ -20,6 +20,10 @@ public final class Game {
         }
     }
 
+    public static void deleteInstance() {
+        game = null;
+    }
+
     public static Game getInstance() {
         return Game.game;
     }

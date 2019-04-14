@@ -52,6 +52,7 @@ public class BeginGameActivity extends AppCompatActivity {
                 realm.deleteAll();
             }
         });
+        Game.deleteInstance();
         Intent intent = new Intent(this, ConfigActivity.class);
         startActivity(intent);
 
