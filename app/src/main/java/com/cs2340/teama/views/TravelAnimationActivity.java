@@ -12,6 +12,9 @@ import com.cs2340.teama.m5.R;
 
 import com.cs2340.teama.viewModels.TravelAnimationViewModel;
 
+/**
+ * Activity for the travel animation screen
+ */
 public class TravelAnimationActivity extends AppCompatActivity {
 
 

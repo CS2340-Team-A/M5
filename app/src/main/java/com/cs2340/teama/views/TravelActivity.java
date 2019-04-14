@@ -21,6 +21,9 @@ import com.cs2340.teama.viewModels.TravelViewModel;
 
 import com.cs2340.teama.m5.R;
 
+/**
+ * Activity for the travel screen
+ */
 public class TravelActivity extends AppCompatActivity {
 
     private Spinner planet_spinner;

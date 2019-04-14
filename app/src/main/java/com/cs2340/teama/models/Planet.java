@@ -131,6 +131,9 @@ public class Planet {
         return tLv;
     }
 
+    /**
+     * @return id
+     */
     public int getId() {
         return id;
     }

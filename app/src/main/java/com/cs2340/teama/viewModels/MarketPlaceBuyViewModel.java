@@ -17,6 +17,9 @@ import java.util.List;
 
 import io.realm.Realm;
 
+/**
+ * ViewModel containing business logic for the MarketPlaceBuyActivity
+ */
 public class MarketPlaceBuyViewModel extends ViewModel {
 
     private final Game game = Game.getInstance();
@@ -36,6 +39,10 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         return this.getPlanet().getTradeGoods();
     }
 
+    /**
+     * @param goodName good specefied
+     * @return good's volume
+     */
     public int getGoodVolume(GoodType goodName) {
         List<TradeGood> goods = getPlanetGoodsList();
         for (TradeGood curGood : goods) {
@@ -46,6 +53,10 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         return 0;
     }
 
+    /**
+     * @param goodName good specified
+     * @return good's volume
+     */
     public double getGoodValue(GoodType goodName) {
         List<TradeGood> goods = getPlanetGoodsList();
         for (TradeGood curGood : goods) {
@@ -56,15 +67,24 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         return 0;
     }
 
+    /**
+     * @return player credits
+     */
     public int getPlayerCredits() {
         return getPlayer().getCredits();
     }
 
+    /**
+     * @return cargo space
+     */
     public String getCargoSpace() {
         return Integer.toString(getPlayer().getShip().getNumGoodsStored()) + " / " +
                 Integer.toString(getPlayer().getShip().getShipType().getCargoSpace());
     }
 
+    /**
+     * @param goodName good being purchased
+     */
     public void purchase(GoodType goodName) {
         List<TradeGood> goods = getPlanetGoodsList();
         for (final TradeGood curGood : goods) {

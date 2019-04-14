@@ -11,10 +11,16 @@ import java.util.List;
 
 import io.realm.Realm;
 
+/**
+ * ViewModel containing business logic for the PirateActivity
+ */
 public class PirateAttackViewModel extends ViewModel {
 
     private final Game game = Game.getInstance();
 
+    /**
+     * Decreases the quantity of every good a player has by one
+     */
     public void pillage() {
         List<TradeGood> goods = getPlayer().getShip().getCargoHold();
         for (final TradeGood curGood : goods) {

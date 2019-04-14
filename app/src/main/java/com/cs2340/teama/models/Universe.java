@@ -11,6 +11,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Represents the Universe in the game
+ */
 public class Universe {
     private static final String[] SYSTEM_NAMES = new String[]{"Acamar",
             "Adahn",		// The alternate personality for The Nameless One in "Planescape: Torment"

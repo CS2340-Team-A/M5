@@ -5,6 +5,9 @@ import android.util.Log;
 
 import java.util.Random;
 
+/**
+ * ViewModel containing business logic for the TravelAnimationActivity
+ */
 public class TravelAnimationViewModel extends ViewModel {
 
     public boolean pirateAttack() {

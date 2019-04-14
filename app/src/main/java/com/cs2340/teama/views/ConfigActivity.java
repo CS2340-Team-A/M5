@@ -24,6 +24,9 @@ import com.cs2340.teama.viewModels.ConfigViewModel;
 
 import com.cs2340.teama.m5.R;
 
+/**
+ * Activity for the configuration screen
+ */
 public class ConfigActivity extends AppCompatActivity {
 
     private Spinner difficultySpinner;

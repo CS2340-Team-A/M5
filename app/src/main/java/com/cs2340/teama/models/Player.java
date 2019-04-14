@@ -16,6 +16,10 @@ public class Player {
     private Coordinates coordinates;
 
 
+    /**
+     * Constructor
+     * @param playerModel Realm object
+     */
     public Player(PlayerModel playerModel) {
         this.name = playerModel.getName();
         this.coordinates = new Coordinates(playerModel.getXCoords(), playerModel.getYCoords());
@@ -34,6 +38,11 @@ public class Player {
     }
 
 
+    /**
+     * Constructor
+     * @param name of player
+     * @param coordinates1 of player's start location
+     */
     public Player(String name, Coordinates coordinates1) {
         this.coordinates = coordinates1;
         this.name = name;
@@ -43,6 +52,10 @@ public class Player {
 
     }
 
+    /**
+     * @param skill specifed
+     * @param increase amount ot increase by
+     */
     public void incrementSkill(SkillType skill, int increase) {
         for(SkillType sk: skills) {
             if(sk == skill)  {
@@ -79,10 +92,16 @@ public class Player {
         return false;
     }
 
+    /**
+     * @return skills
+     */
     public SkillType[] getSkills() {
         return skills;
     }
 
+    /**
+     * @return ship
+     */
     public Ship getShip() {
         return ship;
     }
@@ -94,6 +113,9 @@ public class Player {
         this.credits += good.getValue();
     }
 
+    /**
+     * @return credits
+     */
     public int getCredits() {
         return credits;
     }
@@ -110,10 +132,16 @@ public class Player {
         return playerString;
     }
 
+    /**
+     * @return coordinates
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
+    /**
+     * @param destCoord place to travel to
+     */
     public void travel(Coordinates destCoord) {
         ship.travelDist(Coordinates.distTo(coordinates, destCoord));
         this.coordinates = destCoord;

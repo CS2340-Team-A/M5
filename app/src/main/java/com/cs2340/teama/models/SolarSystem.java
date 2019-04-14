@@ -6,6 +6,9 @@ import com.cs2340.teama.models.realm.SolarSystemModel;
 
 import java.util.List;
 
+/**
+ * Represents a SolarSystem object in the game
+ */
 public class SolarSystem {
     private final String name;
     private final Coordinates coordinates;

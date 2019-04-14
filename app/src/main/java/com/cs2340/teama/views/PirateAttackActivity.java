@@ -12,6 +12,9 @@ import com.cs2340.teama.m5.R;
 
 import com.cs2340.teama.viewModels.PirateAttackViewModel;
 
+/**
+ * Activity for the pirate attack screen
+ */
 public class PirateAttackActivity extends AppCompatActivity {
 
     @Override

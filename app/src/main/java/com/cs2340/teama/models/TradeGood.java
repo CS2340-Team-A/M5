@@ -5,6 +5,9 @@ import android.util.Log;
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.realm.TradeGoodModel;
 
+/**
+ * Represents a TradeGood object in the game
+ */
 public class TradeGood {
 
     private final double value;

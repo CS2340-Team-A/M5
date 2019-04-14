@@ -7,6 +7,12 @@ public class Coordinates {
     private final int x;
     private final int y;
 
+    /**
+     * Constructor
+     *
+     * @param x coordinate
+     * @param y coordinate
+     */
     public Coordinates(int x, int y) {
         this.x = x;
         this.y = y;
@@ -24,10 +30,16 @@ public class Coordinates {
         return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
     }
 
+    /**
+     * @return x
+     */
     public int getX() {
         return this.x;
     }
 
+    /**
+     * @return y
+     */
     public int getY() {
         return this.y;
     }

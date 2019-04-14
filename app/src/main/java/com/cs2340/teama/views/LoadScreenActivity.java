@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.cs2340.teama.m5.R;
 
-
+/**
+ * Activity for the load screen
+ */
 public class LoadScreenActivity extends AppCompatActivity {
 
     private static final int DELAY_DURATION = 2000;

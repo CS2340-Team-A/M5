@@ -12,6 +12,9 @@ import com.cs2340.teama.models.Game;
 
 import io.realm.Realm;
 
+/**
+ * Activity for the begin game screen
+ */
 public class BeginGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

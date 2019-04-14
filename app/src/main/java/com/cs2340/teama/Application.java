@@ -11,6 +11,9 @@ import com.cs2340.teama.models.realm.UniverseModel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
+/**
+ * Represents the application as it is stored in the Realm backend database
+ */
 public class Application extends android.app.Application {
 
     @Override

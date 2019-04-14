@@ -16,6 +16,9 @@ import java.util.List;
 
 import io.realm.Realm;
 
+/**
+ * ViewModel containing business logic for the TravelActivity
+ */
 public class TravelViewModel extends ViewModel {
 
     private final Game game = Game.getInstance();

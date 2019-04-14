@@ -10,6 +10,9 @@ import com.cs2340.teama.models.realm.TradeGoodModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a Ship object in the game
+ */
 public class Ship {
     private final ShipType shipType;
     private final List<TradeGood> cargoHold;

@@ -15,6 +15,9 @@ import com.cs2340.teama.m5.R;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Activity for the planet screen
+ */
 public class PlanetActivity extends AppCompatActivity {
 
     @Override

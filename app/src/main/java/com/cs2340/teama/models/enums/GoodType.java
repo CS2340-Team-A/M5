@@ -36,34 +36,58 @@ public enum GoodType {
         this.ER = er;
     }
 
+    /**
+     * @return MTLP
+     */
     public int getMTLP() {
         return this.MTLP;
     }
 
+    /**
+     * @return MTLU
+     */
     public int getMTLU() {
         return this.MTLU;
     }
 
+    /**
+     * @return TTP
+     */
     public int getTTP() {
         return this.TTP;
     }
 
+    /**
+     * @return basePrice
+     */
     public int getBasePrice() {
         return this.basePrice;
     }
 
+    /**
+     * @return IPL
+     */
     public int getIPL() {
         return this.IPL;
     }
 
+    /**
+     * @return Var
+     */
     public int getVar() {
         return this.var;
     }
 
+    /**
+     * @return CR
+     */
     public Resources getCR() {
         return this.CR;
     }
 
+    /**
+     * @return ER
+     */
     public Resources getER() {
         return this.ER;
     }

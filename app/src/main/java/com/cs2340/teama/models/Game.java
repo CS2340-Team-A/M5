@@ -14,6 +14,11 @@ public final class Game {
         this.universe = u;
     }
 
+    /**
+     * @param p player
+     * @param u universe
+     * @return the game
+     */
     public static Game getInstance(Player p, Universe u) {
         if (Game.game == null) {
             Game.game = new Game(p, u);
@@ -21,14 +26,23 @@ public final class Game {
         return Game.game;
     }
 
+    /**
+     * @return the one game instance
+     */
     public static Game getInstance() {
         return Game.game;
     }
 
+    /**
+     * @return player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * @return universe
+     */
     public Universe getUniverse() {
         return universe;
     }
