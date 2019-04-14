@@ -96,7 +96,7 @@ public class Player {
      * @return skills
      */
     public SkillType[] getSkills() {
-        return skills;
+        return skills.clone();
     }
 
     /**
@@ -122,14 +122,13 @@ public class Player {
 
     @Override
     public String toString() {
-        String playerString = "\nPlayers name is " + name + ".\n";
+        StringBuilder playerString = new StringBuilder("\nPlayers name is " + name + ".\n");
         for (SkillType sk: skills) {
-            playerString = playerString + name + " has " + sk.getSkillPointsAllocated() + " points"
-            + " allocated to " + sk + ".\n";
+            playerString.append(name).append(" has ").append(sk.getSkillPointsAllocated()).append(" points").append(" allocated to ").append(sk).append(".\n");
         }
-        playerString = playerString + "Player's ship is the " + getShip() + ".\n";
-        playerString = playerString + "Player has " + getCredits() + " credits.";
-        return playerString;
+        playerString.append("Player's ship is the ").append(getShip()).append(".\n");
+        playerString.append("Player has ").append(getCredits()).append(" credits.");
+        return playerString.toString();
     }
 
     /**

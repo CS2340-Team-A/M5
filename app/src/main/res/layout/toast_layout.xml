@@ -11,7 +11,8 @@
         android:id="@+id/toast_image"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_toasticon"/>
+        android:src="@drawable/ic_toasticon"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/toast_text"

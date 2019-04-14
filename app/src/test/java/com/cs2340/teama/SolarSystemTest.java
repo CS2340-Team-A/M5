@@ -3,7 +3,6 @@ package com.cs2340.teama;
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.Universe;
-import com.cs2340.teama.models.enums.TechLevel;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -31,7 +30,7 @@ public class SolarSystemTest {
     }
 
     @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    public final ExpectedException expectedException = ExpectedException.none();
 
     /**
      * Written by Eduardo Nava.
@@ -58,7 +57,7 @@ public class SolarSystemTest {
                 .findSolarSystemByCoords(list, myCoords));
 
         //we should get an exception if we input and empty list
-        list = (List<SolarSystem>) new LinkedList<SolarSystem>();
+        list = new LinkedList<SolarSystem>();
         expectedException.expect(IllegalArgumentException.class);
         SolarSystem.findSolarSystemByCoords(list, myCoords);
 

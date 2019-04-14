@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cs2340.teama.views.ConfigActivity"></activity>
+        <activity android:name="com.cs2340.teama.views.ConfigActivity" />
         <activity
             android:name="com.cs2340.teama.views.PlanetActivity"
             android:label="@string/title_activity_planet"
@@ -43,7 +43,7 @@
         <activity
             android:name="com.cs2340.teama.views.TravelActivity"
             android:label="@string/title_activity_travel"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.cs2340.teama.views.PirateAttackActivity"
             android:label="PirateAttackActivity"

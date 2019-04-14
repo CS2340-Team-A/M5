@@ -3,6 +3,9 @@ package com.cs2340.teama.models.realm;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.Universe;
 
+import java.util.Collections;
+import java.util.List;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -19,8 +22,12 @@ public class UniverseModel extends RealmObject {
     }
 
 
-    public RealmList<SolarSystemModel> getSolarSystems() {
-        return solarSystems;
+    public List<SolarSystemModel> getSolarSystems() {
+        return Collections.unmodifiableList(solarSystems);
+    }
+
+    public void setSolarSystems(RealmList<SolarSystemModel> solarSystems) {
+        this.solarSystems = solarSystems;
     }
 
 }
