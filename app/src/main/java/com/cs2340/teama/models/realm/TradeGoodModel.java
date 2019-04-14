@@ -21,6 +21,11 @@ public class TradeGoodModel extends RealmObject {
     private final RealmResults<SolarSystemModel> system = null;
 
     /**
+     * Constructor
+     */
+    public TradeGoodModel() {
+    }
+    /**
      * @param tradeGood whose data is to be stored
      */
     public TradeGoodModel(TradeGood tradeGood) {

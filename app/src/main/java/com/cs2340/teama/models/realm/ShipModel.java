@@ -20,6 +20,12 @@ public class ShipModel extends RealmObject {
     private RealmList<TradeGoodModel> cargoHold;
 
     /**
+     * Constructor
+     */
+    public ShipModel() {
+    }
+
+    /**
      * @param ship that whose data is to be stored
      */
     public ShipModel(Ship ship) {

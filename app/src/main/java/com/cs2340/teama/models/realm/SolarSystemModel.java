@@ -22,7 +22,11 @@ public class SolarSystemModel extends RealmObject {
     private String resourcesName;
     private RealmList<TradeGoodModel> tradeGoods;
 
-
+    /**
+     * Constructor
+     */
+    public SolarSystemModel() {
+    }
     /**
      * @param solarSystem whose data is to be stored
      */

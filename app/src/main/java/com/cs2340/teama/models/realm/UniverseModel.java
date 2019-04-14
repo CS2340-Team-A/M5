@@ -15,7 +15,11 @@ import io.realm.RealmObject;
 public class UniverseModel extends RealmObject {
 
     private RealmList<SolarSystemModel> solarSystems;
-
+    /**
+     * Constructor
+     */
+    public UniverseModel() {
+    }
     /**
      * @param universe whose data is to be stored
      */

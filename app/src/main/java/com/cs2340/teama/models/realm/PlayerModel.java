@@ -25,6 +25,12 @@ public class PlayerModel extends RealmObject {
 
     /**
      * Constructor
+     */
+    public PlayerModel() {
+    }
+
+    /**
+     * Constructor
      *
      * @param player containing stored information
      */
