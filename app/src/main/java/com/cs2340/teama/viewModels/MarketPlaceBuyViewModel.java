@@ -25,10 +25,9 @@ public class MarketPlaceBuyViewModel extends ViewModel {
     private final Game game = Game.getInstance();
 
     private Planet getPlanet() {
-        Coordinates planetCoords = game.getPlayer().getCoordinates();
-        SolarSystem s = SolarSystem.findSolarSystemByCoords(
+        Coordinates planetCoords = game.getPlayerCoordinates();
+        return SolarSystem.findSolarSystemPlanetByCoords(
                 game.getUniverse().getSolarSystems(), planetCoords);
-        return s.getPlanet();
     }
 
     private Player getPlayer(){
@@ -36,7 +35,9 @@ public class MarketPlaceBuyViewModel extends ViewModel {
     }
 
     private List<TradeGood> getPlanetGoodsList() {
-        return this.getPlanet().getTradeGoods();
+        Coordinates planetCoords = game.getPlayerCoordinates();
+        return SolarSystem.findSolarSystemPlanetGoodsListByCoords(
+                game.getUniverse().getSolarSystems(), planetCoords);
     }
 
     /**
@@ -71,15 +72,16 @@ public class MarketPlaceBuyViewModel extends ViewModel {
      * @return player credits
      */
     public int getPlayerCredits() {
-        return getPlayer().getCredits();
+        return game.getPlayerCredits();
     }
 
     /**
      * @return cargo space
      */
     public String getCargoSpace() {
-        return Integer.toString(getPlayer().getShip().getNumGoodsStored()) + " / " +
-                Integer.toString(getPlayer().getShip().getShipType().getCargoSpace());
+        return Integer.toString(game.getNumGoodsStored()) + " / " +
+                Integer.toString(game.getCargoSpace());
+
     }
 
     /**
@@ -89,12 +91,12 @@ public class MarketPlaceBuyViewModel extends ViewModel {
         List<TradeGood> goods = getPlanetGoodsList();
         for (final TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
-                if (getPlayer().canBuy(curGood) && curGood.inStock()) {
-                    boolean wasSuccessful = getPlayer().getShip().addToCargoHold(new TradeGood(0,
+                if (game.canBuy(curGood) && curGood.inStock()) {
+                    boolean wasSuccessful = game.addToPlayerCargoHold(new TradeGood(0,
                             curGood.getGoodType(), 1));
                     if(wasSuccessful) {
                         curGood.decrementVolume(1);
-                        getPlayer().decrementCredits(curGood);
+                        game.decrementPlayerCredits(curGood);
 
                         Realm realm = Realm.getDefaultInstance();
                         realm.executeTransaction(new Realm.Transaction() {

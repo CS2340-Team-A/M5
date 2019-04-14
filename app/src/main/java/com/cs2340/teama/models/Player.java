@@ -120,6 +120,18 @@ public class Player {
         return credits;
     }
 
+    public int getShipGoodsStored() {
+        return ship.getNumGoodsStored();
+    }
+
+    public int getShipCargoSpace() {
+        return ship.getCargoSpace();
+    }
+
+    public boolean addToShipCargoHold(TradeGood good) {
+        return ship.addToCargoHold(good);
+    }
+
     @Override
     public String toString() {
         StringBuilder playerString = new StringBuilder("\nPlayers name is " + name + ".\n");

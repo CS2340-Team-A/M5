@@ -87,6 +87,9 @@ public class Ship {
         return fuelCapacity;
     }
 
+    public int getCargoSpace() {
+        return shipType.getCargoSpace();
+    }
     /**
      * @param addedGood good to add to cargo hold
      * @return if the good was successfully added

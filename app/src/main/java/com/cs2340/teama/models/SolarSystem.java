@@ -46,6 +46,30 @@ public class SolarSystem {
         return foundSolarSystem;
     }
 
+    public static Planet findSolarSystemPlanetByCoords(List<SolarSystem> solarSystems,
+                                                      Coordinates planetCoords) {
+        // here we should implement a good search algorithm or closest to algorithm
+        SolarSystem foundSolarSystem = solarSystems.get(0);
+        for (SolarSystem s :solarSystems) {
+            if (s.getCoordinates().equals(planetCoords)) {
+                foundSolarSystem = s;
+            }
+        }
+        return foundSolarSystem.planet;
+    }
+
+    public static List<TradeGood> findSolarSystemPlanetGoodsListByCoords(List<SolarSystem> solarSystems,
+                                                       Coordinates planetCoords) {
+        // here we should implement a good search algorithm or closest to algorithm
+        SolarSystem foundSolarSystem = solarSystems.get(0);
+        for (SolarSystem s :solarSystems) {
+            if (s.getCoordinates().equals(planetCoords)) {
+                foundSolarSystem = s;
+            }
+        }
+        return foundSolarSystem.planet.getTradeGoods();
+    }
+
     /**
      * @return coordinates
      */

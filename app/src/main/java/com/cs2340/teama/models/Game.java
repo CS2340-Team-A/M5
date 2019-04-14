@@ -53,12 +53,41 @@ public final class Game {
     }
 
     /**
+     * @return player credits
+     */
+    public int getPlayerCredits() {
+        return player.getCredits();
+    }
+
+    public int getNumGoodsStored() {
+        return player.getShipGoodsStored();
+    }
+
+    public int getCargoSpace() {
+        return player.getShipCargoSpace();
+    }
+
+    public boolean canBuy(TradeGood good) {
+        return player.canBuy(good);
+    }
+
+    public boolean addToPlayerCargoHold(TradeGood good) {
+        return player.addToShipCargoHold(good);
+    }
+
+    public void decrementPlayerCredits(TradeGood good) {
+        player.decrementCredits(good);
+    }
+    /**
      * @return planet specefied
      */
     public Planet getPlanet() {
-        Coordinates planetCoords = Game.game.getPlayer().getCoordinates();
-        SolarSystem s = SolarSystem.findSolarSystemByCoords(
-                Game.game.getUniverse().getSolarSystems(), planetCoords);
-        return s.getPlanet();
+        Coordinates planetCoords = Game.game.player.getCoordinates();
+        return SolarSystem.findSolarSystemPlanetByCoords(
+                Game.game.universe.getSolarSystems(), planetCoords);
+    }
+
+    public Coordinates getPlayerCoordinates() {
+        return player.getCoordinates();
     }
 }
