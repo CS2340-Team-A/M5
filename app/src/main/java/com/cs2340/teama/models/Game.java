@@ -14,24 +14,40 @@ public final class Game {
         this.universe = u;
     }
 
+    /**
+     * @param p player
+     * @param u universe
+     */
     public static void getInstance(Player p, Universe u) {
         if (Game.game == null) {
             Game.game = new Game(p, u);
         }
     }
 
+    /**
+     * Deletes the game
+     */
     public static void deleteInstance() {
         game = null;
     }
 
+    /**
+     * @return game
+     */
     public static Game getInstance() {
         return Game.game;
     }
 
+    /**
+     * @return player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * @return universe
+     */
     public Universe getUniverse() {
         return universe;
     }
