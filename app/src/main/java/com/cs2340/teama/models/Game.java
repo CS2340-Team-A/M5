@@ -14,11 +14,10 @@ public final class Game {
         this.universe = u;
     }
 
-    public static Game getInstance(Player p, Universe u) {
+    public static void getInstance(Player p, Universe u) {
         if (Game.game == null) {
             Game.game = new Game(p, u);
         }
-        return Game.game;
     }
 
     public static Game getInstance() {

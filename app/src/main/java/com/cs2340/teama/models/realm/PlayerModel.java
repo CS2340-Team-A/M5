@@ -8,7 +8,7 @@ import io.realm.RealmObject;
 
 public class PlayerModel extends RealmObject {
 
-    private String name;
+    // --Commented out by Inspection (4/14/19, 2:14 PM):private String name;
     
     private int credits;
     private int pilotSkillPoints;

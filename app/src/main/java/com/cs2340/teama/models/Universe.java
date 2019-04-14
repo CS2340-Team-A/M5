@@ -7,6 +7,7 @@ import com.cs2340.teama.models.realm.UniverseModel;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -90,15 +91,15 @@ public class Universe {
     }
 
     public List<SolarSystem> getSolarSystems() {
-        return solarSystems;
+        return Collections.unmodifiableList(solarSystems);
     }
 
     @Override
     public String toString() {
-        String output = "Solar Systems in Universe:\n";
+        StringBuilder output = new StringBuilder("Solar Systems in Universe:\n");
         for (SolarSystem system : solarSystems) {
-            output += system.toString() + "\n";
+            output.append(system.toString()).append("\n");
         }
-        return output;
+        return output.toString();
     }
 }

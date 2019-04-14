@@ -3,6 +3,9 @@ package com.cs2340.teama.models.realm;
 import com.cs2340.teama.models.Ship;
 import com.cs2340.teama.models.TradeGood;
 
+import java.util.Collections;
+import java.util.List;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -43,8 +46,8 @@ public class ShipModel extends RealmObject {
         return fuelCapacity;
     }
 
-    public RealmList<TradeGoodModel> getCargoHold() {
-        return cargoHold;
+    public List<TradeGoodModel> getCargoHold() {
+        return Collections.unmodifiableList(cargoHold);
     }
 
     public void removeFromCargoHold(String cargoType, int volume) {

@@ -8,6 +8,7 @@ import com.cs2340.teama.models.realm.ShipModel;
 import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Ship {
@@ -47,7 +48,7 @@ public class Ship {
     }
 
     public List<TradeGood> getCargoHold() {
-        return cargoHold;
+        return Collections.unmodifiableList(cargoHold);
     }
 
     public int getNumGoodsStored() {

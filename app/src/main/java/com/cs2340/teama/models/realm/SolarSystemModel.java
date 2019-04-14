@@ -3,6 +3,9 @@ package com.cs2340.teama.models.realm;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.TradeGood;
 
+import java.util.Collections;
+import java.util.List;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -52,8 +55,8 @@ public class SolarSystemModel extends RealmObject {
         return resourcesName;
     }
 
-    public RealmList<TradeGoodModel> getTradeGoods() {
-        return this.tradeGoods;
+    public List<TradeGoodModel> getTradeGoods() {
+        return Collections.unmodifiableList(this.tradeGoods);
     }
 }
 

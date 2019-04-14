@@ -7,6 +7,7 @@ import com.cs2340.teama.models.realm.SolarSystemModel;
 import com.cs2340.teama.models.realm.TradeGoodModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -150,6 +151,6 @@ public class Planet {
      * @return tradeGoods
      */
     public List<TradeGood> getTradeGoods() {
-        return this.tradeGoods;
+        return Collections.unmodifiableList(this.tradeGoods);
     }
 }
