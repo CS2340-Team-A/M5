@@ -49,6 +49,9 @@ public class Universe {
     private static final int yBound = 500;
     private final List<SolarSystem> solarSystems;
 
+    /**
+     * @param universeModel from which data is loaded from the Realm database
+     */
     public Universe(UniverseModel universeModel) {
         this.solarSystems = new ArrayList<>();
         for (SolarSystemModel ssm: universeModel.getSolarSystems()) {
@@ -56,6 +59,9 @@ public class Universe {
         }
     }
 
+    /**
+     * Creates a Universe
+     */
     public Universe() {
         Random rng = new Random();
         Collection<String> nameSet = new HashSet<>();
@@ -93,6 +99,9 @@ public class Universe {
         }
     }
 
+    /**
+     * @return a list of solar systems
+     */
     public List<SolarSystem> getSolarSystems() {
         return Collections.unmodifiableList(solarSystems);
     }

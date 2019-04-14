@@ -12,16 +12,25 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Tests for the ship class
+ */
 public class ShipTest {
 
     private Ship ship;
 
 
+    /**
+     * Intializes variables
+     */
     @Before
     public void setup() {
         this.ship = new Ship(ShipType.GNAT);
     }
 
+    /**
+     * Tests the addToCargoHold() method in the Ship class
+     */
     @Test
     public void testAddToCargoHold() {
         boolean addSuccess = ship.addToCargoHold(
@@ -80,6 +89,9 @@ public class ShipTest {
     }
 
     //Animesh's Individual JUnit Test Code for M10
+    /**
+     * Tests the removeToCargoHold() method in the Ship class
+     */
     @Test
     public void testRemoveFromCargoHold() {
         final int defaultVal = 0;

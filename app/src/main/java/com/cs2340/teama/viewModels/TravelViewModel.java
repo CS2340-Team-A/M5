@@ -27,10 +27,16 @@ public class TravelViewModel extends ViewModel {
         return game.getPlanet();
     }
 
+    /**
+     * @return the planets information
+     */
     public CharSequence getPlanetInfo() {
         return this.getPlanet().getInfo();
     }
 
+    /**
+     * @return the ship
+     */
     public Ship getShip() {
         return game.getPlayer().getShip();
     }
@@ -74,6 +80,9 @@ public class TravelViewModel extends ViewModel {
         return reachablePlanets;
     }
 
+    /**
+     * @return list containing all solar systems
+     */
     private List<SolarSystem> getSolarSystems() {
         List<SolarSystem> reachableSystems = new ArrayList<>();
         Coordinates playerCoords = game.getPlayer().getCoordinates();
@@ -90,6 +99,9 @@ public class TravelViewModel extends ViewModel {
         return reachableSystems;
     }
 
+    /**
+     * @param planetPos destination planet
+     */
     public void travelTo(int planetPos) {
         Planet planet = this.getPlanetList().get(planetPos);
         Log.d("Edit", "Got planet " + planet);

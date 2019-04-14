@@ -12,6 +12,9 @@ public enum SkillType {
         skillPointsAllocated = 0;
     }
 
+    /**
+     * @return skill points allocated
+     */
     public int getSkillPointsAllocated() {
         return skillPointsAllocated;
     }

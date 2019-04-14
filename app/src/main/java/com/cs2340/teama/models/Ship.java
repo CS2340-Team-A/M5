@@ -24,6 +24,9 @@ public class Ship {
     public static final double FUEL_EFFICIENCY = 1.0;
     private static final int INITIAL_FUEL = 500;
 
+    /**
+     * @param shipModel Realm model in which data is stored
+     */
     Ship(ShipModel shipModel) {
         this.shipType = ShipType.valueOf(shipModel.getShipName());
         this.numGoodsStored = shipModel.getNumGoodsStored();
@@ -35,6 +38,9 @@ public class Ship {
         }
     }
 
+    /**
+     * @param shipType type of ship to be created
+     */
     public Ship (ShipType shipType) {
         this.cargoHold = new ArrayList<>();
         for(GoodType t: GoodType.values()) {
@@ -46,22 +52,37 @@ public class Ship {
         this.fuelCapacity = INITIAL_FUEL;
     }
 
+    /**
+     * @return ship type
+     */
     public ShipType  getShipType() {
         return shipType;
     }
 
+    /**
+     * @return cargo hold
+     */
     public List<TradeGood> getCargoHold() {
         return Collections.unmodifiableList(cargoHold);
     }
 
+    /**
+     * @return number of goods stored in the cargo hold
+     */
     public int getNumGoodsStored() {
         return numGoodsStored;
     }
 
+    /**
+     * @return fuel
+     */
     public double getFuel() {
         return fuel;
     }
 
+    /**
+     * @return fuel
+     */
     public double getFuelCapacity() {
         return fuelCapacity;
     }

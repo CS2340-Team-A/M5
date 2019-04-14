@@ -7,6 +7,9 @@ import io.realm.RealmObject;
 import io.realm.RealmResults;
 import io.realm.annotations.LinkingObjects;
 
+/**
+ * A Realm object that stores the information of the TradeGoods
+ */
 public class TradeGoodModel extends RealmObject {
 
     private String type;
@@ -17,46 +20,53 @@ public class TradeGoodModel extends RealmObject {
     @LinkingObjects("tradeGoods")
     private final RealmResults<SolarSystemModel> system = null;
 
-    public TradeGoodModel() {}
-
+    /**
+     * @param tradeGood whose data is to be stored
+     */
     public TradeGoodModel(TradeGood tradeGood) {
         this.type = tradeGood.getGoodType().toString();
         this.quantity = tradeGood.getVolume();
         this.value = tradeGood.getValue();
     }
 
+    /**
+     * @return type
+     */
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    /**
+     * @return quantity
+     */
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
+    /**
+     * @return value
+     */
     public double getValue() {
         return value;
     }
 
-    public void setValue(double value) {
-        this.value = value;
-    }
-
+    /**
+     * @param amount to reduce quantity by
+     */
     public void removeQuantity(int amount) {
         this.quantity -= amount;
     }
 
+    /**
+     * @param amount to increase quantity by
+     */
     public void addQuantity(int amount) {
         this.quantity += amount;
     }
 
+    /**
+     * Decrements quantity by one
+     */
     public void decrementQuantity() {
         this.quantity--;
     }

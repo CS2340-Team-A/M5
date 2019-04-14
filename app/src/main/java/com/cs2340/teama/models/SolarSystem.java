@@ -46,14 +46,23 @@ public class SolarSystem {
         return foundSolarSystem;
     }
 
+    /**
+     * @return coordinates
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
+    /**
+     * @return planet
+     */
     public Planet getPlanet() {
         return planet;
     }
 
+    /**
+     * @return name
+     */
     public String getName() {
         return name;
     }

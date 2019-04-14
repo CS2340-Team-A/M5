@@ -9,6 +9,9 @@ import java.util.List;
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
+/**
+ * A Realm object that stores the information of the SolarSystem
+ */
 public class SolarSystemModel extends RealmObject {
 
     private String name;
@@ -19,8 +22,10 @@ public class SolarSystemModel extends RealmObject {
     private String resourcesName;
     private RealmList<TradeGoodModel> tradeGoods;
 
-    public SolarSystemModel() {}
 
+    /**
+     * @param solarSystem whose data is to be stored
+     */
     public SolarSystemModel(SolarSystem solarSystem) {
         this.name = solarSystem.getName();
         this.xCoords = solarSystem.getCoordinates().getX();
@@ -34,27 +39,44 @@ public class SolarSystemModel extends RealmObject {
     }
 
 
-
+    /**
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return xCoords
+     */
     public int getXCoords() {
         return xCoords;
     }
 
+    /**
+     * @return yCoords
+     */
     public int getYCoords() {
         return yCoords;
     }
 
+    /**
+     * @return techLevel
+     */
     public String getTechLevel() {
         return techLevel;
     }
 
+    /**
+     * @return resourcesName
+     */
     public String getResourcesName() {
         return resourcesName;
     }
 
+    /**
+     * @return list pf trade goods
+     */
     public List<TradeGoodModel> getTradeGoods() {
         return Collections.unmodifiableList(this.tradeGoods);
     }

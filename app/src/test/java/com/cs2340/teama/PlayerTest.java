@@ -19,11 +19,17 @@ public class PlayerTest {
     private Player player;
 
 
+    /**
+     * Initalizes variables
+     */
     @Before
     public void setup() {
         player = new Player("Names,", new Coordinates(10,10));
     }
 
+    /**
+     * Tests the cansell() method in the Player class
+     */
     @Test
     public void testCanSell() {
         TradeGood water = new TradeGood(0, GoodType.WATER, 2);
@@ -50,6 +56,9 @@ public class PlayerTest {
         assertFalse(player.canSell(new TradeGood(90, GoodType.NARCOTICS, 2)));
     }
 
+    /**
+     * Tests the cansell() method in the Player class with null input
+     */
     @Test (expected = NullPointerException.class)
     public void testCanSellNullException() {
         player.canSell(null);

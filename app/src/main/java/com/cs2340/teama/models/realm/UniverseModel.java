@@ -9,11 +9,16 @@ import java.util.List;
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
+/**
+ * A Realm object that stores the information of the Universe
+ */
 public class UniverseModel extends RealmObject {
 
     private RealmList<SolarSystemModel> solarSystems;
 
-    public UniverseModel() {}
+    /**
+     * @param universe whose data is to be stored
+     */
     public UniverseModel(Universe universe) {
         this.solarSystems = new RealmList<>();
         for (SolarSystem solarSystem: universe.getSolarSystems()) {
@@ -22,10 +27,16 @@ public class UniverseModel extends RealmObject {
     }
 
 
+    /**
+     * @return solar systems
+     */
     public List<SolarSystemModel> getSolarSystems() {
         return Collections.unmodifiableList(solarSystems);
     }
 
+    /**
+     * @param solarSystems to be stored
+     */
     public void setSolarSystems(RealmList<SolarSystemModel> solarSystems) {
         this.solarSystems = solarSystems;
     }

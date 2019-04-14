@@ -9,6 +9,9 @@ import java.util.List;
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
+/**
+ * A Realm object that stores the information of the Ship
+ */
 public class ShipModel extends RealmObject {
     private String shipName;
     private int numGoodsStored;
@@ -16,8 +19,9 @@ public class ShipModel extends RealmObject {
     private double fuelCapacity;
     private RealmList<TradeGoodModel> cargoHold;
 
-    public ShipModel() {}
-
+    /**
+     * @param ship that whose data is to be stored
+     */
     public ShipModel(Ship ship) {
         this.shipName = ship.getShipType().toString();
         this.numGoodsStored = ship.getNumGoodsStored();
@@ -30,26 +34,42 @@ public class ShipModel extends RealmObject {
     }
 
 
+    /**
+     * @return ship name
+     */
     public String getShipName() {
         return shipName;
     }
-
+    /**
+     * @return number of goods stored in the cargo hold
+     */
     public int getNumGoodsStored() {
         return numGoodsStored;
     }
-
+    /**
+     * @return fuel
+     */
     public double getFuel() {
         return fuel;
     }
-
+    /**
+     * @return fuel capacity
+     */
     public double getFuelCapacity() {
         return fuelCapacity;
     }
 
+    /**
+     * @return cargo hold
+     */
     public List<TradeGoodModel> getCargoHold() {
         return Collections.unmodifiableList(cargoHold);
     }
 
+    /**
+     * @param cargoType good to be removed
+     * @param volume number of goods to removed
+     */
     public void removeFromCargoHold(String cargoType, int volume) {
         for (TradeGoodModel tradeGoodModel: cargoHold) {
             if (cargoType.equals(tradeGoodModel.getType())) {
@@ -59,6 +79,10 @@ public class ShipModel extends RealmObject {
         }
     }
 
+    /**
+     * @param cargoType good to be added
+     * @param volume number of goods to added
+     */
     public void addToCargoHold(String cargoType, int volume) {
         for (TradeGoodModel tradeGoodModel: cargoHold) {
             if (cargoType.equals(tradeGoodModel.getType())) {
@@ -68,6 +92,9 @@ public class ShipModel extends RealmObject {
         }
     }
 
+    /**
+     * @param fuel amount of fuel to remove
+     */
     public void removeFuel(double fuel) {
         this.fuel -= fuel;
     }

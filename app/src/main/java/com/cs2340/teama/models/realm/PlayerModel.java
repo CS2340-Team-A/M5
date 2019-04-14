@@ -12,7 +12,7 @@ import io.realm.RealmObject;
 public class PlayerModel extends RealmObject {
 
     private String name;
-    
+
     private int credits;
     private int pilotSkillPoints;
     private int fighterSkillPoints;

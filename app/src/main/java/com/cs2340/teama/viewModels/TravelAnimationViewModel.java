@@ -10,6 +10,9 @@ import java.util.Random;
  */
 public class TravelAnimationViewModel extends ViewModel {
 
+    /**
+     * @return whather or not a pirate attack should occur
+     */
     public boolean pirateAttack() {
         Random rand = new Random();
         int a = rand.nextInt(100);

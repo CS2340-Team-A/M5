@@ -23,6 +23,9 @@ public class SolarSystemTest {
     private Universe universe;
     private SolarSystem solarSystem;
 
+    /**
+     * Intializes variables
+     */
     @Before
     public void setup() {
         this.universe = new Universe();

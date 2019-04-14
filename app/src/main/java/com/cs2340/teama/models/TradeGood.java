@@ -14,12 +14,20 @@ public class TradeGood {
     private int quantity;
     private final GoodType goodType;
 
+    /**
+     * @param tgm model class from which the Realm database data is loaded
+     */
     public TradeGood(TradeGoodModel tgm) {
         this.value = tgm.getValue();
         this.quantity = tgm.getQuantity();
         this.goodType = GoodType.valueOf(tgm.getType());
     }
 
+    /**
+     * @param value of good
+     * @param gT type of good
+     * @param quantity of good
+     */
     public TradeGood(double value, GoodType gT, int quantity) {
         this.value = value;
         this.goodType = gT;
@@ -28,22 +36,37 @@ public class TradeGood {
                 " and quantity " + quantity);
     }
 
+    /**
+     * @return value
+     */
     public double getValue() {
         return value;
     }
 
+    /**
+     * @return quantity
+     */
     public int getVolume() {
         return quantity;
     }
 
+    /**
+     * @return type of good
+     */
     public GoodType getGoodType() {
         return goodType;
     }
 
+    /**
+     * @param volAdded number of goods to be added
+     */
     void incrementVolume(int volAdded) {
         quantity += volAdded;
     }
 
+    /**
+     * @param volRemoved number of goods to be removed
+     */
     public void decrementVolume(int volRemoved) {
         if (quantity < volRemoved) {
             return;
@@ -51,6 +74,9 @@ public class TradeGood {
         quantity -= volRemoved;
     }
 
+    /**
+     * @return if the player has the good
+     */
     public boolean inStock() {
         return quantity > 0;
     }
