@@ -80,7 +80,7 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * @return player credits
      */
     public int getPlayerCredits() {
-        return getPlayerCredits();
+        return game.getPlayerCredits();
     }
 
     /**

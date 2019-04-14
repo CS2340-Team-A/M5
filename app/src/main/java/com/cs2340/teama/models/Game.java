@@ -111,11 +111,43 @@ public final class Game {
                 Game.game.universe.getSolarSystems(), planetCoords);
     }
 
+    public String getPlanetInfo() {
+        Coordinates planetCoords = Game.game.player.getCoordinates();
+        return SolarSystem.findSolarSystemPlanetInfoByCoords(
+                Game.game.universe.getSolarSystems(), planetCoords);
+    }
+
+    public int getPlanetId() {
+        Coordinates planetCoords = Game.game.player.getCoordinates();
+        return SolarSystem.findSolarSystemPlanetIDByCoords(
+                Game.game.universe.getSolarSystems(), planetCoords);
+    }
+
     public List<SolarSystem> getSolarSystems() {
         return universe.getSolarSystems();
     }
 
     public Coordinates getPlayerCoordinates() {
         return player.getCoordinates();
+    }
+
+    public Ship getShip(){
+        return player.getShip();
+    }
+
+    public double getShipFuel() {
+        return player.getShipFuel();
+    }
+
+    public double getShipFuelCapacity() {
+        return player.getShipFuelCapacity();
+    }
+
+    public boolean canTravelDist(double dist) {
+        return player.canTravelDist(dist);
+    }
+
+    public void travel(Coordinates dest) {
+        player.travel(dest);
     }
 }

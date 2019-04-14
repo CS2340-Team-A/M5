@@ -142,6 +142,26 @@ public class Player {
         ship.removeFromCargoHold(good);
     }
 
+    public int getXCoord() {
+        return coordinates.getX();
+    }
+
+    public int getYCoord() {
+        return coordinates.getY();
+    }
+
+    public double getShipFuel() {
+        return ship.getFuel();
+    }
+
+    public boolean canTravelDist(double dist) {
+        return ship.canTravelDist(dist);
+    }
+
+    public double getShipFuelCapacity() {
+        return ship.getFuelCapacity();
+    }
+
 
     @Override
     public String toString() {

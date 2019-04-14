@@ -32,12 +32,13 @@ public class SolarSystemModel extends RealmObject {
      */
     public SolarSystemModel(SolarSystem solarSystem) {
         this.name = solarSystem.getName();
-        this.xCoords = solarSystem.getCoordinates().getX();
-        this.yCoords = solarSystem.getCoordinates().getY();
-        this.techLevel = solarSystem.getPlanet().getTLv().toString();
-        this.resourcesName = solarSystem.getPlanet().getResources().toString();
+        this.xCoords = solarSystem.getXCoordinates();
+        this.yCoords = solarSystem.getYCoordinates();
+        this.techLevel = solarSystem.getPlanetTlv().toString();
+
+        this.resourcesName = solarSystem.getPlanetResources().toString();
         this.tradeGoods = new RealmList<>();
-        for (TradeGood tradeGood: solarSystem.getPlanet().getTradeGoods()) {
+        for (TradeGood tradeGood: solarSystem.getTradeGoods()) {
             tradeGoods.add(new TradeGoodModel(tradeGood));
         }
     }

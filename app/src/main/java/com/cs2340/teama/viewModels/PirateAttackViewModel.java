@@ -22,10 +22,10 @@ public class PirateAttackViewModel extends ViewModel {
      * Decreases the quantity of every good a player has by one
      */
     public void pillage() {
-        List<TradeGood> goods = getPlayer().getShip().getCargoHold();
+        List<TradeGood> goods = game.getCargoHold();
         for (final TradeGood curGood : goods) {
-            if (getPlayer().canSell(curGood)) {
-                getPlayer().getShip().removeFromCargoHold(new TradeGood(0,
+            if (game.canSell(curGood)) {
+                game.removeFromPlayerCargoHold(new TradeGood(0,
                         curGood.getGoodType(), 1));
                 Realm realm = Realm.getDefaultInstance();
                 realm.executeTransaction(new Realm.Transaction() {
@@ -33,7 +33,7 @@ public class PirateAttackViewModel extends ViewModel {
                     public void execute(Realm realm) {
                         PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
                         if (playerModel != null) {
-                            playerModel.getShip().removeFromCargoHold(
+                            playerModel.removeFromCargoHold(
                                     curGood.getGoodType().toString(), 1
                             );
                         }

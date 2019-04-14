@@ -31,14 +31,22 @@ public class TravelViewModel extends ViewModel {
      * @return the planets information
      */
     public CharSequence getPlanetInfo() {
-        return this.getPlanet().getInfo();
+        return game.getPlanetInfo();
     }
 
     /**
      * @return the ship
      */
     public Ship getShip() {
-        return game.getPlayer().getShip();
+        return game.getShip();
+    }
+
+    public double getShipFuel() {
+        return game.getShipFuel();
+    }
+
+    public double getShipFuelCapacity() {
+        return game.getShipFuelCapacity();
     }
 
     /**
@@ -46,13 +54,13 @@ public class TravelViewModel extends ViewModel {
      * @return List of Reachable Planets*/
     public List<Planet> getPlanetList(){
         List<Planet> reachablePlanets = new ArrayList<>();
-        Coordinates playerCoords = game.getPlayer().getCoordinates();
+        Coordinates playerCoords = game.getPlayerCoordinates();
         double distToPlanet;
-        Ship ship = game.getPlayer().getShip();
-        for (SolarSystem system : game.getUniverse().getSolarSystems()) {
+        Ship ship = game.getShip();
+        for (SolarSystem system : game.getSolarSystems()) {
 
             distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
-            if (ship.canTravelDist(distToPlanet)) {
+            if (game.canTravelDist(distToPlanet)) {
                 reachablePlanets.add(system.getPlanet());
             }
 
@@ -66,14 +74,14 @@ public class TravelViewModel extends ViewModel {
      */
     public List<String> getPlanetNameList() {
         List<String> reachablePlanets = new ArrayList<>();
-        Coordinates playerCoords = game.getPlayer().getCoordinates();
+        Coordinates playerCoords = game.getPlayerCoordinates();
         double distToPlanet;
-        Ship ship = game.getPlayer().getShip();
-        for (SolarSystem system : game.getUniverse().getSolarSystems()) {
+        Ship ship = game.getShip();
+        for (SolarSystem system : game.getSolarSystems()) {
 
             distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
-            if (ship.canTravelDist(distToPlanet)) {
-                reachablePlanets.add(system.getPlanet().getName());
+            if (game.canTravelDist(distToPlanet)) {
+                reachablePlanets.add(system.getName());
             }
 
         }
@@ -85,13 +93,13 @@ public class TravelViewModel extends ViewModel {
      */
     private List<SolarSystem> getSolarSystems() {
         List<SolarSystem> reachableSystems = new ArrayList<>();
-        Coordinates playerCoords = game.getPlayer().getCoordinates();
+        Coordinates playerCoords = game.getPlayerCoordinates();
         double distToPlanet;
-        Ship ship = game.getPlayer().getShip();
-        for (SolarSystem system : game.getUniverse().getSolarSystems()) {
+        Ship ship = game.getShip();
+        for (SolarSystem system : game.getSolarSystems()) {
 
             distToPlanet = Coordinates.distTo(playerCoords, system.getCoordinates());
-            if (ship.canTravelDist(distToPlanet)) {
+            if (game.canTravelDist(distToPlanet)) {
                 reachableSystems.add(system);
             }
 
@@ -106,10 +114,10 @@ public class TravelViewModel extends ViewModel {
         Planet planet = this.getPlanetList().get(planetPos);
         Log.d("Edit", "Got planet " + planet);
 
-        SolarSystem system = this.getSolarSystems().get(planetPos);
+        final SolarSystem system = this.getSolarSystems().get(planetPos);
         final Coordinates destCoord = system.getCoordinates();
 
-        game.getPlayer().travel(destCoord);
+        game.travel(destCoord);
 
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {
@@ -122,7 +130,7 @@ public class TravelViewModel extends ViewModel {
                             playerModel.getCoordinates(),
                             destCoord
                     ) / Ship.FUEL_EFFICIENCY);
-                    playerModel.setCoordinates(destCoord.getX(), destCoord.getY());
+                    playerModel.setCoordinates(system.getXCoordinates(), system.getYCoordinates());
                 }
             }
         });

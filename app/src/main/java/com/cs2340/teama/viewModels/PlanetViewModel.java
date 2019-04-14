@@ -20,21 +20,21 @@ public class PlanetViewModel extends ViewModel {
      * @return planet
      */
     public CharSequence getPlanetName() {
-        return this.getPlanet().getName();
+        return game.getPlanetName();
     }
 
     /**
      * @return planet's infor
      */
     public CharSequence getPlanetInfo() {
-        return this.getPlanet().getInfo();
+        return game.getPlanetInfo();
     }
 
     /**
      * @return planet's unique id
      */
     public int getPlanetID() {
-        return this.getPlanet().getId();
+        return game.getPlanetId();
     }
 
 

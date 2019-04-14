@@ -39,7 +39,7 @@ public class SolarSystem {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);
         for (SolarSystem s :solarSystems) {
-            if (s.getCoordinates().equals(planetCoords)) {
+            if (s.coordinates.equals(planetCoords)) {
                 foundSolarSystem = s;
             }
         }
@@ -51,7 +51,7 @@ public class SolarSystem {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);
         for (SolarSystem s :solarSystems) {
-            if (s.getCoordinates().equals(planetCoords)) {
+            if (s.coordinates.equals(planetCoords)) {
                 foundSolarSystem = s;
             }
         }
@@ -63,7 +63,7 @@ public class SolarSystem {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);
         for (SolarSystem s :solarSystems) {
-            if (s.getCoordinates().equals(planetCoords)) {
+            if (s.coordinates.equals(planetCoords)) {
                 foundSolarSystem = s;
             }
         }
@@ -75,11 +75,35 @@ public class SolarSystem {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);
         for (SolarSystem s :solarSystems) {
-            if (s.getCoordinates().equals(planetCoords)) {
+            if (s.coordinates.equals(planetCoords)) {
                 foundSolarSystem = s;
             }
         }
         return foundSolarSystem.planet.getName();
+    }
+
+    public static String findSolarSystemPlanetInfoByCoords(List<SolarSystem> solarSystems,
+                                                           Coordinates planetCoords) {
+        // here we should implement a good search algorithm or closest to algorithm
+        SolarSystem foundSolarSystem = solarSystems.get(0);
+        for (SolarSystem s :solarSystems) {
+            if (s.coordinates.equals(planetCoords)) {
+                foundSolarSystem = s;
+            }
+        }
+        return foundSolarSystem.planet.getInfo();
+    }
+
+    public static int findSolarSystemPlanetIDByCoords(List<SolarSystem> solarSystems,
+                                                           Coordinates planetCoords) {
+        // here we should implement a good search algorithm or closest to algorithm
+        SolarSystem foundSolarSystem = solarSystems.get(0);
+        for (SolarSystem s :solarSystems) {
+            if (s.coordinates.equals(planetCoords)) {
+                foundSolarSystem = s;
+            }
+        }
+        return foundSolarSystem.planet.getId();
     }
 
     /**
@@ -87,6 +111,14 @@ public class SolarSystem {
      */
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    public int getXCoordinates() {
+        return coordinates.getX();
+    }
+
+    public int getYCoordinates() {
+        return coordinates.getY();
     }
 
     /**
@@ -101,6 +133,18 @@ public class SolarSystem {
      */
     public String getName() {
         return name;
+    }
+
+    public List<TradeGood> getTradeGoods() {
+        return planet.getTradeGoods();
+    }
+
+    public TechLevel getPlanetTlv() {
+        return planet.getTLv();
+    }
+
+    public Resources getPlanetResources() {
+        return planet.getResources();
     }
 
     @Override

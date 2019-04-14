@@ -36,8 +36,8 @@ public class PlayerModel extends RealmObject {
      * @param player containing stored information
      */
     public PlayerModel(Player player) {
-        this.xCoordinates = player.getCoordinates().getX();
-        this.yCoordinates = player.getCoordinates().getY();
+        this.xCoordinates = player.getXCoord();
+        this.yCoordinates = player.getYCoord();
         this.credits = player.getCredits();
         for (SkillType skillType: player.getSkills()) {
             switch (skillType.toString()) {
