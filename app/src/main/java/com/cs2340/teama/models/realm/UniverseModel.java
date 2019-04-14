@@ -26,4 +26,8 @@ public class UniverseModel extends RealmObject {
         return Collections.unmodifiableList(solarSystems);
     }
 
+    public void setSolarSystems(RealmList<SolarSystemModel> solarSystems) {
+        this.solarSystems = solarSystems;
+    }
+
 }
