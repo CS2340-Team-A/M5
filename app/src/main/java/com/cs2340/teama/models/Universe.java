@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.NonNull;
+
 import com.cs2340.teama.models.enums.TechLevel;
 import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.realm.SolarSystemModel;
@@ -110,6 +112,7 @@ public class Universe {
         return Collections.unmodifiableList(solarSystems).get(0);
     }
 
+    @NonNull
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder("Solar Systems in Universe:\n");

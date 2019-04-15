@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.NonNull;
+
 import com.cs2340.teama.models.enums.ShipType;
 import com.cs2340.teama.models.enums.SkillType;
 import com.cs2340.teama.models.realm.PlayerModel;
@@ -192,6 +194,7 @@ public class Player {
     }
 
 
+    @NonNull
     @Override
     public String toString() {
         StringBuilder playerString = new StringBuilder("\nPlayers name is " + name + ".\n");

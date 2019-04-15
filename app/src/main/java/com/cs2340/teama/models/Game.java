@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.Nullable;
+
 import java.util.List;
 
 /**
@@ -9,6 +11,7 @@ public final class Game {
     private final Universe universe;
     private final Player player;
 
+    @Nullable
     private static Game game;
 
     private Game(Player p, Universe u) {

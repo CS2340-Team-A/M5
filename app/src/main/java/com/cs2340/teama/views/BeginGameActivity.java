@@ -2,6 +2,7 @@ package com.cs2340.teama.views;
 
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -51,7 +52,7 @@ public class BeginGameActivity extends AppCompatActivity {
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
-            public void execute(Realm realm) {
+            public void execute(@NonNull Realm realm) {
                 realm.deleteAll();
             }
         });

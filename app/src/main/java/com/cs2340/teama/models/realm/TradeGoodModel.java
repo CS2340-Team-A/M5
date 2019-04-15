@@ -16,7 +16,6 @@ public class TradeGoodModel extends RealmObject {
     private int quantity;
     private double value;
 
-    @SuppressWarnings("ALL")
     @LinkingObjects("tradeGoods")
     private final RealmResults<SolarSystemModel> system = null;
 

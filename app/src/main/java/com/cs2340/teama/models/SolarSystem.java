@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.NonNull;
+
 import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.enums.TechLevel;
 import com.cs2340.teama.models.realm.SolarSystemModel;
@@ -180,6 +182,7 @@ public class SolarSystem {
         return planet.getResources();
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Name: " + name + " | Coordinates: " + coordinates.toString() +

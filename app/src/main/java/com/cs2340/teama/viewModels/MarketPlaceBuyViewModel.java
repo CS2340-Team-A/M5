@@ -1,6 +1,7 @@
 package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.cs2340.teama.models.Coordinates;
@@ -99,7 +100,7 @@ public class MarketPlaceBuyViewModel extends ViewModel {
                         Realm realm = Realm.getDefaultInstance();
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
-                            public void execute(Realm realm) {
+                            public void execute(@NonNull Realm realm) {
                                 TradeGoodModel tgm = realm.where(TradeGoodModel.class)
                                         .equalTo("system.name", game.getPlanetName())
                                         .equalTo("type", curGood.getGoodType().toString())

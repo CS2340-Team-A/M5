@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.NonNull;
+
 import com.cs2340.teama.models.enums.GoodType;
 import com.cs2340.teama.models.enums.Resources;
 import com.cs2340.teama.models.enums.TechLevel;
@@ -96,6 +98,7 @@ public class Planet {
         count++;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Planet: " + this.name + "\n" + getInfo();

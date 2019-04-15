@@ -1,6 +1,7 @@
 package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 
 import com.cs2340.teama.models.Game;
 import com.cs2340.teama.models.Player;
@@ -30,7 +31,7 @@ public class PirateAttackViewModel extends ViewModel {
                 Realm realm = Realm.getDefaultInstance();
                 realm.executeTransaction(new Realm.Transaction() {
                     @Override
-                    public void execute(Realm realm) {
+                    public void execute(@NonNull Realm realm) {
                         PlayerModel playerModel = realm.where(PlayerModel.class).findFirst();
                         if (playerModel != null) {
                             playerModel.removeFromCargoHold(

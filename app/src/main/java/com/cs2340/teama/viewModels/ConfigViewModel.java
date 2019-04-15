@@ -1,6 +1,7 @@
 package com.cs2340.teama.viewModels;
 
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 
 import com.cs2340.teama.models.Game;
 import com.cs2340.teama.models.Player;
@@ -25,7 +26,7 @@ public class ConfigViewModel extends ViewModel {
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
-            public void execute(Realm realm) {
+            public void execute(@NonNull Realm realm) {
                 realm.deleteAll();
                 PlayerModel stagedPlayer = new PlayerModel(p);
                 UniverseModel stagedUniverse = new UniverseModel(u);

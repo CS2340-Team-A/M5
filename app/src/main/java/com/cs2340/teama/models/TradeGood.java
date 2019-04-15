@@ -1,5 +1,6 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.cs2340.teama.models.enums.GoodType;
@@ -86,6 +87,7 @@ public class TradeGood {
      *
      * @return a string representation of the TradeGood
      */
+    @NonNull
     @Override
     public String toString() {
         return goodType + " with price Ç" + value + " takes up " + quantity +

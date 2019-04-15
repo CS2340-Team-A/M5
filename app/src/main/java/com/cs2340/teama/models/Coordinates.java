@@ -1,5 +1,7 @@
 package com.cs2340.teama.models;
 
+import android.support.annotation.NonNull;
+
 /**
  * Coordinates represent the location of a Planet in the SpaceTrader Universe
  */
@@ -63,6 +65,7 @@ public class Coordinates {
         return x < y ? y * y + x : x * x + x + y;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "(" + this.getX() + ", " + this.getY() + ")";
