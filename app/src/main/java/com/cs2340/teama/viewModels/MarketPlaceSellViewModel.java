@@ -4,8 +4,6 @@ import android.arch.lifecycle.ViewModel;
 
 import com.cs2340.teama.models.Coordinates;
 import com.cs2340.teama.models.Game;
-import com.cs2340.teama.models.Planet;
-import com.cs2340.teama.models.Player;
 import com.cs2340.teama.models.SolarSystem;
 import com.cs2340.teama.models.TradeGood;
 import com.cs2340.teama.models.enums.GoodType;
