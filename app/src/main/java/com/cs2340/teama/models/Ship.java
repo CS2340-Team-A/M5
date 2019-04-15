@@ -63,7 +63,7 @@ public class Ship {
      * @return cargo hold
      */
     public List<TradeGood> getCargoHold() {
-        return Collections.unmodifiableList(cargoHold);
+        return cargoHold;
     }
 
     /**

@@ -105,7 +105,7 @@ public class Universe {
      * @return a list of solar systems
      */
     public List<SolarSystem> getSolarSystems() {
-        return Collections.unmodifiableList(solarSystems);
+        return solarSystems;
     }
 
     /**

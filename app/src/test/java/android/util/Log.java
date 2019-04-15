@@ -1,7 +1,7 @@
 package android.util;
 
 @SuppressWarnings({"ALL", "SameReturnValue"})
-class Log {
+public class Log {
     public static int d(String tag, String msg) {
         System.out.println("DEBUG: " + tag + ": " + msg);
         return 0;
