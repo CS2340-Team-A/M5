@@ -89,7 +89,6 @@ public class ConfigActivity extends AppCompatActivity {
                         Universe universe = new Universe();
                         Log.d("Edit", "Created Universe: \n" + universe);
 
-                        //GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
                         if (nameGiven.getText().toString().isEmpty()) {
                             throw new IllegalArgumentException();

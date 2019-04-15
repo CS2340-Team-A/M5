@@ -108,6 +108,9 @@ public class Universe {
         return Collections.unmodifiableList(solarSystems);
     }
 
+    /**
+     * @return the first solar system in the universe
+     */
     public SolarSystem getFirstSolarSystem() {
         return Collections.unmodifiableList(solarSystems).get(0);
     }

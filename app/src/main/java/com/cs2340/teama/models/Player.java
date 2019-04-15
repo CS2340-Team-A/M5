@@ -199,7 +199,8 @@ public class Player {
     public String toString() {
         StringBuilder playerString = new StringBuilder("\nPlayers name is " + name + ".\n");
         for (SkillType sk: skills) {
-            playerString.append(name).append(" has ").append(sk.getSkillPointsAllocated()).append(" points").append(" allocated to ").append(sk).append(".\n");
+            playerString.append(name).append(" has ").append(sk.getSkillPointsAllocated())
+                    .append(" points").append(" allocated to ").append(sk).append(".\n");
         }
         playerString.append("Player's ship is the ").append(getShip()).append(".\n");
         playerString.append("Player has ").append(getCredits()).append(" credits.");

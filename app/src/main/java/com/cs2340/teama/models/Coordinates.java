@@ -62,7 +62,11 @@ public class Coordinates {
 
     @Override
     public int hashCode() {
-        return x < y ? y * y + x : x * x + x + y;
+        if (x < y) {
+            return y * y + x;
+        } else {
+            return x * x + x + y;
+        }
     }
 
     @NonNull

@@ -69,8 +69,8 @@ public class SolarSystem {
      * @param planetCoords coordinates of planet
      * @return planet's list og goods
      */
-    public static List<TradeGood> findSolarSystemPlanetGoodsListByCoords(List<SolarSystem> solarSystems,
-                                                       Coordinates planetCoords) {
+    public static List<TradeGood> findSolarSystemPlanetGoodsListByCoords(
+            List<SolarSystem> solarSystems, Coordinates planetCoords) {
         // here we should implement a good search algorithm or closest to algorithm
         SolarSystem foundSolarSystem = solarSystems.get(0);
         for (SolarSystem s :solarSystems) {
