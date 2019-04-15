@@ -66,7 +66,8 @@ public class TravelActivity extends AppCompatActivity {
 
         ProgressBar fuelBar = findViewById(R.id.fuel_bar);
         fuelBar.setMax(100);
-        fuelBar.setProgress((int) ((viewModel.getShipFuel() * 100) / viewModel.getShipFuelCapacity()), true);
+        fuelBar.setProgress((int) ((viewModel
+                .getShipFuel() * 100) / viewModel.getShipFuelCapacity()), true);
 
         travel_button.setOnClickListener(new View.OnClickListener() {
             @Override

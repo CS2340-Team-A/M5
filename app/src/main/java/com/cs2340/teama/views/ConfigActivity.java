@@ -29,7 +29,6 @@ import com.cs2340.teama.m5.R;
  */
 public class ConfigActivity extends AppCompatActivity {
 
-    private Spinner difficultySpinner;
     private EditText fighter;
     private EditText pilot;
     private EditText trader;
@@ -46,7 +45,7 @@ public class ConfigActivity extends AppCompatActivity {
         /*
         Grabbing the widgets
          */
-        difficultySpinner = findViewById(R.id.difficulty_spinner);
+        Spinner difficultySpinner = findViewById(R.id.difficulty_spinner);
         fighter = findViewById(R.id.pilot_number);
         pilot = findViewById(R.id.fighter_number);
         trader = findViewById(R.id.trader_number);
@@ -90,7 +89,6 @@ public class ConfigActivity extends AppCompatActivity {
                         Universe universe = new Universe();
                         Log.d("Edit", "Created Universe: \n" + universe);
 
-                        //GameDifficulty diff = (GameDifficulty) difficultySpinner.getSelectedItem();
 
                         if (nameGiven.getText().toString().isEmpty()) {
                             throw new IllegalArgumentException();
