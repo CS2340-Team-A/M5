@@ -44,7 +44,7 @@ public class MarketPlaceSellViewModel extends ViewModel {
      * @return the count of the good in the cargo hold
      */
     public int getGoodVolume(GoodType goodName) {
-        List<TradeGood> goods = getPlanetGoodsList();
+        List<TradeGood> goods = game.getCargoHold();
         for (TradeGood curGood : goods) {
             if (curGood.getGoodType() == goodName) {
                 return curGood.getVolume();
