@@ -122,42 +122,71 @@ public class Player {
         return credits;
     }
 
+    /**
+     * @return ship's cargo hold
+     */
     public List<TradeGood> getCargoHold() {
         return ship.getCargoHold();
     }
-
+    /**
+     * @return ship's current goods
+     */
     public int getShipGoodsStored() {
         return ship.getNumGoodsStored();
     }
-
+    /**
+     * @return ship's cargo space
+     */
     public int getShipCargoSpace() {
         return ship.getCargoSpace();
     }
 
+    /**
+     * @param good to be added
+     * @return if the good has been added properly
+     */
     public boolean addToShipCargoHold(TradeGood good) {
         return ship.addToCargoHold(good);
     }
 
+    /**
+     * @param good to be removed
+     */
     public void removeFromShipCargoHold(TradeGood good) {
         ship.removeFromCargoHold(good);
     }
 
+    /**
+     * @return x coordinate
+     */
     public int getXCoord() {
         return coordinates.getX();
     }
-
+    /**
+     * @return y coordinate
+     */
     public int getYCoord() {
         return coordinates.getY();
     }
 
+    /**
+     * @return ship's fuel level
+     */
     public double getShipFuel() {
         return ship.getFuel();
     }
 
+    /**
+     * @param dist to be traveled
+     * @return if the distance can be traveled
+     */
     public boolean canTravelDist(double dist) {
         return ship.canTravelDist(dist);
     }
 
+    /**
+     * @return ship's fuel capacity
+     */
     public double getShipFuelCapacity() {
         return ship.getFuelCapacity();
     }

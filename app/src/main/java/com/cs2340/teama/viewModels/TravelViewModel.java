@@ -41,10 +41,15 @@ public class TravelViewModel extends ViewModel {
         return game.getShip();
     }
 
+    /**
+     * @return ship's fuel level
+     */
     public double getShipFuel() {
         return game.getShipFuel();
     }
-
+    /**
+     * @return ship's fuel capacity
+     */
     public double getShipFuelCapacity() {
         return game.getShipFuelCapacity();
     }

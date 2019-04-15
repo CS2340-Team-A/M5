@@ -87,6 +87,9 @@ public class Ship {
         return fuelCapacity;
     }
 
+    /**
+     * @return ship's cargo space
+     */
     public int getCargoSpace() {
         return shipType.getCargoSpace();
     }
