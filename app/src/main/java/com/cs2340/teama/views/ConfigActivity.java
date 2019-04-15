@@ -97,7 +97,7 @@ public class ConfigActivity extends AppCompatActivity {
                         }
 
                         Coordinates startingCoords = universe
-                                .getSolarSystems().get(0).getCoordinates();
+                                .getFirstSolarSystem().getCoordinates();
 
                         Player player = new Player(nameGiven.getText().toString(), startingCoords);
 

@@ -59,6 +59,11 @@ public class Coordinates {
     }
 
     @Override
+    public int hashCode() {
+        return x < y ? y * y + x : x * x + x + y;
+    }
+
+    @Override
     public String toString() {
         return "(" + this.getX() + ", " + this.getY() + ")";
     }

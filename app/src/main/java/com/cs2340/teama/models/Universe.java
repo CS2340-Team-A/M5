@@ -106,6 +106,10 @@ public class Universe {
         return Collections.unmodifiableList(solarSystems);
     }
 
+    public SolarSystem getFirstSolarSystem() {
+        return Collections.unmodifiableList(solarSystems).get(0);
+    }
+
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder("Solar Systems in Universe:\n");

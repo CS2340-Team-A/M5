@@ -60,7 +60,7 @@ public class SolarSystemTest {
                 .findSolarSystemByCoords(list, myCoords));
 
         //we should get an exception if we input and empty list
-        list = new LinkedList<SolarSystem>();
+        list = new LinkedList<>();
         expectedException.expect(IllegalArgumentException.class);
         SolarSystem.findSolarSystemByCoords(list, myCoords);
 

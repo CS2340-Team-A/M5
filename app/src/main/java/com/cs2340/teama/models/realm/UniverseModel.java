@@ -38,11 +38,11 @@ public class UniverseModel extends RealmObject {
         return Collections.unmodifiableList(solarSystems);
     }
 
-    /**
-     * @param solarSystems to be stored
-     */
-    public void setSolarSystems(RealmList<SolarSystemModel> solarSystems) {
-        this.solarSystems = solarSystems;
-    }
+//    /**
+//     * @param solarSystems to be stored
+//     */
+//    public void setSolarSystems(RealmList<SolarSystemModel> solarSystems) {
+//        this.solarSystems = solarSystems;
+//    }
 
 }
